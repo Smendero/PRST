@@ -1,0 +1,337 @@
+SampleID	CFL_ID	Site	Sample_type	Soil-tree_type	Treatment	Conservation_time_week	Repetition	Depth	Extraction_date					
+GRDI-ECO_PS-CM-202108-RAM1-1_16S	RAM1-1	Valcartier	Soil	Agricultural mineral	RNAlater	1	1	30 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-RAM1-2_16S	RAM1-2	Valcartier	Soil	Agricultural mineral	RNAlater	1	2	30 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-RAM1-3_16S	RAM1-3	Valcartier	Soil	Agricultural mineral	RNAlater	1	3	30 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-RAM2-1_16S	RAM2-1	Valcartier	Soil	Agricultural mineral	RNAlater	2	1	30 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-RAM2-2_16S	RAM2-2	Valcartier	Soil	Agricultural mineral	RNAlater	2	2	30 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-RAM2-3_16S	RAM2-3	Valcartier	Soil	Agricultural mineral	RNAlater	2	3	30 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-RAM3-1_16S	RAM3-1	Valcartier	Soil	Agricultural mineral	RNAlater	3	1	30 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-RAM3-2_16S	RAM3-2	Valcartier	Soil	Agricultural mineral	RNAlater	3	2	30 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-RAM3-3_16S	RAM3-3	Valcartier	Soil	Agricultural mineral	RNAlater	3	3	30 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-EAM1-1_16S	EAM1-1	Valcartier	Soil	Agricultural mineral	Ethanol	1	1	30 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-EAM1-2_16S	EAM1-2	Valcartier	Soil	Agricultural mineral	Ethanol	1	2	30 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-EAM1-3_16S	EAM1-3	Valcartier	Soil	Agricultural mineral	Ethanol	1	3	30 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-EAM2-1_16S	EAM2-1	Valcartier	Soil	Agricultural mineral	Ethanol	2	1	30 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-EAM2-2_16S	EAM2-2	Valcartier	Soil	Agricultural mineral	Ethanol	2	2	30 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-EAM2-3_16S	EAM2-3	Valcartier	Soil	Agricultural mineral	Ethanol	2	3	30 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-EAM3-1_16S	EAM3-1	Valcartier	Soil	Agricultural mineral	Ethanol	3	1	30 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-EAM3-2_16S	EAM3-2	Valcartier	Soil	Agricultural mineral	Ethanol	3	2	30 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-EAM3-3_16S	EAM3-3	Valcartier	Soil	Agricultural mineral	Ethanol	3	3	30 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-LAM1-1_16S	LAM1-1	Valcartier	Soil	Agricultural mineral	LifeGuard	1	1	30 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-LAM1-2_16S	LAM1-2	Valcartier	Soil	Agricultural mineral	LifeGuard	1	2	30 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-LAM1-3_16S	LAM1-3	Valcartier	Soil	Agricultural mineral	LifeGuard	1	3	30 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-LAM2-1_16S	LAM2-1	Valcartier	Soil	Agricultural mineral	LifeGuard	2	1	30 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-LAM2-2_16S	LAM2-2	Valcartier	Soil	Agricultural mineral	LifeGuard	2	2	30 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-LAM2-3_16S	LAM2-3	Valcartier	Soil	Agricultural mineral	LifeGuard	2	3	30 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-LAM3-1_16S	LAM3-1	Valcartier	Soil	Agricultural mineral	LifeGuard	3	1	30 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-LAM3-2_16S	LAM3-2	Valcartier	Soil	Agricultural mineral	LifeGuard	3	2	30 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-LAM3-3_16S	LAM3-3	Valcartier	Soil	Agricultural mineral	LifeGuard	3	3	30 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-CAM1-1_16S	CAM1-1	Valcartier	Soil	Agricultural mineral	CD1	1	1	30 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-CAM1-2_16S	CAM1-2	Valcartier	Soil	Agricultural mineral	CD1	1	2	30 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-CAM1-3_16S	CAM1-3	Valcartier	Soil	Agricultural mineral	CD1	1	3	30 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-CAM2-1_16S	CAM2-1	Valcartier	Soil	Agricultural mineral	CD1	2	1	30 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-CAM2-2_16S	CAM2-2	Valcartier	Soil	Agricultural mineral	CD1	2	2	30 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-CAM2-3_16S	CAM2-3	Valcartier	Soil	Agricultural mineral	CD1	2	3	30 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-CAM3-1_16S	CAM3-1	Valcartier	Soil	Agricultural mineral	CD1	3	1	30 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-CAM3-2_16S	CAM3-2	Valcartier	Soil	Agricultural mineral	CD1	3	2	30 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-CAM3-3_16S	CAM3-3	Valcartier	Soil	Agricultural mineral	CD1	3	3	30 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-DAM1-1_16S	DAM1-1	Valcartier	Soil	Agricultural mineral	Dry-Dry	1	1	30 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-DAM1-2_16S	DAM1-2	Valcartier	Soil	Agricultural mineral	Dry-Dry	1	2	30 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-DAM1-3_16S	DAM1-3	Valcartier	Soil	Agricultural mineral	Dry-Dry	1	3	30 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-DAM2-1_16S	DAM2-1	Valcartier	Soil	Agricultural mineral	Dry-Dry	2	1	30 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-DAM2-2_16S	DAM2-2	Valcartier	Soil	Agricultural mineral	Dry-Dry	2	2	30 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-DAM2-3_16S	DAM2-3	Valcartier	Soil	Agricultural mineral	Dry-Dry	2	3	30 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-DAM3-1_16S	DAM3-1	Valcartier	Soil	Agricultural mineral	Dry-Dry	3	1	30 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-DAM3-2_16S	DAM3-2	Valcartier	Soil	Agricultural mineral	Dry-Dry	3	2	30 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-DAM3-3_16S	DAM3-3	Valcartier	Soil	Agricultural mineral	Dry-Dry	3	3	30 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-FAM-1_16S	FAM-1	Valcartier	Soil	Agricultural mineral	Freeze	Ref-frozen	1	30 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-FAM-2_16S	FAM-2	Valcartier	Soil	Agricultural mineral	Freeze	Ref-frozen	2	30 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-FAM-3_16S	FAM-3	Valcartier	Soil	Agricultural mineral	Freeze	Ref-frozen	3	30 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-AM-1_16S	AM-1	Valcartier	Soil	Agricultural mineral	Immediate extraction	Ref-fresh	1	30 cm	2021-07-16					
+GRDI-ECO_PS-CM-202108-AM-2_16S	AM-2	Valcartier	Soil	Agricultural mineral	Immediate extraction	Ref-fresh	2	30 cm	2021-07-16					
+GRDI-ECO_PS-CM-202108-AM-3_16S	AM-3	Valcartier	Soil	Agricultural mineral	Immediate extraction	Ref-fresh	3	30 cm	2021-07-16					
+GRDI-ECO_PS-CM-202108-RFM1-1_16S	RFM1-1	Valcartier	Soil	Forest mineral	RNAlater	1	1	50 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-RFM1-2_16S	RFM1-2	Valcartier	Soil	Forest mineral	RNAlater	1	2	50 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-RFM1-3_16S	RFM1-3	Valcartier	Soil	Forest mineral	RNAlater	1	3	50 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-RFM2-1_16S	RFM2-1	Valcartier	Soil	Forest mineral	RNAlater	2	1	50 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-RFM2-2_16S	RFM2-2	Valcartier	Soil	Forest mineral	RNAlater	2	2	50 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-RFM2-3_16S	RFM2-3	Valcartier	Soil	Forest mineral	RNAlater	2	3	50 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-RFM3-1_16S	RFM3-1	Valcartier	Soil	Forest mineral	RNAlater	3	1	50 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-RFM3-2_16S	RFM3-2	Valcartier	Soil	Forest mineral	RNAlater	3	2	50 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-RFM3-3_16S	RFM3-3	Valcartier	Soil	Forest mineral	RNAlater	3	3	50 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-EFM1-1_16S	EFM1-1	Valcartier	Soil	Forest mineral	Ethanol	1	1	50 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-EFM1-2_16S	EFM1-2	Valcartier	Soil	Forest mineral	Ethanol	1	2	50 cm	2021-08-19					
+GRDI-ECO_PS-CM-202108-EFM1-3_16S	EFM1-3	Valcartier	Soil	Forest mineral	Ethanol	1	3	50 cm	2021-08-19					
+GRDI-ECO_PS-CM-202108-EFM2-1_16S	EFM2-1	Valcartier	Soil	Forest mineral	Ethanol	2	1	50 cm	2021-08-19					
+GRDI-ECO_PS-CM-202108-EFM2-2_16S	EFM2-2	Valcartier	Soil	Forest mineral	Ethanol	2	2	50 cm	2021-08-19					
+GRDI-ECO_PS-CM-202108-EFM2-3_16S	EFM2-3	Valcartier	Soil	Forest mineral	Ethanol	2	3	50 cm	2021-08-19					
+GRDI-ECO_PS-CM-202108-EFM3-1_16S	EFM3-1	Valcartier	Soil	Forest mineral	Ethanol	3	1	50 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-EFM3-2_16S	EFM3-2	Valcartier	Soil	Forest mineral	Ethanol	3	2	50 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-EFM3-3_16S	EFM3-3	Valcartier	Soil	Forest mineral	Ethanol	3	3	50 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-LFM1-1_16S	LFM1-1	Valcartier	Soil	Forest mineral	LifeGuard	1	1	50 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-LFM1-2_16S	LFM1-2	Valcartier	Soil	Forest mineral	LifeGuard	1	2	50 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-LFM1-3_16S	LFM1-3	Valcartier	Soil	Forest mineral	LifeGuard	1	3	50 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-LFM2-1_16S	LFM2-1	Valcartier	Soil	Forest mineral	LifeGuard	2	1	50 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-LFM2-2_16S	LFM2-2	Valcartier	Soil	Forest mineral	LifeGuard	2	2	50 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-LFM2-3_16S	LFM2-3	Valcartier	Soil	Forest mineral	LifeGuard	2	3	50 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-LFM3-1_16S	LFM3-1	Valcartier	Soil	Forest mineral	LifeGuard	3	1	50 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-LFM3-2_16S	LFM3-2	Valcartier	Soil	Forest mineral	LifeGuard	3	2	50 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-LFM3-3_16S	LFM3-3	Valcartier	Soil	Forest mineral	LifeGuard	3	3	50 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-CFM1-1_16S	CFM1-1	Valcartier	Soil	Forest mineral	CD1	1	1	50 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-CFM1-2_16S	CFM1-2	Valcartier	Soil	Forest mineral	CD1	1	2	50 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-CFM1-3_16S	CFM1-3	Valcartier	Soil	Forest mineral	CD1	1	3	50 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-CFM2-1_16S	CFM2-1	Valcartier	Soil	Forest mineral	CD1	2	1	50 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-CFM2-2_16S	CFM2-2	Valcartier	Soil	Forest mineral	CD1	2	2	50 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-CFM2-3_16S	CFM2-3	Valcartier	Soil	Forest mineral	CD1	2	3	50 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-CFM3-1_16S	CFM3-1	Valcartier	Soil	Forest mineral	CD1	3	1	50 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-CFM3-2_16S	CFM3-2	Valcartier	Soil	Forest mineral	CD1	3	2	50 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-CFM3-3_16S	CFM3-3	Valcartier	Soil	Forest mineral	CD1	3	3	50 cm	2021-08-18					
+GRDI-ECO_PS-CM-202108-DFM1-1_16S	DFM1-1	Valcartier	Soil	Forest mineral	Dry-Dry	1	1	50 cm	2021-08-19					
+GRDI-ECO_PS-CM-202108-DFM1-2_16S	DFM1-2	Valcartier	Soil	Forest mineral	Dry-Dry	1	2	50 cm	2021-08-19					
+GRDI-ECO_PS-CM-202108-DFM1-3_16S	DFM1-3	Valcartier	Soil	Forest mineral	Dry-Dry	1	3	50 cm	2021-08-19					
+GRDI-ECO_PS-CM-202108-DFM2-1_16S	DFM2-1	Valcartier	Soil	Forest mineral	Dry-Dry	2	1	50 cm	2021-08-19					
+GRDI-ECO_PS-CM-202108-DFM2-2_16S	DFM2-2	Valcartier	Soil	Forest mineral	Dry-Dry	2	2	50 cm	2021-08-19					
+GRDI-ECO_PS-CM-202108-DFM2-3_16S	DFM2-3	Valcartier	Soil	Forest mineral	Dry-Dry	2	3	50 cm	2021-08-19					
+GRDI-ECO_PS-CM-202108-DFM3-1_16S	DFM3-1	Valcartier	Soil	Forest mineral	Dry-Dry	3	1	50 cm	2021-08-19					
+GRDI-ECO_PS-CM-202108-DFM3-2_16S	DFM3-2	Valcartier	Soil	Forest mineral	Dry-Dry	3	2	50 cm	2021-08-19					
+GRDI-ECO_PS-CM-202108-DFM3-3_16S	DFM3-3	Valcartier	Soil	Forest mineral	Dry-Dry	3	3	50 cm	2021-08-19					
+GRDI-ECO_PS-CM-202108-FFM-1_16S	FFM-1	Valcartier	Soil	Forest mineral	Freeze	Ref-frozen	1	50 cm	2021-08-19					
+GRDI-ECO_PS-CM-202108-FFM-2_16S	FFM-2	Valcartier	Soil	Forest mineral	Freeze	Ref-frozen	2	50 cm	2021-08-19					
+GRDI-ECO_PS-CM-202108-FFM-3_16S	FFM-3	Valcartier	Soil	Forest mineral	Freeze	Ref-frozen	3	50 cm	2021-08-19					
+GRDI-ECO_PS-CM-202108-FM-1_16S	FM-1	Valcartier	Soil	Forest mineral	Immediate extraction	Ref-fresh	1	50 cm	2021-07-16					
+GRDI-ECO_PS-CM-202108-FM-2_16S	FM-2	Valcartier	Soil	Forest mineral	Immediate extraction	Ref-fresh	2	50 cm	2021-07-16					
+GRDI-ECO_PS-CM-202108-FM-3_16S	FM-3	Valcartier	Soil	Forest mineral	Immediate extraction	Ref-fresh	3	50 cm	2021-07-16					
+GRDI-ECO_PS-CM-202108-RFO1-1_16S	RFO1-1	Valcartier	Soil	Forest organic	RNAlater	1	1	0-7 cm	2021-08-16					
+GRDI-ECO_PS-CM-202108-RFO1-2_16S	RFO1-2	Valcartier	Soil	Forest organic	RNAlater	1	2	0-7 cm	2021-08-16					
+GRDI-ECO_PS-CM-202108-RFO1-3_16S	RFO1-3	Valcartier	Soil	Forest organic	RNAlater	1	3	0-7 cm	2021-08-16					
+GRDI-ECO_PS-CM-202108-RFO2-1_16S	RFO2-1	Valcartier	Soil	Forest organic	RNAlater	2	1	0-7 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-RFO2-2_16S	RFO2-2	Valcartier	Soil	Forest organic	RNAlater	2	2	0-7 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-RFO2-3_16S	RFO2-3	Valcartier	Soil	Forest organic	RNAlater	2	3	0-7 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-RFO3-1_16S	RFO3-1	Valcartier	Soil	Forest organic	RNAlater	3	1	0-7 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-RFO3-2_16S	RFO3-2	Valcartier	Soil	Forest organic	RNAlater	3	2	0-7 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-RFO3-3_16S	RFO3-3	Valcartier	Soil	Forest organic	RNAlater	3	3	0-7 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-EFO1-1_16S	EFO1-1	Valcartier	Soil	Forest organic	Ethanol	1	1	0-7 cm	2021-08-16					
+GRDI-ECO_PS-CM-202108-EFO1-2_16S	EFO1-2	Valcartier	Soil	Forest organic	Ethanol	1	2	0-7 cm	2021-08-16					
+GRDI-ECO_PS-CM-202108-EFO1-3_16S	EFO1-3	Valcartier	Soil	Forest organic	Ethanol	1	3	0-7 cm	2021-08-16					
+GRDI-ECO_PS-CM-202108-EFO2-1_16S	EFO2-1	Valcartier	Soil	Forest organic	Ethanol	2	1	0-7 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-EFO2-2_16S	EFO2-2	Valcartier	Soil	Forest organic	Ethanol	2	2	0-7 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-EFO2-3_16S	EFO2-3	Valcartier	Soil	Forest organic	Ethanol	2	3	0-7 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-EFO3-1_16S	EFO3-1	Valcartier	Soil	Forest organic	Ethanol	3	1	0-7 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-EFO3-2_16S	EFO3-2	Valcartier	Soil	Forest organic	Ethanol	3	2	0-7 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-EFO3-3_16S	EFO3-3	Valcartier	Soil	Forest organic	Ethanol	3	3	0-7 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-LFO1-1_16S	LFO1-1	Valcartier	Soil	Forest organic	LifeGuard	1	1	0-7 cm	2021-08-16					
+GRDI-ECO_PS-CM-202108-LFO1-2_16S	LFO1-2	Valcartier	Soil	Forest organic	LifeGuard	1	2	0-7 cm	2021-08-16					
+GRDI-ECO_PS-CM-202108-LFO1-3_16S	LFO1-3	Valcartier	Soil	Forest organic	LifeGuard	1	3	0-7 cm	2021-08-16					
+GRDI-ECO_PS-CM-202108-LFO2-1_16S	LFO2-1	Valcartier	Soil	Forest organic	LifeGuard	2	1	0-7 cm	2021-08-16					
+GRDI-ECO_PS-CM-202108-LFO2-2_16S	LFO2-2	Valcartier	Soil	Forest organic	LifeGuard	2	2	0-7 cm	2021-08-16					
+GRDI-ECO_PS-CM-202108-LFO2-3_16S	LFO2-3	Valcartier	Soil	Forest organic	LifeGuard	2	3	0-7 cm	2021-08-16					
+GRDI-ECO_PS-CM-202108-LFO3-1_16S	LFO3-1	Valcartier	Soil	Forest organic	LifeGuard	3	1	0-7 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-LFO3-2_16S	LFO3-2	Valcartier	Soil	Forest organic	LifeGuard	3	2	0-7 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-LFO3-3_16S	LFO3-3	Valcartier	Soil	Forest organic	LifeGuard	3	3	0-7 cm	2021-08-17					
+GRDI-ECO_PS-CM-202108-CFO1-1_16S	CFO1-1	Valcartier	Soil	Forest organic	CD1	1	1	0-7 cm	2021-08-16					
+GRDI-ECO_PS-CM-202108-CFO1-2_16S	CFO1-2	Valcartier	Soil	Forest organic	CD1	1	2	0-7 cm	2021-08-16					
+GRDI-ECO_PS-CM-202108-CFO1-3_16S	CFO1-3	Valcartier	Soil	Forest organic	CD1	1	3	0-7 cm	2021-08-16					
+GRDI-ECO_PS-CM-202108-CFO2-1_16S	CFO2-1	Valcartier	Soil	Forest organic	CD1	2	1	0-7 cm	2021-08-16					
+GRDI-ECO_PS-CM-202108-CFO2-2_16S	CFO2-2	Valcartier	Soil	Forest organic	CD1	2	2	0-7 cm	2021-08-16					
+GRDI-ECO_PS-CM-202108-CFO2-3_16S	CFO2-3	Valcartier	Soil	Forest organic	CD1	2	3	0-7 cm	2021-08-16					
+GRDI-ECO_PS-CM-202108-CFO3-1_16S	CFO3-1	Valcartier	Soil	Forest organic	CD1	3	1	0-7 cm	2021-08-16					
+GRDI-ECO_PS-CM-202108-CFO3-2_16S	CFO3-2	Valcartier	Soil	Forest organic	CD1	3	2	0-7 cm	2021-08-16					
+GRDI-ECO_PS-CM-202108-CFO3-3_16S	CFO3-3	Valcartier	Soil	Forest organic	CD1	3	3	0-7 cm	2021-08-16					
+GRDI-ECO_PS-CM-202108-DFO1-1_16S	DFO1-1	Valcartier	Soil	Forest organic	Dry-Dry	1	1	0-7 cm	2021-08-16					
+GRDI-ECO_PS-CM-202108-DFO1-2_16S	DFO1-2	Valcartier	Soil	Forest organic	Dry-Dry	1	2	0-7 cm	2021-08-16					
+GRDI-ECO_PS-CM-202108-DFO1-3_16S	DFO1-3	Valcartier	Soil	Forest organic	Dry-Dry	1	3	0-7 cm	2021-08-16					
+GRDI-ECO_PS-CM-202108-DFO2-1_16S	DFO2-1	Valcartier	Soil	Forest organic	Dry-Dry	2	1	0-7 cm	2021-08-16					
+GRDI-ECO_PS-CM-202108-DFO2-2_16S	DFO2-2	Valcartier	Soil	Forest organic	Dry-Dry	2	2	0-7 cm	2021-08-16					
+GRDI-ECO_PS-CM-202108-DFO2-3_16S	DFO2-3	Valcartier	Soil	Forest organic	Dry-Dry	2	3	0-7 cm	2021-08-16					
+GRDI-ECO_PS-CM-202108-DFO3-1_16S	DFO3-1	Valcartier	Soil	Forest organic	Dry-Dry	3	1	0-7 cm	2021-08-16					
+GRDI-ECO_PS-CM-202108-DFO3-2_16S	DFO3-2	Valcartier	Soil	Forest organic	Dry-Dry	3	2	0-7 cm	2021-08-16					
+GRDI-ECO_PS-CM-202108-DFO3-3_16S	DFO3-3	Valcartier	Soil	Forest organic	Dry-Dry	3	3	0-7 cm	2021-08-16					
+GRDI-ECO_PS-CM-202108-FFO-1_16S	FFO-1	Valcartier	Soil	Forest organic	Freeze	Ref-frozen	1	0-7 cm	2021-08-16					
+GRDI-ECO_PS-CM-202108-FFO-2_16S	FFO-2	Valcartier	Soil	Forest organic	Freeze	Ref-frozen	2	0-7 cm	2021-08-16					
+GRDI-ECO_PS-CM-202108-FFO-3_16S	FFO-3	Valcartier	Soil	Forest organic	Freeze	Ref-frozen	3	0-7 cm	2021-08-16					
+GRDI-ECO_PS-CM-202108-FO-1_16S	FO-1	Valcartier	Soil	Forest organic	Immediate extraction	Ref-fresh	1	0-7 cm	2021-07-16					
+GRDI-ECO_PS-CM-202108-FO-2_16S	FO-2	Valcartier	Soil	Forest organic	Immediate extraction	Ref-fresh	2	0-7 cm	2021-07-16					
+GRDI-ECO_PS-CM-202108-FO-3_16S	FO-3	Valcartier	Soil	Forest organic	Immediate extraction	Ref-fresh	3	0-7 cm	2021-07-16					
+GRDI-ECO_PS-CM-202108-RPP1-1_16S	RPP1-1	Valcartier	Phyllosphere	Populus tremuloides	RNAlater	1	1	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-RPP1-2_16S	RPP1-2	Valcartier	Phyllosphere	Populus tremuloides	RNAlater	1	2	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-RPP1-3_16S	RPP1-3	Valcartier	Phyllosphere	Populus tremuloides	RNAlater	1	3	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-RPP2-1_16S	RPP2-1	Valcartier	Phyllosphere	Populus tremuloides	RNAlater	2	1	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-RPP2-2_16S	RPP2-2	Valcartier	Phyllosphere	Populus tremuloides	RNAlater	2	2	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-RPP2-3_16S	RPP2-3	Valcartier	Phyllosphere	Populus tremuloides	RNAlater	2	3	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-RPP3-1_16S	RPP3-1	Valcartier	Phyllosphere	Populus tremuloides	RNAlater	3	1	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-RPP3-2_16S	RPP3-2	Valcartier	Phyllosphere	Populus tremuloides	RNAlater	3	2	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-RPP3-3_16S	RPP3-3	Valcartier	Phyllosphere	Populus tremuloides	RNAlater	3	3	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-EPP1-1_16S	EPP1-1	Valcartier	Phyllosphere	Populus tremuloides	Ethanol	1	1	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-EPP1-2_16S	EPP1-2	Valcartier	Phyllosphere	Populus tremuloides	Ethanol	1	2	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-EPP1-3_16S	EPP1-3	Valcartier	Phyllosphere	Populus tremuloides	Ethanol	1	3	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-EPP2-1_16S	EPP2-1	Valcartier	Phyllosphere	Populus tremuloides	Ethanol	2	1	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-EPP2-2_16S	EPP2-2	Valcartier	Phyllosphere	Populus tremuloides	Ethanol	2	2	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-EPP2-3_16S	EPP2-3	Valcartier	Phyllosphere	Populus tremuloides	Ethanol	2	3	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-EPP3-1_16S	EPP3-1	Valcartier	Phyllosphere	Populus tremuloides	Ethanol	3	1	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-EPP3-2_16S	EPP3-2	Valcartier	Phyllosphere	Populus tremuloides	Ethanol	3	2	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-EPP3-3_16S	EPP3-3	Valcartier	Phyllosphere	Populus tremuloides	Ethanol	3	3	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-LPP1-1_16S	LPP1-1	Valcartier	Phyllosphere	Populus tremuloides	LifeGuard	1	1	na	2021-08-26					
+GRDI-ECO_PS-CM-202108-LPP1-2_16S	LPP1-2	Valcartier	Phyllosphere	Populus tremuloides	LifeGuard	1	2	na	2021-08-26					
+GRDI-ECO_PS-CM-202108-LPP1-3_16S	LPP1-3	Valcartier	Phyllosphere	Populus tremuloides	LifeGuard	1	3	na	2021-08-26					
+GRDI-ECO_PS-CM-202108-LPP2-1_16S	LPP2-1	Valcartier	Phyllosphere	Populus tremuloides	LifeGuard	2	1	na	2021-08-26					
+GRDI-ECO_PS-CM-202108-LPP2-2_16S	LPP2-2	Valcartier	Phyllosphere	Populus tremuloides	LifeGuard	2	2	na	2021-08-26					
+GRDI-ECO_PS-CM-202108-LPP2-3_16S	LPP2-3	Valcartier	Phyllosphere	Populus tremuloides	LifeGuard	2	3	na	2021-08-26					
+GRDI-ECO_PS-CM-202108-LPP3-1_16S	LPP3-1	Valcartier	Phyllosphere	Populus tremuloides	LifeGuard	3	1	na	2021-08-26					
+GRDI-ECO_PS-CM-202108-LPP3-2_16S	LPP3-2	Valcartier	Phyllosphere	Populus tremuloides	LifeGuard	3	2	na	2021-08-26					
+GRDI-ECO_PS-CM-202108-LPP3-3_16S	LPP3-3	Valcartier	Phyllosphere	Populus tremuloides	LifeGuard	3	3	na	2021-08-26					
+GRDI-ECO_PS-CM-202108-DPP1-1_16S	DPP1-1	Valcartier	Phyllosphere	Populus tremuloides	Dry-Dry	1	1	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-DPP1-2_16S	DPP1-2	Valcartier	Phyllosphere	Populus tremuloides	Dry-Dry	1	2	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-DPP1-3_16S	DPP1-3	Valcartier	Phyllosphere	Populus tremuloides	Dry-Dry	1	3	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-DPP2-1_16S	DPP2-1	Valcartier	Phyllosphere	Populus tremuloides	Dry-Dry	2	1	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-DPP2-2_16S	DPP2-2	Valcartier	Phyllosphere	Populus tremuloides	Dry-Dry	2	2	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-DPP2-3_16S	DPP2-3	Valcartier	Phyllosphere	Populus tremuloides	Dry-Dry	2	3	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-DPP3-1_16S	DPP3-1	Valcartier	Phyllosphere	Populus tremuloides	Dry-Dry	3	1	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-DPP3-2_16S	DPP3-2	Valcartier	Phyllosphere	Populus tremuloides	Dry-Dry	3	2	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-DPP3-3_16S	DPP3-3	Valcartier	Phyllosphere	Populus tremuloides	Dry-Dry	3	3	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-FPP-1_16S	FPP-1	Valcartier	Phyllosphere	Populus tremuloides	Freeze	Ref-frozen	1	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-FPP-2_16S	FPP-2	Valcartier	Phyllosphere	Populus tremuloides	Freeze	Ref-frozen	2	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-FPP-3_16S	FPP-3	Valcartier	Phyllosphere	Populus tremuloides	Freeze	Ref-frozen	3	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-PP-1_16S	PP-1	Valcartier	Phyllosphere	Populus tremuloides	Immediate extraction	Ref-fresh	1	na	2021-07-19					
+GRDI-ECO_PS-CM-202108-PP-2_16S	PP-2	Valcartier	Phyllosphere	Populus tremuloides	Immediate extraction	Ref-fresh	2	na	2021-07-19					
+GRDI-ECO_PS-CM-202108-PP-3_16S	PP-3	Valcartier	Phyllosphere	Populus tremuloides	Immediate extraction	Ref-fresh	3	na	2021-07-19					
+GRDI-ECO_PS-CM-202108-RPE1-1_16S	RPE1-1	Valcartier	Phyllosphere	 Picea glauca	RNAlater	1	1	na	2021-08-26					
+GRDI-ECO_PS-CM-202108-RPE1-2_16S	RPE1-2	Valcartier	Phyllosphere	 Picea glauca	RNAlater	1	2	na	2021-08-26					
+GRDI-ECO_PS-CM-202108-RPE1-3_16S	RPE1-3	Valcartier	Phyllosphere	 Picea glauca	RNAlater	1	3	na	2021-08-26					
+GRDI-ECO_PS-CM-202108-RPE2-1_16S	RPE2-1	Valcartier	Phyllosphere	 Picea glauca	RNAlater	2	1	na	2021-08-26					
+GRDI-ECO_PS-CM-202108-RPE2-2_16S	RPE2-2	Valcartier	Phyllosphere	 Picea glauca	RNAlater	2	2	na	2021-08-26					
+GRDI-ECO_PS-CM-202108-RPE2-3_16S	RPE2-3	Valcartier	Phyllosphere	 Picea glauca	RNAlater	2	3	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-RPE3-1_16S	RPE3-1	Valcartier	Phyllosphere	 Picea glauca	RNAlater	3	1	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-RPE3-2_16S	RPE3-2	Valcartier	Phyllosphere	 Picea glauca	RNAlater	3	2	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-RPE3-3_16S	RPE3-3	Valcartier	Phyllosphere	 Picea glauca	RNAlater	3	3	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-EPE1-1_16S	EPE1-1	Valcartier	Phyllosphere	 Picea glauca	Ethanol	1	1	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-EPE1-2_16S	EPE1-2	Valcartier	Phyllosphere	 Picea glauca	Ethanol	1	2	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-EPE1-3_16S	EPE1-3	Valcartier	Phyllosphere	 Picea glauca	Ethanol	1	3	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-EPE2-1_16S	EPE2-1	Valcartier	Phyllosphere	 Picea glauca	Ethanol	2	1	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-EPE2-2_16S	EPE2-2	Valcartier	Phyllosphere	 Picea glauca	Ethanol	2	2	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-EPE2-3_16S	EPE2-3	Valcartier	Phyllosphere	 Picea glauca	Ethanol	2	3	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-EPE3-1_16S	EPE3-1	Valcartier	Phyllosphere	 Picea glauca	Ethanol	3	1	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-EPE3-2_16S	EPE3-2	Valcartier	Phyllosphere	 Picea glauca	Ethanol	3	2	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-EPE3-3_16S	EPE3-3	Valcartier	Phyllosphere	 Picea glauca	Ethanol	3	3	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-LPE1-1_16S	LPE1-1	Valcartier	Phyllosphere	 Picea glauca	LifeGuard	1	1	na	2021-08-26					
+GRDI-ECO_PS-CM-202108-LPE1-2_16S	LPE1-2	Valcartier	Phyllosphere	 Picea glauca	LifeGuard	1	2	na	2021-08-26					
+GRDI-ECO_PS-CM-202108-LPE1-3_16S	LPE1-3	Valcartier	Phyllosphere	 Picea glauca	LifeGuard	1	3	na	2021-08-26					
+GRDI-ECO_PS-CM-202108-LPE2-1_16S	LPE2-1	Valcartier	Phyllosphere	 Picea glauca	LifeGuard	2	1	na	2021-08-26					
+GRDI-ECO_PS-CM-202108-LPE2-2_16S	LPE2-2	Valcartier	Phyllosphere	 Picea glauca	LifeGuard	2	2	na	2021-08-26					
+GRDI-ECO_PS-CM-202108-LPE2-3_16S	LPE2-3	Valcartier	Phyllosphere	 Picea glauca	LifeGuard	2	3	na	2021-08-26					
+GRDI-ECO_PS-CM-202108-LPE3-1_16S	LPE3-1	Valcartier	Phyllosphere	 Picea glauca	LifeGuard	3	1	na	2021-08-26					
+GRDI-ECO_PS-CM-202108-LPE3-2_16S	LPE3-2	Valcartier	Phyllosphere	 Picea glauca	LifeGuard	3	2	na	2021-08-26					
+GRDI-ECO_PS-CM-202108-LPE3-3_16S	LPE3-3	Valcartier	Phyllosphere	 Picea glauca	LifeGuard	3	3	na	2021-08-26					
+GRDI-ECO_PS-CM-202108-DPE1-1_16S	DPE1-1	Valcartier	Phyllosphere	 Picea glauca	Dry-Dry	1	1	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-DPE1-2_16S	DPE1-2	Valcartier	Phyllosphere	 Picea glauca	Dry-Dry	1	2	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-DPE1-3_16S	DPE1-3	Valcartier	Phyllosphere	 Picea glauca	Dry-Dry	1	3	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-DPE2-1_16S	DPE2-1	Valcartier	Phyllosphere	 Picea glauca	Dry-Dry	2	1	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-DPE2-2_16S	DPE2-2	Valcartier	Phyllosphere	 Picea glauca	Dry-Dry	2	2	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-DPE2-3_16S	DPE2-3	Valcartier	Phyllosphere	 Picea glauca	Dry-Dry	2	3	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-DPE3-1_16S	DPE3-1	Valcartier	Phyllosphere	 Picea glauca	Dry-Dry	3	1	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-DPE3-2_16S	DPE3-2	Valcartier	Phyllosphere	 Picea glauca	Dry-Dry	3	2	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-DPE3-3_16S	DPE3-3	Valcartier	Phyllosphere	 Picea glauca	Dry-Dry	3	3	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-FPE-1_16S	FPE-1	Valcartier	Phyllosphere	 Picea glauca	Freeze	Ref-frozen	1	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-FPE-2_16S	FPE-2	Valcartier	Phyllosphere	 Picea glauca	Freeze	Ref-frozen	2	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-FPE-3_16S	FPE-3	Valcartier	Phyllosphere	 Picea glauca	Freeze	Ref-frozen	3	na	2021-08-27					
+GRDI-ECO_PS-CM-202108-PE-1_16S	PE-1	Valcartier	Phyllosphere	 Picea glauca	Immediate extraction	Ref-fresh	1	na	2021-07-19					
+GRDI-ECO_PS-CM-202108-PE-2_16S	PE-2	Valcartier	Phyllosphere	 Picea glauca	Immediate extraction	Ref-fresh	2	na	2021-07-19					
+GRDI-ECO_PS-CM-202108-PE-3_16S	PE-3	Valcartier	Phyllosphere	 Picea glauca	Immediate extraction	Ref-fresh	3	na	2021-07-19					
+GRDI-ECO_PS-CM-202108-RRA1-1_16S	RRA1-1	Valcartier	Roots	Populus tremuloides	RNAlater	1	1	na	2021-08-24					
+GRDI-ECO_PS-CM-202108-RRA1-2_16S	RRA1-2	Valcartier	Roots	Populus tremuloides	RNAlater	1	2	na	2021-08-24					
+GRDI-ECO_PS-CM-202108-RRA1-3_16S	RRA1-3	Valcartier	Roots	Populus tremuloides	RNAlater	1	3	na	2021-08-24					
+GRDI-ECO_PS-CM-202108-RRA2-1_16S	RRA2-1	Valcartier	Roots	Populus tremuloides	RNAlater	2	1	na	2021-08-24					
+GRDI-ECO_PS-CM-202108-RRA2-2_16S	RRA2-2	Valcartier	Roots	Populus tremuloides	RNAlater	2	2	na	2021-08-24					
+GRDI-ECO_PS-CM-202108-RRA2-3_16S	RRA2-3	Valcartier	Roots	Populus tremuloides	RNAlater	2	3	na	2021-08-24					
+GRDI-ECO_PS-CM-202108-RRA3-1_16S	RRA3-1	Valcartier	Roots	Populus tremuloides	RNAlater	3	1	na	2021-08-24					
+GRDI-ECO_PS-CM-202108-RRA3-2_16S	RRA3-2	Valcartier	Roots	Populus tremuloides	RNAlater	3	2	na	2021-08-24					
+GRDI-ECO_PS-CM-202108-RRA3-3_16S	RRA3-3	Valcartier	Roots	Populus tremuloides	RNAlater	3	3	na	2021-08-24					
+GRDI-ECO_PS-CM-202108-ERA1-1_16S	ERA1-1	Valcartier	Roots	Populus tremuloides	Ethanol	1	1	na	2021-08-24					
+GRDI-ECO_PS-CM-202108-ERA1-2_16S	ERA1-2	Valcartier	Roots	Populus tremuloides	Ethanol	1	2	na	2021-08-24					
+GRDI-ECO_PS-CM-202108-ERA1-3_16S	ERA1-3	Valcartier	Roots	Populus tremuloides	Ethanol	1	3	na	2021-08-24					
+GRDI-ECO_PS-CM-202108-ERA2-1_16S	ERA2-1	Valcartier	Roots	Populus tremuloides	Ethanol	2	1	na	2021-08-24					
+GRDI-ECO_PS-CM-202108-ERA2-2_16S	ERA2-2	Valcartier	Roots	Populus tremuloides	Ethanol	2	2	na	2021-08-24					
+GRDI-ECO_PS-CM-202108-ERA2-3_16S	ERA2-3	Valcartier	Roots	Populus tremuloides	Ethanol	2	3	na	2021-08-24					
+GRDI-ECO_PS-CM-202108-ERA3-1_16S	ERA3-1	Valcartier	Roots	Populus tremuloides	Ethanol	3	1	na	2021-08-24					
+GRDI-ECO_PS-CM-202108-ERA3-2_16S	ERA3-2	Valcartier	Roots	Populus tremuloides	Ethanol	3	2	na	2021-08-24					
+GRDI-ECO_PS-CM-202108-ERA3-3_16S	ERA3-3	Valcartier	Roots	Populus tremuloides	Ethanol	3	3	na	2021-08-24					
+GRDI-ECO_PS-CM-202108-LRA1-1_16S	LRA1-1	Valcartier	Roots	Populus tremuloides	LifeGuard	1	1	na	2021-08-24					
+GRDI-ECO_PS-CM-202108-LRA1-2_16S	LRA1-2	Valcartier	Roots	Populus tremuloides	LifeGuard	1	2	na	2021-08-24					
+GRDI-ECO_PS-CM-202108-LRA1-3_16S	LRA1-3	Valcartier	Roots	Populus tremuloides	LifeGuard	1	3	na	2021-08-24					
+GRDI-ECO_PS-CM-202108-LRA2-1_16S	LRA2-1	Valcartier	Roots	Populus tremuloides	LifeGuard	2	1	na	2021-08-24					
+GRDI-ECO_PS-CM-202108-LRA2-2_16S	LRA2-2	Valcartier	Roots	Populus tremuloides	LifeGuard	2	2	na	2021-08-24					
+GRDI-ECO_PS-CM-202108-LRA2-3_16S	LRA2-3	Valcartier	Roots	Populus tremuloides	LifeGuard	2	3	na	2021-08-24					
+GRDI-ECO_PS-CM-202108-LRA3-1_16S	LRA3-1	Valcartier	Roots	Populus tremuloides	LifeGuard	3	1	na	2021-08-24					
+GRDI-ECO_PS-CM-202108-LRA3-2_16S	LRA3-2	Valcartier	Roots	Populus tremuloides	LifeGuard	3	2	na	2021-08-24					
+GRDI-ECO_PS-CM-202108-LRA3-3_16S	LRA3-3	Valcartier	Roots	Populus tremuloides	LifeGuard	3	3	na	2021-08-24					
+GRDI-ECO_PS-CM-202108-DRA1-1_16S	DRA1-1	Valcartier	Roots	Populus tremuloides	Dry-Dry	1	1	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-DRA1-2_16S	DRA1-2	Valcartier	Roots	Populus tremuloides	Dry-Dry	1	2	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-DRA1-3_16S	DRA1-3	Valcartier	Roots	Populus tremuloides	Dry-Dry	1	3	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-DRA2-1_16S	DRA2-1	Valcartier	Roots	Populus tremuloides	Dry-Dry	2	1	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-DRA2-2_16S	DRA2-2	Valcartier	Roots	Populus tremuloides	Dry-Dry	2	2	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-DRA2-3_16S	DRA2-3	Valcartier	Roots	Populus tremuloides	Dry-Dry	2	3	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-DRA3-1_16S	DRA3-1	Valcartier	Roots	Populus tremuloides	Dry-Dry	3	1	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-DRA3-2_16S	DRA3-2	Valcartier	Roots	Populus tremuloides	Dry-Dry	3	2	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-DRA3-3_16S	DRA3-3	Valcartier	Roots	Populus tremuloides	Dry-Dry	3	3	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-FRA-1_16S	FRA-1	Valcartier	Roots	Populus tremuloides	Freeze	Ref-frozen	1	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-FRA-2_16S	FRA-2	Valcartier	Roots	Populus tremuloides	Freeze	Ref-frozen	2	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-FRA-3_16S	FRA-3	Valcartier	Roots	Populus tremuloides	Freeze	Ref-frozen	3	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-RA-1_16S	RA-1	Valcartier	Roots	Populus tremuloides	Immediate extraction	Ref-fresh	1	na	2021-07-20					
+GRDI-ECO_PS-CM-202108-RA-2_16S	RA-2	Valcartier	Roots	Populus tremuloides	Immediate extraction	Ref-fresh	2	na	2021-07-20					
+GRDI-ECO_PS-CM-202108-RA-3_16S	RA-3	Valcartier	Roots	Populus tremuloides	Immediate extraction	Ref-fresh	3	na	2021-07-20					
+GRDI-ECO_PS-CM-202108-RRH1-1_16S	RRH1-1	Valcartier	Rhizosphere	Populus tremuloides	RNAlater	1	1	na	2021-08-19					
+GRDI-ECO_PS-CM-202108-RRH1-2_16S	RRH1-2	Valcartier	Rhizosphere	Populus tremuloides	RNAlater	1	2	na	2021-08-19					
+GRDI-ECO_PS-CM-202108-RRH1-3_16S	RRH1-3	Valcartier	Rhizosphere	Populus tremuloides	RNAlater	1	3	na	2021-08-19					
+GRDI-ECO_PS-CM-202108-RRH2-1_16S	RRH2-1	Valcartier	Rhizosphere	Populus tremuloides	RNAlater	2	1	na	2021-08-19					
+GRDI-ECO_PS-CM-202108-RRH2-2_16S	RRH2-2	Valcartier	Rhizosphere	Populus tremuloides	RNAlater	2	2	na	2021-08-19					
+GRDI-ECO_PS-CM-202108-RRH2-3_16S	RRH2-3	Valcartier	Rhizosphere	Populus tremuloides	RNAlater	2	3	na	2021-08-19					
+GRDI-ECO_PS-CM-202108-RRH3-1_16S	RRH3-1	Valcartier	Rhizosphere	Populus tremuloides	RNAlater	3	1	na	2021-08-19					
+GRDI-ECO_PS-CM-202108-RRH3-2_16S	RRH3-2	Valcartier	Rhizosphere	Populus tremuloides	RNAlater	3	2	na	2021-08-19					
+GRDI-ECO_PS-CM-202108-RRH3-3_16S	RRH3-3	Valcartier	Rhizosphere	Populus tremuloides	RNAlater	3	3	na	2021-08-19					
+GRDI-ECO_PS-CM-202108-ERH1-1_16S	ERH1-1	Valcartier	Rhizosphere	Populus tremuloides	Ethanol	1	1	na	2021-08-19					
+GRDI-ECO_PS-CM-202108-ERH1-2_16S	ERH1-2	Valcartier	Rhizosphere	Populus tremuloides	Ethanol	1	2	na	2021-08-19					
+GRDI-ECO_PS-CM-202108-ERH1-3_16S	ERH1-3	Valcartier	Rhizosphere	Populus tremuloides	Ethanol	1	3	na	2021-08-19					
+GRDI-ECO_PS-CM-202108-ERH2-1_16S	ERH2-1	Valcartier	Rhizosphere	Populus tremuloides	Ethanol	2	1	na	2021-08-19					
+GRDI-ECO_PS-CM-202108-ERH2-2_16S	ERH2-2	Valcartier	Rhizosphere	Populus tremuloides	Ethanol	2	2	na	2021-08-19					
+GRDI-ECO_PS-CM-202108-ERH2-3_16S	ERH2-3	Valcartier	Rhizosphere	Populus tremuloides	Ethanol	2	3	na	2021-08-19					
+GRDI-ECO_PS-CM-202108-ERH3-1_16S	ERH3-1	Valcartier	Rhizosphere	Populus tremuloides	Ethanol	3	1	na	2021-08-19					
+GRDI-ECO_PS-CM-202108-ERH3-2_16S	ERH3-2	Valcartier	Rhizosphere	Populus tremuloides	Ethanol	3	2	na	2021-08-19					
+GRDI-ECO_PS-CM-202108-ERH3-3_16S	ERH3-3	Valcartier	Rhizosphere	Populus tremuloides	Ethanol	3	3	na	2021-08-19					
+GRDI-ECO_PS-CM-202108-LRH1-1_16S	LRH1-1	Valcartier	Rhizosphere	Populus tremuloides	LifeGuard	1	1	na	2021-08-19					
+GRDI-ECO_PS-CM-202108-LRH1-2_16S	LRH1-2	Valcartier	Rhizosphere	Populus tremuloides	LifeGuard	1	2	na	2021-08-19					
+GRDI-ECO_PS-CM-202108-LRH1-3_16S	LRH1-3	Valcartier	Rhizosphere	Populus tremuloides	LifeGuard	1	3	na	2021-08-19					
+GRDI-ECO_PS-CM-202108-LRH2-1_16S	LRH2-1	Valcartier	Rhizosphere	Populus tremuloides	LifeGuard	2	1	na	2021-08-19					
+GRDI-ECO_PS-CM-202108-LRH2-2_16S	LRH2-2	Valcartier	Rhizosphere	Populus tremuloides	LifeGuard	2	2	na	2021-08-19					
+GRDI-ECO_PS-CM-202108-LRH2-3_16S	LRH2-3	Valcartier	Rhizosphere	Populus tremuloides	LifeGuard	2	3	na	2021-08-19					
+GRDI-ECO_PS-CM-202108-LRH3-1_16S	LRH3-1	Valcartier	Rhizosphere	Populus tremuloides	LifeGuard	3	1	na	2021-08-19					
+GRDI-ECO_PS-CM-202108-LRH3-2_16S	LRH3-2	Valcartier	Rhizosphere	Populus tremuloides	LifeGuard	3	2	na	2021-08-19					
+GRDI-ECO_PS-CM-202108-LRH3-3_16S	LRH3-3	Valcartier	Rhizosphere	Populus tremuloides	LifeGuard	3	3	na	2021-08-19					
+GRDI-ECO_PS-CM-202108-DRH1-1_16S	DRH1-1	Valcartier	Rhizosphere	Populus tremuloides	Dry-Dry	1	1	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-DRH1-2_16S	DRH1-2	Valcartier	Rhizosphere	Populus tremuloides	Dry-Dry	1	2	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-DRH1-3_16S	DRH1-3	Valcartier	Rhizosphere	Populus tremuloides	Dry-Dry	1	3	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-DRH2-1_16S	DRH2-1	Valcartier	Rhizosphere	Populus tremuloides	Dry-Dry	2	1	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-DRH2-2_16S	DRH2-2	Valcartier	Rhizosphere	Populus tremuloides	Dry-Dry	2	2	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-DRH2-3_16S	DRH2-3	Valcartier	Rhizosphere	Populus tremuloides	Dry-Dry	2	3	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-DRH3-1_16S	DRH3-1	Valcartier	Rhizosphere	Populus tremuloides	Dry-Dry	3	1	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-DRH3-2_16S	DRH3-2	Valcartier	Rhizosphere	Populus tremuloides	Dry-Dry	3	2	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-DRH3-3_16S	DRH3-3	Valcartier	Rhizosphere	Populus tremuloides	Dry-Dry	3	3	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-FRH-1_16S	FRH-1	Valcartier	Rhizosphere	Populus tremuloides	Freeze	Ref-frozen	1	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-FRH-2_16S	FRH-2	Valcartier	Rhizosphere	Populus tremuloides	Freeze	Ref-frozen	2	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-FRH-3_16S	FRH-3	Valcartier	Rhizosphere	Populus tremuloides	Freeze	Ref-frozen	3	na	2021-09-02					
+GRDI-ECO_PS-CM-202108-RH-1_16S	RH-1	Valcartier	Rhizosphere	Populus tremuloides	Immediate extraction	Ref-fresh	1	na	2021-07-20					
+GRDI-ECO_PS-CM-202108-RH-2_16S	RH-2	Valcartier	Rhizosphere	Populus tremuloides	Immediate extraction	Ref-fresh	2	na	2021-07-20					
+GRDI-ECO_PS-CM-202108-RH-3_16S	RH-3	Valcartier	Rhizosphere	Populus tremuloides	Immediate extraction	Ref-fresh	3	na	2021-07-20					
+GRDI-ECO_PS-CM-202108-Ctrl01G_16S	Ctrl01G	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	2021-07-16					
+GRDI-ECO_PS-CM-202108-Ctrl02G_16S	Ctrl02G	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	2021-07-19					
+GRDI-ECO_PS-CM-202108-Ctrl03D_16S	Ctrl03D	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	2021-07-20					
+GRDI-ECO_PS-CM-202108-Ctrl04G_16S	Ctrl04G	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	2021-08-16					
+GRDI-ECO_PS-CM-202108-Ctrl05D_16S	Ctrl05D	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	2021-08-17					
+GRDI-ECO_PS-CM-202108-Ctrl06G_16S	Ctrl06G	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	2021-08-18					
+GRDI-ECO_PS-CM-202108-Ctrl07D_16S	Ctrl07D	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	2021-08-19					
+GRDI-ECO_PS-CM-202108-Ctrl08G_16S	Ctrl08G	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	2021-08-24					
+GRDI-ECO_PS-CM-202108-Ctrl09D_16S	Ctrl09D	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	2021-08-24					
+GRDI-ECO_PS-CM-202108-Ctrl10G_16S	Ctrl10G	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	2021-08-24					
+GRDI-ECO_PS-CM-202108-Ctrl11D_16S	Ctrl11D	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	2021-08-26					
+GRDI-ECO_PS-CM-202108-Ctrl12G_16S	Ctrl12G	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	2021-08-27					
+GRDI-ECO_PS-CM-202108-Ctrl13D_16S	Ctrl13D	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	Extraction control	2021-09-02					
+GRDI-ECO_PS-CM-CONTpcr1_16S	CONTpcr1	PCR control	PCR control	PCR control	PCR control	PCR control	PCR control	PCR control	na					
+GRDI-ECO_PS-CM-CONTpcr2_16S	CONTpcr2	PCR control	PCR control	PCR control	PCR control	PCR control	PCR control	PCR control	na					

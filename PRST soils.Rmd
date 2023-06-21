@@ -1,0 +1,1520 @@
+---
+title: "Drying as an effective method to store soil samples for DNA-based microbial community analyses: a comparative study"
+author:
+- \* Emily Smenderovac (corresponding author), Great Lakes Forestry Centre, Natural Resources Canada, emily.smenderovac@nrcan-rncan.gc.ca
+- Caroline Emilson, Great Lakes Forestry Centre, Natural Resources Canada, caroline.emilson@nrcan-rncan.gc.ca
+- Karelle Rheault,  Laurentian Forestry Centre, Natural Resources Canada, karh@ign.ku.dk
+- Élodie Brazeau, Laurentian Forestry Centre, Natural Resources Canada, elodie.brazeau@gmail.com
+- Marie-Josée Morency, Laurentian Forestry Centre, Natural Resources Canada, marie-josee.morency@nrcan-rncan.gc.ca
+- Patrick Gagné, Laurentian Forestry Centre, Natural Resources Canada, patrick.gagne@nrcan-rncan.gc.ca
+- Lisa Venier, Great Lakes Forestry Centre, Natural Resources Canada, lisa.venier@nrcan-rncan.gc.ca
+- Christine Martineau, Laurentian Forestry Centre, Natural Resources Canada, christine.martineau@nrcan-rncan.gc.ca
+date: "`r Sys.Date()`"
+bibliography: bibliography.json
+csl: scientific-reports.csl
+output: 
+      bookdown::word_document2:
+            toc: false
+---
+
+
+```{r setup, include=FALSE}
+### Load required libraries & functions
+knitr::opts_chunk$set(echo = FALSE, results = "asis", eval = TRUE, message = FALSE, warning = FALSE)
+memory.limit(30000)
+
+library(tidyverse)
+library(vegan)
+library(DESeq2)
+library(ANCOMBC)
+library(ggpubr)
+library(phyloseq)
+library(zCompositions)
+source("../src/03_metabarcoding-analysis-functions.R")
+
+
+### Read in datasets
+ds.16S <- read.delim("data/16S/ASV tables/Preservation_CFL_16S_nov2021.ASV_table_norarefaction_dnNA.tsv", skip = 1, check.names = FALSE)
+ds.16S.contaminants <-  readxl::read_excel("data/16S/ASV tables/contaminant ASV.xlsx", skip =1) ## Figure out what to do here from a discussion
+
+ds.ITS <- read.delim("data/ITS/ASV tables/Preservation_CFL_NOAM_ITS_nov2021.ASV_table_norarefaction_dnNA.tsv", skip = 1, check.names = FALSE)
+
+
+## Pull in DNA concentration information
+Concentrations <- readxl::read_excel("data/Conservation_2021_SampleID and DNA concentration_CFL.xlsx", sheet = "SampleID_CFL-2021")
+
+## Assume any "out-of-range" data is below detection - set to 0.
+
+Concentrations$`Concentration ADN (ng/µL)` <- as.numeric(Concentrations$`Concentration ADN (ng/µL)`)
+Concentrations$`Concentration ADN (ng/µL)`[is.na(Concentrations$`Concentration ADN (ng/µL)`)] <- 0
+
+## Nanodrop data
+nd.data <- list.files("data/Nanodrop", pattern = ".txt$", full.names = "TRUE")
+
+Nanodrop <- map_dfr(nd.data, function(x)read.delim(x)) %>%
+      mutate(Sample.ID = as.character(Sample.ID), 
+             Sample.ID = ifelse(!grepl("-[[:digit:]]$", Sample.ID), paste0(gsub("[[:digit:]]", "", Sample.ID), "-", str_extract(Sample.ID, "[[:digit:]]$")), Sample.ID))
+
+
+
+## Sample Metadata
+metadata.ITS <- read.delim("data/ITS/metadata_file_ITS.txt")
+metadata.16S <- read.delim("data/16S/metadata_file_16S.txt")
+
+metadat <- rbind(metadata.16S, metadata.ITS) %>%
+      dplyr::select(1:10) %>%
+      mutate(Sample_type = trimws(Sample_type), 
+             Soil.tree_type = trimws(Soil.tree_type)) %>%
+      group_by(SampleID) %>%
+      mutate(nrow = n()) %>%
+      distinct() %>%
+      mutate(Conservation_time_week = as.numeric(ifelse(grepl("fresh|control", Conservation_time_week), "0", ifelse(grepl("frozen", Conservation_time_week), "3", Conservation_time_week))))
+
+## Remove Agricultural Soil samples from Bacterial Dataset
+ds.16S <- ds.16S[, colnames(ds.16S) %in% c("#OTU ID", metadata.16S$SampleID[!metadata.16S$Soil.tree_type == "Agricultural mineral" & !metadata.16S$Sample_type %in% c("Rhizosphere", "Phyllosphere", "Roots")], "taxonomy")]
+colnames(ds.16S) = gsub("_16S", "", colnames(ds.16S))
+## remove absent zOTUS
+ds.16S <- ds.16S[!rowSums(ds.16S[,grep("GRDI", colnames(ds.16S), value = T)]) == 0, ]
+
+ds.ITS <- ds.ITS[, colnames(ds.ITS) %in% c("#OTU ID", metadata.ITS$SampleID[!metadata.ITS$Soil.tree_type == "Agricultural mineral" & !metadata.ITS$Sample_type %in% c("Rhizosphere", "Phyllosphere", "Roots")], "taxonomy")]
+colnames(ds.ITS) = gsub("_ITS", "", colnames(ds.ITS))
+## remove absent zOTUS
+ds.ITS <- ds.ITS[!rowSums(ds.ITS[,grep("GRDI", colnames(ds.ITS), value = T)]) == 0, ]
+
+metadat <- metadat %>%
+      filter(!Soil.tree_type == "Agricultural mineral", !Sample_type %in% c("Rhizosphere", "Phyllosphere", "Roots")) %>%
+      as.data.frame() %>%
+      mutate(SampleID = gsub("_ITS|_16S", "", SampleID)) %>% distinct()
+
+
+## assemble community structures into ds list
+
+## Subset to just samples that are soil
+ds_list <- list(Bac = ds.16S[, colnames(ds.16S) %in% c("#OTU ID", metadat$SampleID, "taxonomy")], 
+                Fun = ds.ITS[, colnames(ds.ITS) %in% c("#OTU ID", metadat$SampleID, "taxonomy")])
+
+## Rreplace names with short codes
+metadat$Treatment <- gsub("Ethanol", "EtOH", metadat$Treatment)
+metadat$Treatment <- gsub("Dry-Dry", "Dry", metadat$Treatment)
+metadat$Treatment <- gsub("LifeGuard", "LG", metadat$Treatment)
+metadat$Treatment <- gsub("RNAlater", "RL", metadat$Treatment)
+
+metadat$Soil.tree_type <- gsub("Forest organic", "Organic", metadat$Soil.tree_type)
+metadat$Soil.tree_type <- gsub("Forest mineral", "Mineral", metadat$Soil.tree_type)
+metadat$Soil.tree_type <- factor(metadat$Soil.tree_type, c("Organic", "Mineral"))
+
+rm(metadata.16S, metadata.ITS, ds.16S, ds.ITS)
+
+cust.cols <- c(`Immediate extraction` = "black", EtOH = "#4daf4a", `Dry` = "#ff7f00", Freeze ="#377eb8", CD1 = "#999999", LG = "#e41a1c", RL = "#f781bf")
+cust.shapes <- c(`Immediate extraction` = 0, EtOH = 1, `Dry` = 2, Freeze =3, CD1 = 4, LG = 5, RL = 6)
+
+cust.cols2 <- c(Organic = "chocolate", Mineral = "darkgray")
+
+perm.obj <- c(ls(), "perm.obj")
+```
+
+
+
+```{r find-contaminants, include = FALSE}
+contaminants.list <- data.frame()
+
+for(ds_name in names(ds_list)){
+       Orddf <- ds_list[[ds_name]]
+        
+       sample_meta <- data.frame(SampleID = colnames(Orddf)[colnames(Orddf) %in% metadat$SampleID]) %>%
+      left_join(metadat, by = "SampleID") %>%
+             left_join(Concentrations %>% dplyr::select(SampleID, `Concentration ADN (ng/µL)`) %>% mutate(DNA.Conc = `Concentration ADN (ng/µL)`) %>% dplyr::rename(CFL_ID = SampleID), by = "CFL_ID")
+       
+        ## select just abundance columns & set ESV to rownames
+        Orddf <- Orddf[,c(sample_meta$SampleID, "#OTU ID")] %>% 
+              as.data.frame() %>%
+              rownames_to_column("delete") %>% 
+              dplyr::select(-delete) %>%
+           column_to_rownames("#OTU ID")
+        
+        ### Calculate the "comparable" read counts based on ratios of DNA concentrations in samples to MOST concentrated sample -- i.e., if sample has low DNA concentration, vs sample with high DNA concentration - reads in sample represent much higher contributions, so better way to compare contamination amount.
+        
+        sample_meta$concentration.ratio = sample_meta$DNA.Conc/max(sample_meta$DNA.Conc, na.rm = T)
+        sample_meta$concentration.ratio[sample_meta$concentration.ratio == 0 | is.na(sample_meta$concentration.ratio)] <- min(sample_meta$concentration.ratio[sample_meta$concentration.ratio != 0 & !is.na(sample_meta$concentration.ratio)])
+        
+        Orddf <- apply(Orddf, 1, function(x) x * sample_meta$concentration.ratio) %>% t() %>% as.data.frame()
+      
+        ## Just controls
+        
+        Ord.controls <- Orddf[,c(sample_meta$SampleID[sample_meta$Sample_type %in% c("Extraction control", "PCR control")])]
+        
+        ## Remove ASV that are not present in controls
+        Ord.controls <- Ord.controls[!rowSums(Ord.controls) == 0, ]
+        
+        ## Check how these ASVs are in samples
+        Ord.samples.contam <- Orddf[rownames(Ord.controls), c(sample_meta$SampleID[!sample_meta$Sample_type %in% c("Extraction control", "PCR control")])]
+        
+        
+        ## For each contaminant ASV that was detected - how many controls do they show up in and what is their average abundance in those samples
+        
+        ## Rules for what would be flagged to remove
+        ## at least one sample has it (obviously)
+        ## The maximum in the control is lower than the maximum observed in the samples (not greater than 10% of the max observed in samples)
+        ## The maximum in the control is less than the minimum observed in the samples (estimated less than 50% of the smallest sample amount)
+        Contaminant.summary <- data.frame(ASV = rownames(Ord.controls), 
+                                          controls.with = apply(Ord.controls, 1, function(x){paste0(sum(x>0), "/", length(x))}),
+                                          prop.controls.with = apply(Ord.controls, 1, function(x){sum(x>0)/ length(x)}),
+                                          cont.min.reads = apply(Ord.controls, 1, function(x){min(x[!x==0])}),
+                                          cont.max.reads = apply(Ord.controls, 1, function(x){max(x)}), 
+                                          samples.with = apply(Ord.samples.contam, 1, function(x){paste0(sum(x>0), "/", length(x))}),
+                                          prop.samples.with = apply(Ord.samples.contam, 1, function(x){sum(x>0)/ length(x)}),
+                                          sample.min.reads = apply(Ord.samples.contam, 1, function(x){ifelse(!sum(x) == 0, min(x[!x==0]), 0)}),
+                                          sample.max.reads = apply(Ord.samples.contam, 1, function(x){max(x)})) %>%
+              mutate(remove = !prop.samples.with == 0 & (cont.max.reads/sample.max.reads) > .1 & (cont.max.reads/sample.min.reads) > .5) %>%
+              mutate(dataset = ds_name)
+
+           contaminants.list <- rbind(contaminants.list, Contaminant.summary); rm(Contaminant.summary)     
+}
+
+knitr::kable(contaminants.list[contaminants.list$remove, ], caption = "List of potentially contaminant sequences.", row.names = FALSE)
+```
+
+
+```{r remove-contaminants, include = FALSE}
+## Grab the ASV to remove
+toremove <- contaminants.list[contaminants.list$remove, ]
+
+
+## Remove them from the dataset
+for(ds_name in unique(names(ds_list))){
+      ds_list[[ds_name]] <- ds_list[[ds_name]][!rownames(ds_list[[ds_name]]) %in% toremove$ASV[toremove$dataset == ds_name], ]
+      
+      ds_list[[ds_name]] <- ds_list[[ds_name]][,!grepl("CONT|Ctrl", colnames(ds_list[[ds_name]]))]
+            
+      ds_list[[ds_name]] <- ds_list[[ds_name]][!rowSums(ds_list[[ds_name]][, !colnames(ds_list[[ds_name]]) %in% c("#OTU ID", "taxonomy")]) == 0, ]
+      
+}
+
+metadat <- metadat[!grepl("control", metadat$Sample_type), ]
+
+perm.obj <- c(perm.obj, "contaminants.list")
+
+obj.rm <- ls()
+obj.rm <- obj.rm[!obj.rm %in% perm.obj]
+
+rm(list = c(obj.rm, "obj.rm"))
+```
+
+# Abstract
+
+Soil sampling for environmental DNA in remote and semi-remote locations is often limited due to logistical constraints surrounding sample preservation, including no or limited access to a freezer. Freezing at -20°C is a common DNA preservation strategy due to affordability and convenience, and given that logistics often prevent extraction of DNA from fresh samples (e.g., sample number, sampling proximity to laboratory), however, other methods such as desiccation, ethanol or commercial preservatives are available as potential alternative DNA preservation methods that can be used at room temperatures. In this study, we assessed five preservation methods (CD1 solution, 95% Ethanol, Dry & Dry silica gel packs, RNAlater®, LifeGuard®) along with freezing at -20°C, against immediate extraction (i.e., the gold standard) on organic and mineral soils for up to three weeks of preservation at room temperature. We assessed direct effects on DNA concentration and quality, and used DNA metabarcoding to assess effects on bacterial and fungal diversity, community structure and composition. Drying with Dry & Dry silica gel led to no significant differences in DNA quality, DNA concentration, community diversity or structure from immediate extraction in organic and mineral soils. RNAlater led to lower DNA concentrations, but performed comparably to freezing for unique ASV changes. CD1, LifeGuard and Ethanol preservation methods either caused immediate significant shifts in community structure, degradation of DNA quality or changes in diversity metrics for at least one metric assessed in the study. Overall, our study supports the use of drying with silica gel packs as a cost-effective, and easily applied method for the short-term storage at room temperature for DNA-based microbial community analyses. This method has the potential to facilitate sampling in remote locations as well as shipping of soil samples longer distances, which are important factors to enable large scale soil microbiome studies and collaboration initiatives. 
+
+
+# Key Words
+
+Environmental DNA, DNA metabarcoding, soil DNA preservation, soil sampling, microbial ecology
+
+
+# Introduction
+
+While molecular ecology is widely recognized as a useful tool for studying soil biodiversity and health, there are significant barriers to implementing these techniques to samples collected in remote locations. One of these barriers is the ability to preserve samples in the field. There are many situations in environmental studies where sample preservation may be difficult, and where doing so via freezing or cooling may be infeasible, impractical or costly. These situations can include remote field work or international shipping of samples, which can limit international collaboration efforts. Validation of preservation strategies other than freezing and/or cooling can add flexibility to existing local sampling regimes, as well as enable soil sampling in situations where it was previously impossible. It also reduces the likelihood of sample losses due to shipping interruptions or delays [@straube2013]. These alternative preservation methods can simplify sampling, and thus increase sampling efficiency in more difficult to reach field locations. 
+
+Long term extreme low temperature storage of samples is widely thought to be the best practice for microbial ecology [@cary2014], however freezer space can quickly become an issue and -80°C freezers are not available in every lab. Typically, -20°C to -30°C are more widely available and so, are more commonly used. Most researchers attempt to get samples into a freezer within 48 hours of sampling after being held at cold temperatures (with ice, or freezer packs) in the field [@smenderovac2023; @xue2018; @schnecker2012]. However, this is not always possible in remote locations, and maintaining samples at these temperatures during shipping requires use of dangerous goods such as dry ice. Freezing as a preservation method has been shown to cause some changes to specific genera abundances [@juan2018], but little change to overall community structure [@wallenius2010;@rubin2013]. Storing at temperatures ranging from 20°C to 30°C leads to shifts in microbial communities [@lane2022; @delavaux2020], but there are some commercially available solutions (e.g., LifeGuard® Soil Preservation Solution) that claim to maintain a sample community structure without freezing and others, such as RNAlater®, that have been applied with mixed success at preserving community structures [@schnecker2012; @rissanen2010]. Some studies have even indicated that ethanol can be used to preserve samples at ambient temperatures (as is regularly employed in arthropod studies) [@stein2013]. Many of these solutions have been evaluated in other studies to see whether they are comparable to freezing, but their performance are inconsistent in complex matrices such as soil [@schnecker2012; @iturbe-espinoza2021; @kruse2017; @rissanen2012]. Desiccation (drying) has also been identified as a promising approach for preserving microbial communities in the short to long term [@wang2021]. These different preservation techniques utilize distinct (sometimes proprietary) mechanisms of inhibiting microbial activity and community change, ranging from damaging proteins and cell walls (ethanol), reducing water availability (desiccation, freezing), or inhibiting DNase and RNase activity (LifeGuard®). Very few studies to date have compared the performance of techniques relying on various mechanisms simultaneously, and it is therefore still not clear what is the best soil preservation strategy for microbial ecology when freezing is not an option.
+
+In this study, we evaluate the effectiveness of six different ambient temperature soil preservation approaches for microbial ecology, and compare them to optimal (i.e., DNA extraction on the day of sampling) and standard (i.e., freezing) approaches applied to two soil types (organic  and mineral forest soil) from Quebec, Canada. We aim to answer the following: Is there a room temperature preservation method that can maintain soil microbial diversity and community structure? Does the best preservation method vary by sample type? How long can these preservation methods maintain sample diversity and community structure? This information will better inform field work planning for soil microbial ecology projects with temperate/boreal remote and semi-remote field work.
+
+
+# Methods
+## Sample collection and preservation
+
+Soils for this experiment were collected at the Valcartier Forestry Research Station in Saint-Gabriel-de-Valcartier (Québec, Canada). Valcartier is a relatively flat landscape featuring a podzolic sandy loam soil on a fluvial plain deposit [@belanger2004]. Two different soil types were collected: organic soil (0-7 cm depth) and, mineral soil (40-50 cm depth). Organic and mineral soils were collected using a shovel, homogenized by sieving *in situ* with a 6 mm sieve, and stored on ice in a plastic bag. All samples were stored refrigerated for no longer than 48 h upon arrival at the Laurentian Forestry Centre. 
+
+Soil samples were split and subjected to 7 preservation methods: Immediate extraction; Freezing in a -30°C Freezer (Freeze); CD1 solution of the DNeasy Powersoil Pro DNA extraction kit (QIAGEN, Valencia, CA, USA) (CD1); Dry & Dry (10 g Dry & Dry silica gel packs) (Dry); LifeGuard® solution (QIAGEN) (LG); RNAlater® solution (Invitrogen, Thermo Fisher) (RL); 95% Ethanol (EtOH). In order to simulate the application of these preservation methods in the field, liquid preservation solutions were prepared in advance by adding 1 mL of storage solution in 2 mL screw cap microtubes. Approximately 0.5 mL of soil was added to the 2 mL tube (corresponding to ~0.5 g organic soil, or ~1 g of mineral soil) and thoroughly mixed. This 2:1 solution-to-soil volume ratio was chosen to replicate field conditions, where a balance is not generally available, while also minimizing the total volume of reagents to reduce costs and space requirements. The Dry & Dry treatment was achieved by placing two silica gel packs in airtight plastic bags with one scoop of soil (~8 g of organic soil or ~15 g mineral soil), again to mimic a realistic field sampling scenario. For the freezing preservation, a 15 mL tube filled with each soil type was stored at -30°C. All ambient temperature preservation methods (i.e., all except Immediate extraction and freezing) were sampled at multiple time-points and stored in a 21°C growth chamber. Triplicate samples were prepared for each preservation method and time point. At 1, 2, and 3 weeks, one set of triplicate samples was removed from each of the room-temperature preservation methods. For the liquid preservation methods, each tube was centrifuged at 15000g for 3 minutes, the supernatant was removed and the soil was transferred to sterile, absorbent paper to remove excess solution prior to to DNA extraction. For all preservation methods, soils were weighed into extraction tubes (100 mg for organic soil and 250 mg for mineral soil). DNA was extracted using the QIAGEN DNeasy Powersoil Pro kit for DNA extractions with the QIAcube system, following the manufacturer's instructions. The initial cell disruption step was performed twice, using a TissueLyzer II (QIAGEN) set to an oscillation speed of 25 Hz for 5 minutes.     
+<!--- has been updated up to here --->
+
+## DNA Quantification and Sequencing
+DNA concentration of each DNA extract was measured using the Qubit™ dsDNA HS (or BR if concentration was too high) Assay Kit (Thermo Fisher) using 5µl of sample and 195µl of reagent. The readings were taken on the Qubit 3.0 fluorometer device (QIAGEN). DNA quality (260/280 ratio) was additionally measured using NanoDrop spectrophotography (Thermo Fisher). A 260/280 ratio of 1.8 is generally considered to be pure DNA, and variation away from this indicates contamination with RNA (if the ratio is higher) or indicates the presence of protein (when it is lower). Metabarcoding libraries targeting the 16S rRNA gene of bacteria and the ITS2 region of fungi were prepared following the procedure described in Rhealt et al [-@rheault2020], except that PCR reactions for the first amplification were set up by first mixing 25 μL of HotStarTaq Plus Master Mix, 19 µL RNase-Free Water (QIAGEN, Valencia, CA, USA), 0.5 μL of each 10 μM primer and 5 μL of gDNA at 5 ng/μL and annealing time was set to 45 s instead of 30 s. Additionally, indexed and purified amplicons were quantified using the Synergy™ Mx Microplate Reader (BioTek Instruments, Inc., Winooski, VT, USA) before pooling at equimolar concentration. Paired-end sequencing (2 × 250 bp) of the pools was carried out on an Illumina MiSeq sequencer at the Illumina Sequencing Platform, Nucleic Acids Solutions, Aquatic and Crop Resource Development, National Research Council Canada-Saskatoon. The Illumina sequence data generated in this study were deposited in the NCBI Sequence Read Archive and are available under the project number PRJNA982550 with the Sample Record numbers SRR24892048 to SRR2482149 for 16S sequences, and SRR24894315 to SRR24894416 for the ITS sequences.
+
+## Bioinformatics
+
+All bioinformatics analyses were performed using QIIME2 (version 2021.8) [@bolyen2019]. Raw demultiplexed sequences were denoised and dereplicated using the QIIME2 implementation of DADA2 (denoised-paired command algorithm) [@callahan2016], rare features (frequency less than 0.05% of the mean features frequency) were removed. The taxonomic assignment of ASVs was done using the SILVA 138 database for the 16S rRNA gene [@quast2012; @yilmaz2014] and the UNITE database (version 8.0) for the ITS2 region [@nilsson2019]. Only ASVs assigned to the kingdom Bacteria and Archaea (for the 16S rRNA gene) or Fungi (for the ITS2 region) were kept in the data set using the taxa filter-table command. Irrelevant taxa in 16S results (eukaryote, mitochondria, chloroplast) were removed using the same command.
+
+## Method costs
+
+Costs of each preservation agent were acquired from Amazon, ThermoFisher, QIAGEN and Fisher Scientific on February 27th, 2023, estimates of costs were all calculated in Canadian Dollars using the exchange rate on that day. Shipping and any additional costs were not assessed. 
+
+## Statistical Analysis
+
+All statistical analyses were performed in R version 4.1.1 [@R-base] using tidyverse [@R-tidyverse] for data transformations, while visualizations were performed with ggplot2 [@R-ggplot2].
+Preservation methods at each week of extraction were independently compared to immediate extraction using defined contrasts. For alpha diversity metrics, samples were rarefied to the 15th percentile of total sample reads. Shannon and inverse Simpson's distances were calculated for bacterial relative abundance transformed data and ASV richness was calculated for both bacterial and fungal data. All diversity metrics were calculated with the diversity function of the vegan package and richness was calculated with the specnumber function of the vegan package [@R-vegan]. A simple ANOVA model using the aov function in R was applied for DNA quality, DNA concentration, Shannon diversity, Inverse Simpson's diversity and richness. Results were assessed in the context of Holm-adjusted p-values as well as unadjusted p-values, at an alpha of (p < 0.05) to provide different levels of confidence for observed effects. Community structure changes were tested with beta-dispersion and PERMANOVA (using the betadisper and adonis2 functions in vegan) on center-logged-ratio transformed datasets using Euclidean distance [@R-vegan], and visualized with ordination using PCA of Aitchison distances. Individual ASV responses were assessed with the ANCOMBC function in the ANCOMBC package [@R-ANCOMBC]. 
+
+# Results
+
+```{r preservation-costs}
+
+exchange.rate = .74
+
+costs.tab <- data.frame(Treatment = c("CD1", "Dry & Dry", "LifeGuard", "RNAlater", "95% Ethanol"), 
+                        `Cost per unit` = c("N/A", 36.99, round(2523/exchange.rate, 2), 686, 171.38),
+                        `Unit size` = c("", "150 packs", "1000 mL botle", "500 mL bottle", "4000 mL bottle"), 
+                        `Number of samples per unit` = c("", round(150/2, 0), 1000, 500, 4000),
+                        `Additional Cost per sample ($CAD)` = c(0, round(36.99/(150/2), 2), round(2523/exchange.rate/1000, 2), round(686/500, 2), round(171.38/4000, 2)), 
+                        `Supplier Information` = c("QIAGEN", "Amazon", "QIAGEN, cat# 12868-1000", "ThermoFisher, cat# AM7021", "Fisher Scientific, cat# LC222054"), check.names = F)
+
+
+knitr::kable(costs.tab, caption="Per-Sample costs of soil preservation for microbial ecology based on estimates acquired on 2023-02-27.")
+
+cat("Liquids require 1 mL for sample preservation, and Dry & Dry uses two packs per sample.")
+cat("CD1 solution is included with QIAGEN DNeasy Powersoil Pro kit.")
+
+```
+
+CD1, Dry & Dry silica packs and 95% Ethanol were the most cost-effective options, all being under $1CAD a sample, while LifeGuard and RNA later were more expensive (Table \@ref(tab:preservation-costs)).
+
+
+```{r reads-for-sample, eval = TRUE, include=FALSE}
+
+### Clean this up to show shift from fresh
+sample_reads <- data.frame()
+
+for(ds_name in names(ds_list)){
+       Orddf <- ds_list[[ds_name]]
+       rownames(Orddf) <- NULL
+        
+        ## select just abundance columns & set ESV to rownames
+        Orddf <- Orddf %>%
+           column_to_rownames("#OTU ID")
+        
+        reads <- colSums(Orddf[, 1:(ncol(Orddf)-1)])
+        
+        sample_reads <- rbind(sample_reads, data.frame(Sample = names(reads), numreads = reads, dataset=ds_name))
+}
+
+sample_reads.anal <- Concentrations %>% dplyr::select(SampleID, `Concentration ADN (ng/µL)`) %>% mutate(DNA.Conc = `Concentration ADN (ng/µL)`) %>% dplyr::rename(CFL_ID = SampleID) %>%
+      left_join(metadat, by = "CFL_ID") %>%
+      left_join(sample_reads %>% mutate(SampleID = Sample), by = "SampleID") %>% 
+      filter(!is.na(DNA.Conc) & !is.na(Treatment)) %>% droplevels() %>%
+      arrange(Conservation_time_week, Treatment)
+
+hull <- sample_reads.anal %>% 
+      group_by(Treatment, Conservation_time_week, Sample_type, Soil.tree_type) %>%
+      dplyr::slice(chull(DNA.Conc, numreads))
+
+ggplot(sample_reads.anal, aes(DNA.Conc, numreads, color = Treatment, shape = as.factor(Conservation_time_week))) + 
+      geom_hline(yintercept = 50000, color = "gray88", size = 2)+
+      geom_point() +
+      geom_polygon(data=hull, alpha = 0) +
+      scale_color_manual(name = "Preservation method", values= cust.cols)+
+      #scale_shape_manual(values = cust.shapes)+
+      facet_wrap(Sample_type~Soil.tree_type, scales = "free")+
+      theme_minimal() + ggtitle("Sample reads and DNA concentration") + 
+      geom_hline(yintercept = 2500, color = "red")
+
+
+#knitr::kable(sample_reads.anal %>% filter(numreads < 2500, Sample_type %in% c("Phyllosphere", "Roots")) %>% dplyr::select(Sample, numreads, Sample_type, Treatment))
+
+write.csv(sample_reads.anal %>% filter(numreads < 2500) %>% dplyr::select(Sample, numreads, Sample_type, Treatment), "data/Samples_for_resequence.csv")
+```
+
+
+
+```{r DNA-tests, fig.height=6, fig.width=10, fig.cap="Preservation method effect size on DNA concentration (ng/mL) and DNA quality (260/280 ratio) compared to Immediate extraction. Points display the estimated effect (difference from immediate extraction) introduced by the preservation method, and error bars represent the standard error of the estimate. For each preservation method, the incubation periods are displayed in order (week one to three), except for Freezing, where only week three is displayed."}
+## For each soil type, for each week, model the effect of Treatment type on DNA concentration as compared to Immediate extraction
+
+testDNA.1wk.results <-  Concentrations %>% dplyr::select(SampleID, `Concentration ADN (ng/µL)`) %>% mutate(DNA.Conc = `Concentration ADN (ng/µL)`) %>% dplyr::rename(CFL_ID = SampleID) %>%
+      left_join(metadat, by = "CFL_ID") %>%
+      left_join(Nanodrop %>% dplyr::rename(CFL_ID = Sample.ID), by = "CFL_ID") %>% 
+      filter(!is.na(DNA.Conc) & !is.na(Treatment)) %>% 
+      droplevels() %>% 
+      mutate(Treatment = factor(as.character(Treatment), levels = c("Immediate extraction", unique(Treatment[Treatment != "Immediate extraction"]))), 
+             Sample_type = as.factor(Sample_type), 
+             keep = Conservation_time_week == 1 | Conservation_time_week == 0) %>% distinct() %>%
+      filter(keep) %>%
+      split(list(.$Soil.tree_type)) %>% 
+      discard(function(x) nrow(x) == 0) %>%
+      map(~ aov(DNA.Conc ~ Treatment, data = .x)) %>% 
+      sapply(function(x){
+            summary.lm(x)$coefficients %>% 
+                  as.data.frame()%>% 
+                  rownames_to_column("parameter")
+      }, simplify=F, USE.NAMES = T) %>%
+      bind_rows(.id = "origin") %>% mutate(week = 1)
+
+testDNA.2wk.results <-  Concentrations %>% dplyr::select(SampleID, `Concentration ADN (ng/µL)`) %>% mutate(DNA.Conc = `Concentration ADN (ng/µL)`) %>% dplyr::rename(CFL_ID = SampleID) %>%
+      left_join(metadat, by = "CFL_ID") %>%
+      left_join(Nanodrop %>% dplyr::rename(CFL_ID = Sample.ID), by = "CFL_ID") %>% 
+      filter(!is.na(DNA.Conc) & !is.na(Treatment)) %>% 
+      droplevels() %>% 
+      mutate(Treatment = factor(as.character(Treatment), levels = c("Immediate extraction", unique(Treatment[Treatment != "Immediate extraction"]))), 
+             Sample_type = as.factor(Sample_type), 
+             keep = Conservation_time_week == 2 | Conservation_time_week == 0) %>% distinct() %>%
+      filter(keep) %>%
+      split(list(.$Soil.tree_type)) %>% 
+      discard(function(x) nrow(x) == 0) %>%
+      map(~ aov(DNA.Conc ~ Treatment, data = .x))%>% 
+      sapply(function(x){
+            summary.lm(x)$coefficients %>% 
+                  as.data.frame()%>% 
+                  rownames_to_column("parameter")
+      }, simplify=F, USE.NAMES = T) %>%
+      bind_rows(.id = "origin") %>% mutate(week = 2)
+
+testDNA.3wk.results <-  Concentrations %>% dplyr::select(SampleID, `Concentration ADN (ng/µL)`) %>% mutate(DNA.Conc = `Concentration ADN (ng/µL)`) %>% dplyr::rename(CFL_ID = SampleID) %>%
+      left_join(metadat, by = "CFL_ID") %>%
+      left_join(Nanodrop %>% dplyr::rename(CFL_ID = Sample.ID), by = "CFL_ID") %>% 
+      filter(!is.na(DNA.Conc) & !is.na(Treatment)) %>% 
+      droplevels() %>% 
+      mutate(Treatment = factor(as.character(Treatment), levels = c("Immediate extraction", unique(Treatment[Treatment != "Immediate extraction"]))), 
+             Sample_type = as.factor(Sample_type), 
+             keep = Conservation_time_week == 3 | Conservation_time_week == 0) %>% distinct() %>%
+      filter(keep) %>%
+      split(list(.$Soil.tree_type)) %>% 
+      discard(function(x) nrow(x) == 0) %>%
+      map(~ aov(DNA.Conc ~ Treatment, data = .x))%>% 
+      sapply(function(x){
+            summary.lm(x)$coefficients %>% 
+                  as.data.frame()%>% 
+                  rownames_to_column("parameter")
+      }, simplify=F, USE.NAMES = T) %>%
+      bind_rows(.id = "origin") %>% mutate(week = 3)
+
+## For each soil type, for each week, model the effect of Treatment type on DNA quality (as represented by 260/280 ratio) as compared to Immediate extraction
+
+testQual.1wk.results <-  Concentrations %>% dplyr::select(SampleID, `Concentration ADN (ng/µL)`) %>% mutate(DNA.Conc = `Concentration ADN (ng/µL)`) %>% dplyr::rename(CFL_ID = SampleID) %>%
+      left_join(metadat, by = "CFL_ID") %>%
+      left_join(Nanodrop %>% dplyr::rename(CFL_ID = Sample.ID), by = "CFL_ID") %>% 
+      filter(!is.na(DNA.Conc) & !is.na(Treatment)) %>% 
+      droplevels() %>% 
+      mutate(Treatment = factor(as.character(Treatment), levels = c("Immediate extraction", unique(Treatment[Treatment != "Immediate extraction"]))), 
+             Sample_type = as.factor(Sample_type), 
+             keep = Conservation_time_week == 1 | Conservation_time_week == 0) %>% distinct() %>%
+      filter(keep) %>%
+      split(list(.$Soil.tree_type)) %>% 
+      discard(function(x) nrow(x) == 0) %>%
+      map(~ aov(X260.280 ~ Treatment, data = .x))%>% 
+      sapply(function(x){
+            summary.lm(x)$coefficients %>% 
+                  as.data.frame()%>% 
+                  rownames_to_column("parameter")
+      }, simplify=F, USE.NAMES = T) %>%
+      bind_rows(.id = "origin") %>% mutate(week = 1)
+
+testQual.2wk.results <-  Concentrations %>% dplyr::select(SampleID, `Concentration ADN (ng/µL)`) %>% mutate(DNA.Conc = `Concentration ADN (ng/µL)`) %>% dplyr::rename(CFL_ID = SampleID) %>%
+      left_join(metadat, by = "CFL_ID") %>%
+      left_join(Nanodrop %>% dplyr::rename(CFL_ID = Sample.ID), by = "CFL_ID") %>% 
+      filter(!is.na(DNA.Conc) & !is.na(Treatment)) %>% 
+      droplevels() %>% 
+      mutate(Treatment = factor(as.character(Treatment), levels = c("Immediate extraction", unique(Treatment[Treatment != "Immediate extraction"]))), 
+             Sample_type = as.factor(Sample_type), 
+             keep = Conservation_time_week == 2 | Conservation_time_week == 0) %>% distinct() %>%
+      filter(keep) %>%
+      split(list(.$Soil.tree_type)) %>% 
+      discard(function(x) nrow(x) == 0) %>%
+      map(~ aov(X260.280 ~ Treatment, data = .x))%>% 
+      sapply(function(x){
+            summary.lm(x)$coefficients %>% 
+                  as.data.frame()%>% 
+                  rownames_to_column("parameter")
+      }, simplify=F, USE.NAMES = T) %>%
+      bind_rows(.id = "origin") %>% mutate(week = 2)
+
+testQual.3wk.results <-  Concentrations %>% dplyr::select(SampleID, `Concentration ADN (ng/µL)`) %>% mutate(DNA.Conc = `Concentration ADN (ng/µL)`) %>% dplyr::rename(CFL_ID = SampleID) %>%
+      left_join(metadat, by = "CFL_ID") %>%
+      left_join(Nanodrop %>% dplyr::rename(CFL_ID = Sample.ID), by = "CFL_ID") %>% 
+      filter(!is.na(DNA.Conc) & !is.na(Treatment)) %>% 
+      droplevels() %>% 
+      mutate(Treatment = factor(as.character(Treatment), levels = c("Immediate extraction", unique(Treatment[Treatment != "Immediate extraction"]))), 
+             Sample_type = as.factor(Sample_type), 
+             keep = Conservation_time_week == 3 | Conservation_time_week == 0) %>% distinct() %>%
+      filter(keep) %>%
+      split(list(.$Soil.tree_type)) %>% 
+      discard(function(x) nrow(x) == 0) %>%
+      map(~ aov(X260.280 ~ Treatment, data = .x)) %>% 
+      sapply(function(x){
+            summary.lm(x)$coefficients %>% 
+                  as.data.frame()%>% 
+                  rownames_to_column("parameter")
+      }, simplify=F, USE.NAMES = T) %>%
+      bind_rows(.id = "origin") %>% mutate(week = 3)
+
+### Compile the results, single plot with treatments on bottom and effect size from fresh on the y-axis Asterisks above bars with significant differences.  
+DNA <- rbind(testDNA.1wk.results, testDNA.2wk.results, testDNA.3wk.results) %>% mutate(test = "DNA")
+Quality <- rbind(testQual.1wk.results, testQual.2wk.results, testQual.3wk.results) %>% mutate(test = "DNA Quality")
+
+DNA.Quality <- rbind(DNA, Quality) %>% mutate(parameter = gsub("Treatment", "", parameter)); rm(DNA, Quality, testDNA.1wk.results, testDNA.2wk.results, testDNA.3wk.results, testQual.1wk.results, testQual.2wk.results, testQual.3wk.results)
+
+## reset the levels so freeze is first
+DNA.Quality <- DNA.Quality %>%
+            arrange(parameter) %>%
+            mutate(parameter = factor(parameter, levels = c("Freeze", unique(parameter)[!unique(parameter) == "Freeze"])), 
+                   origin = factor(origin, levels = c("Organic", "Mineral")), 
+                   test = ifelse(test == "DNA", "DNA Concentration", test), 
+                   significant = factor(ifelse(p.adjust(`Pr(>|t|)`, method = "holm") < 0.05, "Significant at holm-adjusted 0.05", ifelse(`Pr(>|t|)` < 0.05, "Significant at 0.05", "Not significant")), levels = c("Significant at holm-adjusted 0.05", "Significant at 0.05", "Not significant")))
+
+plot1 <- ggplot(DNA.Quality %>% 
+             filter(!parameter == "(Intercept)" & test == "DNA Concentration"), 
+       aes(parameter, Estimate, color = parameter, group = paste(parameter, week), shape = significant)) + 
+      geom_hline(yintercept=0, color = "black", lwd = 1)+
+      geom_point(position = position_dodge(width = 1), size =3) +
+      scale_color_manual(name = "Preservation method", values= cust.cols[levels(DNA.Quality$parameter)]) + 
+      scale_shape_manual(name = "Significance", values= c(8, 4, 1)) +
+      theme_minimal() + 
+      geom_errorbar(aes(ymin = Estimate - `Std. Error`, ymax = Estimate + `Std. Error`), position = position_dodge(width = 1)) + ylab("Estimated difference from Immediate extraction") + xlab("")+
+      facet_wrap(.~origin, ncol = 1, scales = "free") + ggtitle("DNA Concentration")+ 
+      theme(strip.background = element_rect(color = "gray88"),
+            plot.title = element_text(hjust = 0.5))
+
+plot2 <- ggplot(DNA.Quality %>% 
+             filter(!parameter == "(Intercept)" & test == "DNA Quality"), 
+       aes(parameter, Estimate, color = parameter, group = paste(parameter, week), shape = significant)) + 
+      geom_hline(yintercept=0, color = "black", lwd = 1)+
+      geom_point(position = position_dodge(width = 1), size =3) +
+      scale_color_manual(name = "Preservation method", values= cust.cols[levels(DNA.Quality$parameter)]) + 
+      scale_shape_manual(name = "Significance", values= c(8, 4, 1)) +
+      theme_minimal() + 
+      geom_errorbar(aes(ymin = Estimate - `Std. Error`, ymax = Estimate + `Std. Error`), position = position_dodge(width = 1)) + ylab("") + xlab("")+
+      facet_wrap(.~origin, ncol = 1, scales = "free") + ggtitle("DNA Quality") + 
+      theme(strip.background = element_rect(color = "gray88"),
+            plot.title = element_text(hjust = 0.5))
+
+ggarrange(plot1, plot2, ncol = 2, common.legend = T, legend = "right")
+
+```
+
+
+
+```{r alpha-diversity, cache=TRUE}
+
+diversity <- data.frame()
+
+count = 1
+
+for(ds_name in names(ds_list)){
+      Orddf <- ds_list[[ds_name]]
+      rownames(Orddf) <- NULL
+      
+      ## select just abundance columns & set ESV to rownames
+      Orddf <- Orddf %>%
+            column_to_rownames("#OTU ID")
+      
+      Orddf <- Orddf[, colnames(Orddf) %in% metadat$SampleID]
+      
+      ## Rarefy to 15th percentile
+      p.15th<- quantile(colSums(Orddf), p = c(.15))
+
+      Orddf <- rrarefy(Orddf, p.15th)
+
+
+      ## Calculate relative abundance for Bacterial, bray-curtis distance, P/A for Fungi jaccard distance
+      if(ds_name == "Bac"){
+            Orddf <- t(apply(Orddf, 2, function(x){x/sum(x)}))
+            dist.metric = "bray"
+      }
+      if(ds_name == "Fun"){
+            Orddf <- t(apply(Orddf, 2, function(x){x/sum(x)}))
+            dist.metric ="jaccard"
+      }
+      
+      ## calculate the diversity metrics off of the matrix
+      temp.div <- data.frame(Shannon = diversity(Orddf, index = "shannon"), Inv.Simpson = diversity(Orddf, index = "invsimpson"), richness = specnumber(Orddf)) %>%
+            # get the rownames (sample IDs as a column)
+            rownames_to_column("SampleID") %>%
+            # pivot to long-form
+            pivot_longer(-SampleID, names_to = "metric", values_to = "value") %>%
+            # join to metadata for plotting
+            left_join(metadat, by = "SampleID")
+      
+diversity <- rbind(diversity, temp.div %>% mutate(dataset = ds_name))
+}
+
+### Diversity test results for single models by week
+
+# Test 1 compare 1 week DNA concentrations to fresh
+testDiv.1wk.results <- diversity %>% 
+      filter(!grepl("control", Sample_type)) %>%
+      mutate(Treatment = factor(as.character(Treatment), levels = c("Immediate extraction", unique(Treatment[Treatment != "Immediate extraction"]))),
+             dataset = as.factor(dataset), 
+             Sample_type = as.factor(Sample_type),
+             keep = Conservation_time_week == 1 | Conservation_time_week == 0) %>%
+      filter(keep) %>% 
+      split(list(.$metric, .$dataset, .$Soil.tree_type)) %>% 
+      discard(function(x) nrow(x) == 0) %>%  
+      map(~ aov(value ~ Treatment, data = .x))%>% 
+      sapply(function(x){
+            summary.lm(x)$coefficients %>% 
+                  as.data.frame()%>% 
+                  rownames_to_column("parameter")
+      }, simplify=F, USE.NAMES = T) %>%
+      bind_rows(.id = "origin") %>% mutate(week = 1)
+
+testDiv.2wk.results <- diversity %>% 
+      filter(!grepl("control", Sample_type)) %>%
+      mutate(Treatment = factor(as.character(Treatment), levels = c("Immediate extraction", unique(Treatment[Treatment != "Immediate extraction"]))),
+             dataset = as.factor(dataset), 
+             Sample_type = as.factor(Sample_type),
+             keep = Conservation_time_week == 2 | Conservation_time_week == 0) %>%
+      filter(keep) %>% 
+      split(list(.$metric, .$dataset, .$Soil.tree_type)) %>% 
+      discard(function(x) nrow(x) == 0) %>%  
+      map(~ lm(value ~ Treatment, data = .x))%>% 
+      sapply(function(x){
+            summary.lm(x)$coefficients %>% 
+                  as.data.frame()%>% 
+                  rownames_to_column("parameter")
+      }, simplify=F, USE.NAMES = T) %>%
+      bind_rows(.id = "origin") %>% mutate(week = 2)
+      
+testDiv.3wk.results <- diversity %>% 
+      filter(!grepl("control", Sample_type)) %>%
+      mutate(Treatment = factor(as.character(Treatment), levels = c("Immediate extraction", unique(Treatment[Treatment != "Immediate extraction"]))),
+             dataset = as.factor(dataset), 
+             Sample_type = as.factor(Sample_type),
+             keep = Conservation_time_week == 3 | Conservation_time_week == 0) %>%
+      filter(keep) %>% 
+      split(list(.$metric, .$dataset, .$Soil.tree_type)) %>% 
+      discard(function(x) nrow(x) == 0) %>%  
+      map(~ aov(value ~ Treatment, data = .x))%>% 
+      sapply(function(x){
+            summary.lm(x)$coefficients %>% 
+                  as.data.frame()%>% 
+                  rownames_to_column("parameter")
+      }, simplify=F, USE.NAMES = T) %>%
+      bind_rows(.id = "origin") %>% mutate(week = 3)
+
+            ## manually investigated model residuals
+            #for(i in 1:length(test1.results)){ print(names(test1.results)[i]); plot(test1.results[[i]]) }; rm(i)
+            #for(i in 1:length(test4.results)){ print(names(test4.results)[i]); plot(test4.results[[i]]) }; rm(i)
+            ### NOTES: 
+            ## All looked pretty good for most part, some specific treatments have differences in variance, but estimated increases/decreases can likely be trusted
+
+diversity.tests.results <- rbind(testDiv.1wk.results, testDiv.2wk.results, testDiv.3wk.results) %>%
+      mutate(test = str_extract(origin, "Inv.Simpson|Shannon|richness"), 
+             type = str_extract(origin, "Bac|Fun"),
+             origin = factor(str_extract(origin, "Mineral|Organic"), c("Organic", "Mineral")),
+             parameter = gsub("Treatment", "", parameter),
+             significant = factor(ifelse(p.adjust(`Pr(>|t|)`, method = "holm") < 0.05, "Significant at holm-adjusted 0.05", ifelse(`Pr(>|t|)` < 0.05, "Significant at 0.05", "Not significant")), levels = c("Significant at holm-adjusted 0.05", "Significant at 0.05", "Not significant"))) %>%
+      arrange(parameter) %>%
+      mutate(parameter = factor(parameter, levels = c("Freeze", unique(parameter)[!unique(parameter)=="Freeze"]))) %>% 
+      filter(!(type == "Fun" & test %in% c("Shannon", "Inv.Simpson")))
+   
+```
+
+
+
+```{r Bac-diversity-plot, fig.width=10, fig.height=8, fig.cap="Preservation method effect sizes on bacterial Shannon diversity, inverse Simpson's diversity and ASV richness compared to Immediate extraction for forest mineral and organic soils. Points display the estimated effect (difference from immediate extraction) introduced by the preservation method, and error bars represent the standard error of the estimate. For each preservation method, the incubation periods are displayed in order (week one to three), except for Freezing, where only week three is displayed."}
+## Plotting the diversity - modify for your custom needs
+plot1 <- ggplot(diversity.tests.results %>% 
+             filter(!parameter == "(Intercept)" & test == "Shannon" & type == "Bac"), 
+       aes(parameter, Estimate, color = parameter, group = paste(parameter, week), shape = significant)) + 
+      geom_hline(yintercept=0, color = "black", lwd = 1)+
+      geom_point(position = position_dodge(width = 1), size =3) +
+      scale_color_manual(name = "Preservation method", values= cust.cols[levels(diversity.tests.results$parameter)], 
+                         guide = guide_legend(override.aes = list(linetype = rep("solid", 6), 
+                                                                  shape = c(rep(1, 6))))) + 
+      scale_shape_manual(name = "Significance",values= c(8, 4, 1)) +
+      theme_minimal() + 
+      geom_errorbar(aes(ymin = Estimate - `Std. Error`, ymax = Estimate + `Std. Error`), position = position_dodge(width = 1)) +
+      facet_wrap(.~origin, ncol = 1, scales = "free") + ggtitle("Shannon") + 
+      theme(strip.background = element_rect(color = "gray88"),
+            plot.title = element_text(hjust = 0.5)) +
+      ylab("Estimated difference from Immediate extraction") + xlab("")
+
+plot2 <- ggplot(diversity.tests.results %>% 
+             filter(!parameter == "(Intercept)" & test == "Inv.Simpson" & type == "Bac"), 
+       aes(parameter, Estimate, color = parameter, group = paste(parameter, week), shape = significant)) + 
+      geom_hline(yintercept=0, color = "black", lwd = 1)+
+      geom_point(position = position_dodge(width = 1), size =3) +
+      scale_color_manual(name = "Preservation method", values= cust.cols[levels(diversity.tests.results$parameter)], 
+                         guide = guide_legend(override.aes = list(linetype = rep("solid", 6), 
+                                                                  shape = c(rep(1, 6))))) + 
+      scale_shape_manual(name = "Significance",values= c(8, 4, 1)) +
+      theme_minimal() + 
+      geom_errorbar(aes(ymin = Estimate - `Std. Error`, ymax = Estimate + `Std. Error`), position = position_dodge(width = 1)) +
+      facet_wrap(.~origin, ncol = 1, scales = "free") + ggtitle("Inverse Simpson's") + 
+      theme(strip.background = element_rect(color = "gray88"),
+            plot.title = element_text(hjust = 0.5))+ 
+      ylab("") + xlab("")
+
+plot3 <- ggplot(diversity.tests.results %>% 
+             filter(!parameter == "(Intercept)" & test == "richness" & type == "Bac"), 
+       aes(parameter, Estimate, color = parameter, group = paste(parameter, week), shape = significant)) + 
+      geom_hline(yintercept=0, color = "black", lwd = 1)+
+      geom_point(position = position_dodge(width = 1), size =3) +
+      scale_color_manual(name = "Preservation method", values= cust.cols[levels(diversity.tests.results$parameter)], 
+                         guide = guide_legend(override.aes = list(linetype = rep("solid", 6), 
+                                                                  shape = c(rep(1, 6))))) + 
+      scale_shape_manual(name = "Significance",values= c(8, 4, 1)) +
+      theme_minimal() + 
+      geom_errorbar(aes(ymin = Estimate - `Std. Error`, ymax = Estimate + `Std. Error`), position = position_dodge(width = 1)) +
+      facet_wrap(.~origin, ncol = 1, scales = "free") + ggtitle("ASV richness")   + 
+      theme(strip.background = element_rect(color = "gray88"),
+            plot.title = element_text(hjust = 0.5))+ 
+      ylab("") + xlab("")
+
+full.plot <- ggarrange(plot1, plot2, plot3, ncol = 3, labels = NULL, common.legend = T, legend = "bottom")
+
+annotate_figure(full.plot, top = text_grob("Bacterial Diversity", 
+               color = "black", face = "bold", size = 16))
+```
+
+
+
+```{r Fun-diversity-plot, fig.width=10, fig.height=8.25, fig.cap="Preservation method effect sizes on fungal ASV richness compared to Immediate extraction for forest mineral and organic soils. Points display the estimated effect (difference from immediate extraction) introduced by the preservation method, and error bars represent the standard error of the estimate. For each preservation method, the incubation periods are displayed in order (week one to three), except for Freezing, where only week three is displayed."}
+## Plotting the diversity - modify for your custom needs
+#plot1 <- ggplot(diversity.tests.results %>% 
+#             filter(!parameter == "(Intercept)" & test == "Shannon" & type == "Fun"), 
+#       aes(parameter, Estimate, color = parameter, group = paste(parameter, week), shape = significant)) + 
+#      geom_hline(yintercept=0, color = "black", lwd = 1)+
+#      geom_point(position = position_dodge(width = 1), size =3) +
+#      scale_color_manual(name = "Preservation method", values= cust.cols, 
+#                         guide = guide_legend(override.aes = list(linetype = rep("solid", 6), 
+#                                                                  shape = c(rep(1, 6))))) + 
+#      scale_shape_manual(name = "Significance",values= c(8, 4, 1)) +
+#      theme_minimal() + 
+#      geom_errorbar(aes(ymin = Estimate - `Std. Error`, ymax = Estimate + `Std. Error`), position = position_dodge(width = 1)) +
+#      facet_wrap(.~origin, ncol = 1, scales = "free") + ggtitle("Shannon") + 
+#      theme(strip.background = element_rect(color = "gray88"),
+#            plot.title = element_text(hjust = 0.5)) +
+#      ylab("Estimated difference from Immediate extraction") + xlab("")
+
+#plot2 <- ggplot(diversity.tests.results %>% 
+#             filter(!parameter == "(Intercept)" & test == "Inv.Simpson" & type == "Fun"), 
+#       aes(parameter, Estimate, color = parameter, group = paste(parameter, week), shape = significant)) + 
+#      geom_hline(yintercept=0, color = "black", lwd = 1)+
+#      geom_point(position = position_dodge(width = 1), size =3) +
+#      scale_color_manual(name = "Preservation method", values= cust.cols, 
+#                         guide = guide_legend(override.aes = list(linetype = rep("solid", 6), 
+#                                                                  shape = c(rep(1, 6))))) + 
+#      scale_shape_manual(name = "Significance",values= c(8, 4, 1)) +
+#      theme_minimal() + 
+#      geom_errorbar(aes(ymin = Estimate - `Std. Error`, ymax = Estimate + `Std. Error`), position = position_dodge(width = 1)) +
+#      facet_wrap(.~origin, ncol = 1, scales = "free") + ggtitle("Inverse Simpson's") + 
+#      theme(strip.background = element_rect(color = "gray88"), 
+#            plot.title = element_text(hjust = 0.5))+ 
+#      ylab("") + xlab("")
+
+plot3 <- ggplot(diversity.tests.results %>% 
+             filter(!parameter == "(Intercept)" & test == "richness" & type == "Fun"), 
+       aes(parameter, Estimate, color = parameter, group = paste(parameter, week), shape = significant)) + 
+      geom_hline(yintercept=0, color = "black", lwd = 1)+
+      geom_point(position = position_dodge(width = 1), size =3) +
+      scale_color_manual(name = "Preservation method", values= cust.cols, 
+                         guide = guide_legend(override.aes = list(linetype = rep("solid", 6), 
+                                                                  shape = c(rep(1, 6))))) + 
+      scale_shape_manual(name = "Significance",values= c(8, 4, 1)) +
+      theme_minimal() + 
+      geom_errorbar(aes(ymin = Estimate - `Std. Error`, ymax = Estimate + `Std. Error`), position = position_dodge(width = 1)) +
+      facet_wrap(.~origin, ncol = 1, scales = "free") + ggtitle("ASV richness")   + 
+      theme(strip.background = element_rect(color = "gray88"),
+            plot.title = element_text(hjust = 0.5))+ 
+      ylab("Estimated difference from Immediate extraction") + xlab("")
+
+#full.plot <- ggarrange(plot1, plot2, plot3, ncol = 3, labels = NULL, common.legend = T, legend = "bottom")
+
+annotate_figure(plot3, top = text_grob("Fungal Diversity", 
+               color = "black", face = "bold", size = 16))
+```
+
+
+
+```{r prep_CODA, cache = TRUE, include=FALSE}
+coda.clrs.res <- list()
+count= 1
+for(ds_n in 1:length(ds_list)){
+        ds_name <- names(ds_list)[ds_n]
+        
+        Orddf <- ds_list[[ds_name]]
+        rownames(Orddf) <- NULL
+        ## select just abundance columns & set ESV to rownames
+        Orddf <- Orddf %>%
+           column_to_rownames("#OTU ID")
+        
+        Orddf <- Orddf[, colnames(Orddf) %in% metadat$SampleID[!grepl("control", metadat$Treatment)]]
+           
+        
+              ## flip for ordination
+                Orddf4aldex <- t(Orddf)
+                
+                ## replace zeros
+                Ord.clr <- cmultRepl(Orddf4aldex, method="CZM", output="p-counts") ## need to surround with "abs" to make sure there aren't negative values. ## aldex just adds 0.5 to everything... any that are negative are just changed to 0.5
+                Ord.clr[Ord.clr<0] <- 0.5
+                
+                
+                ## transform the data to ratios by sample (rows)
+                Ord.clr <- apply(Ord.clr, 1, function(x){x/sum(x)})
+
+                ## make compositional by sample (columns)
+                Ord.clr <- apply(Ord.clr, 2, function(x){log(x) - mean(log(x))}) ## We are calculating this like aldex does.
+                
+                ## Add new item to the list
+                coda.clrs.res[[count]] <- list(Ord.clr)
+                names(coda.clrs.res)[count] <- paste(ds_name, sep="_")
+                count=count+1
+          
+                
+        
+}
+
+rm(count, ds_name, Ord.clr, Orddf4aldex, Orddf, ds_n)
+```
+
+
+
+```{r coda-pca-var, include=FALSE, echo=FALSE}
+
+## Create an empty data frame to fill with plotting information
+clr.pca.plotting <- data.frame()
+
+for(ds_n in 1:length(coda.clrs.res)){
+        ds_name <- names(coda.clrs.res)[ds_n]
+        
+        d.clr.abund <- t(coda.clrs.res[[ds_name]][[1]])
+        
+        ## SVD PCA of clr values
+        pca <- prcomp(d.clr.abund)
+        
+        ## calculate the variance of each PC and add to the dataset
+        clr.pca.plotting <- rbind(clr.pca.plotting, data.frame(dataset = ds_name, variance=pca$sdev^2/sum(pca$sdev^2)))
+}
+
+##  Plot the total variance represented by the first two axes (this could be modified to first 3, or you can change the graph entirely) 
+pca.plotting <- clr.pca.plotting %>%
+  mutate(temp = 1) %>%
+  group_by(dataset) %>% mutate(PC = 1:n()) %>%
+  mutate(dataset = factor(as.character(dataset), levels = unique(as.character(dataset))))%>%
+      filter(variance > 0.001) %>%
+      mutate(explanatory = variance > (mean(variance)))
+  ggplot(pca.plotting, aes(PC, variance, dataset, fill = explanatory)) + geom_bar(stat= "identity") + xlab("PC") + theme_minimal() + facet_grid(dataset~.)
+  
+rm(clr.pca.plotting, pca, ds_n, ds_name, d.clr.abund, pca.plotting)
+```
+
+
+
+```{r CODA-NMDS-1, include=FALSE}
+## This is a loop that constructs plots which can then be called in individual chunks in the RMarkdown.
+## Chose NMDS for preliminary visualization because data is very dimensional - takes many PC's to pull out real gradients in data. Using Aitchison distance.
+
+clr.pca.plots <- list()
+
+permanov.res <- data.frame()
+
+PERM.mods <- list()
+plotcount <- 1
+count <- 1
+permcount <- 1
+
+
+## contrast matrix for tests
+
+contrast.matrix <- data.frame(Dry = c(`Immediate extraction` = -1, CD1 = 0, Dry= 1, EtOH = 0, Freeze = 0, LG = 0, RL = 0), 
+                              CD1 =  c(`Immediate extraction` = -1, CD1 = 1, Dry= 0, EtOH = 0, Freeze = 0, LG = 0, RL = 0), 
+                              EtOH =  c(`Immediate extraction` = -1, CD1 = 0, Dry= 0, EtOH = 1, Freeze = 0, LG = 0, RL = 0),
+                              Freeze =  c(`Immediate extraction` = -1, CD1 = 0, Dry= 0, EtOH = 0, Freeze = 1, LG = 0, RL = 0),
+                              LG =  c(`Immediate extraction` = -1, CD1 = 0, Dry= 0, EtOH = 0, Freeze = 0, LG = 1, RL = 0),
+                              RL =  c(`Immediate extraction` = -1, CD1 = 0, Dry= 0, EtOH = 0, Freeze = 0, LG = 0, RL = 1), check.names = F)
+
+for(ds_name in names(coda.clrs.res)){
+        
+        ## You can add special rules if you want to exclude certain plots using "next"
+        #if(grepl("Genus|functional", ds_name)){next}
+        dist.metric = "euclidean"
+        ## Pull in the clr matrix
+        d.clr.abund <- t(coda.clrs.res[[ds_name]][[1]])
+        
+#### Take your metadata and do any required changes for the plots you wish to create. #### 
+      #### ADONIS AND PERMANOVA TESTS ####
+      # Test 1 compare 1 week centroids
+      # Test 4 compare 1 week beta-dispersion of reads to fresh
+      
+      permfunc <- function(x, dist.metric){
+            test.ord <- d.clr.abund[rownames(d.clr.abund) %in% x$SampleID, ]
+                  test.metadat <- metadat[match(rownames(test.ord), metadat$SampleID), ]
+                  
+                  contrast.matrix.set <- contrast.matrix[,colnames(contrast.matrix) %in% unique(test.metadat$Treatment)]
+                  
+                  permanov.res <- ortho_adonis(Orddf = test.ord, ortho_matrix = contrast.matrix.set, fac_name = "Treatment", characteristics_df = test.metadat, method = dist.metric)
+                  bdisper.res <- ortho_betadisper(test.ord, contrast.matrix.set, "Treatment", test.metadat, method = dist.metric)
+                  return(list(permanov=permanov.res, bdisp=bdisper.res))
+      }
+        
+        permfunc2 <- function(x, dist.metric){
+            test.ord <- d.clr.abund[rownames(d.clr.abund) %in% x$SampleID, ]
+                  test.metadat <- metadat[match(rownames(test.ord), metadat$SampleID), ]
+                  
+                  contrast.matrix.set <- contrast.matrix[,colnames(contrast.matrix) %in% unique(test.metadat$Treatment)]
+                  
+                  permanov.res <- pairwise_adonis(test.ord, "Soil.tree_type", test.metadat, method = dist.metric)
+                  bdisper.res <- pairwise_betadisper(test.ord, "Soil.tree_type", test.metadat, method = dist.metric)
+                  return(list(permanov=permanov.res, bdisp=bdisper.res))
+      }
+      
+      testCODAperm.1wk.results <- metadat %>% 
+            filter(!grepl("control", Treatment)) %>%
+      mutate(Treatment = factor(as.character(Treatment), levels = c("Immediate extraction", unique(Treatment[Treatment != "Immediate extraction"]))), 
+             Sample_type = as.factor(Sample_type),
+             keep = Conservation_time_week == 1 | Conservation_time_week == 0) %>%
+      filter(keep)%>%
+      split(list(.$Sample_type, .$Soil.tree_type)) %>% 
+      discard(function(x) nrow(x) == 0) %>%  
+      map(~ permfunc(.x, dist.metric)) %>% 
+      sapply(function(x){
+            x$permanov %>% 
+                  rename(c( "SumOfSqs"="Sum.Sq", "F"="F.value")) %>%
+                  mutate(Mean.Sq = NA, type = "PERMANOVA") %>%
+                  rbind(
+                        x$bdisp%>%
+                              mutate(R2 = NA, 
+                                     type = "beta-dispersion")
+                  )
+      }, simplify=F, USE.NAMES = T) %>%
+      bind_rows(.id = "origin") %>% mutate(week = 1)
+      
+       testCODAperm.2wk.results <- metadat %>% 
+            filter(!grepl("control", Treatment)) %>%
+      mutate(Treatment = factor(as.character(Treatment), levels = c("Immediate extraction", unique(Treatment[Treatment != "Immediate extraction"]))), 
+             Sample_type = as.factor(Sample_type),
+             keep = Conservation_time_week == 2 | Conservation_time_week == 0) %>%
+      filter(keep)%>%
+      split(list(.$Sample_type, .$Soil.tree_type)) %>% 
+      discard(function(x) nrow(x) == 0) %>%  
+      map(~ permfunc(.x, dist.metric)) %>% 
+      sapply(function(x){
+            x$permanov %>% 
+                  rename(c( "SumOfSqs"="Sum.Sq", "F"="F.value")) %>%
+                  mutate(Mean.Sq = NA, type = "PERMANOVA") %>%
+                  rbind(
+                        x$bdisp%>%
+                              mutate(R2 = NA, 
+                                     type = "beta-dispersion")
+                  )
+      }, simplify=F, USE.NAMES = T) %>%
+      bind_rows(.id = "origin") %>% mutate(week = 2)
+       
+      testCODAperm.3wk.results <- metadat %>% 
+            filter(!grepl("control", Treatment)) %>%
+      mutate(Treatment = factor(as.character(Treatment), levels = c("Immediate extraction", unique(Treatment[Treatment != "Immediate extraction"]))), 
+             Sample_type = as.factor(Sample_type),
+             keep = Conservation_time_week == 3 | Conservation_time_week == 0) %>%
+      filter(keep)%>%
+      split(list(.$Sample_type, .$Soil.tree_type)) %>% 
+      discard(function(x) nrow(x) == 0) %>%  
+      map(~ permfunc(.x, dist.metric)) %>% 
+      sapply(function(x){
+            x$permanov %>% 
+                  rename(c( "SumOfSqs"="Sum.Sq", "F"="F.value")) %>%
+                  mutate(Mean.Sq = NA, type = "PERMANOVA") %>%
+                  rbind(
+                        x$bdisp%>%
+                              mutate(R2 = NA, 
+                                     type = "beta-dispersion")
+                  )
+      }, simplify=F, USE.NAMES = T) %>%
+      bind_rows(.id = "origin") %>% mutate(week = 3)
+      
+
+      
+      
+      testCODAperm.type.results <- metadat %>% 
+            filter(!grepl("control", Treatment)) %>%
+      mutate(Treatment = factor(as.character(Treatment), levels = c("Immediate extraction", unique(Treatment[Treatment != "Immediate extraction"]))), 
+             Sample_type = as.factor(Sample_type)) %>%
+      permfunc2(dist.metric)  
+      
+      extract_results <- function(x){
+            x$permanov %>% 
+                  rename(c( "SumOfSqs"="Sum.Sq", "F"="F.value")) %>%
+                  mutate(Mean.Sq = NA, type = "PERMANOVA") %>%
+                  rbind(
+                        x$bdisp%>%
+                              mutate(R2 = NA, 
+                                     type = "beta-dispersion")
+                  )
+      }
+      
+      testCODAperm.type.results <- extract_results(testCODAperm.type.results) %>% 
+            mutate(origin = "Soil", week = NA) %>% dplyr::rename(contrast = test_pair)
+      
+      weeks.perms <- rbind(testCODAperm.1wk.results, testCODAperm.2wk.results, testCODAperm.3wk.results, testCODAperm.type.results) %>% mutate(set = ds_name)
+
+      permanov.res<- rbind(permanov.res, weeks.perms); rm(weeks.perms, testCODAperm.1wk.results, testCODAperm.2wk.results, testCODAperm.3wk.results, testCODAperm.type.results)
+      
+       
+               ##NMDS  of the clr values ##
+        nmds <- rda(d.clr.abund[row.names(d.clr.abund) %in% metadat$SampleID, ])
+        
+        ## Prepare plotting axis labels
+        xlab.val <- paste0("PC1", " (", round(summary(nmds)$cont$importance[2,1]*100, 1), "%)")
+        ylab.val <- paste("PC2", " (", round(summary(nmds)$cont$importance[2,2]*100, 2), "%)")
+        
+        ## extract the data for plotting the same way base biplot for princomp does & join data to the metadata
+        plottingdat <- as.data.frame(plot(nmds)$sites) %>%
+          rownames_to_column("SampleID") %>% 
+          left_join(metadat, by="SampleID") %>%
+          dplyr::select(-SampleID)
+    
+         ## Find Hulls of data for creating plotting hulls
+#### replace "variable" with a vector of the column name(s) of the variables you want to create your hulls groupings with ####
+      hulls = Ordination_hulls(plottingdat, c("Treatment", "Conservation_time_week", "Soil.tree_type")) 
+      
+#### Create your plot - replace "variable" with your treatment column of interest or add parameters as required for your customized plot in ggplot. ####
+       clr.pca.plots[[plotcount]] <-  ggplot(plottingdat, aes(PC1, PC2))+
+   geom_point(data=plottingdat, aes(color=Soil.tree_type), alpha=0.5, size = 2) + 
+   #geom_polygon(data=hulls, aes(group=hullgrp, fill = Soil.tree_type, color=Soil.tree_type), alpha = 0.1) +
+   scale_color_manual(values= cust.cols2[unique(plottingdat$Soil.tree_type)])+
+   scale_fill_manual(values= cust.cols2[unique(plottingdat$Soil.tree_type)])+
+   #scale_shape_manual(values= cust.shapes)+
+   xlab(xlab.val)+
+   ylab(ylab.val)+
+   theme_minimal() #+ 
+             # theme(legend.position = "none")
+   
+       #print(clr.pca.plots[[plotcount]])
+       
+names(clr.pca.plots)[plotcount] <- paste(ds_name, sep = "_")
+        plotcount <- plotcount +1
+        
+        soil.tree.levs <- unique(plottingdat$Soil.tree_type)
+        
+        for(soil.tree in soil.tree.levs){
+                   ##NMDS  of the clr values ##
+              
+              if(length(metadat$SampleID[metadat$Soil.tree_type == soil.tree]) < 3){next}
+        nmds <- rda(d.clr.abund[row.names(d.clr.abund) %in% metadat$SampleID[metadat$Soil.tree_type == soil.tree], ], distance = "euclidean")
+      
+         ## Prepare plotting axis labels
+        xlab.val <- paste0("PC1", " (", round(summary(nmds)$cont$importance[2,1]*100, 1), "%)")
+        ylab.val <- paste("PC2", " (", round(summary(nmds)$cont$importance[2,2]*100, 2), "%)")
+        
+        ## extract the data for plotting the same way base biplot for princomp does & join data to the metadata
+        plottingdat2 <- as.data.frame(summary(nmds)$sites) %>%
+          rownames_to_column("SampleID") %>% 
+          left_join(metadat, by="SampleID") %>%
+          dplyr::select(-SampleID) %>%
+              mutate(Treatment = factor(as.character(Treatment), levels = c("Immediate extraction", "Freeze", unique(Treatment[!Treatment %in% c("Immediate extraction", "Freeze")]))))
+   
+        
+        
+         ## Find Hulls of data for creating plotting hulls
+#### replace "variable" with a vector of the column name(s) of the variables you want to create your hulls groupings with ####
+      hulls = Ordination_hulls(plottingdat2, c("Treatment", "Conservation_time_week", "Soil.tree_type")) 
+      
+      ## Create paths for all starting from the 0 extraction
+      paths.plot <- plottingdat2 %>% 
+            filter(!Conservation_time_week == 0) %>%
+            group_by(Treatment, Conservation_time_week) %>%
+            summarize(PC1 = mean(PC1),
+                      PC2 = mean(PC2)) %>%
+              arrange(Conservation_time_week)
+        
+#### Create your plot - replace "variable" with your treatment column of interest or add parameters as required for your customized plot in ggplot. ####
+      
+     
+       clr.pca.plots[[plotcount]] <-  ggplot(plottingdat2, aes(PC1, PC2, group_by(Treatment)))+
+   geom_point(data=plottingdat2, aes(color=Treatment, shape = as.factor(Conservation_time_week)), alpha=0.5, size = 2) + 
+   geom_polygon(data=hulls[hulls$Treatment == "Immediate extraction", ], aes(group=hullgrp, color=Treatment), fill = "black", alpha = 0.1, show.legend = FALSE) +
+   #geom_polygon(data=hulls, aes(group=hullgrp, color=Treatment), alpha = 0, lty = 2) +
+   #geom_path(data = paths.plot, aes(color = Treatment), arrow = arrow(), show.legend = FALSE) +
+   scale_color_manual(values= cust.cols[levels(plottingdat2$Treatment)])+
+   scale_shape_manual(name = "Week", values= c(0, 1, 2, 3))+
+   xlab(xlab.val)+
+   ylab(ylab.val)+
+   theme_minimal()
+   
+       #print(clr.pca.plots[[plotcount]])
+       
+names(clr.pca.plots)[plotcount] <- paste(ds_name, soil.tree, sep = "_")
+        plotcount <- plotcount +1
+        }
+        
+        
+        }
+
+
+rm(plotcount, ds_name, d.clr.abund, hulls, pca, nmds, plottingdat, xlab.val, ylab.val, soil.tree, soil.tree.levs)
+```
+
+
+
+```{r PCA1, fig.cap="PCA of Bacterial community based on Aitchison distances for soil samples subjected to different storage conditions over time. A) Ordination for all preservation methods for the different soil types at all time points, B) Ordination for each soil type, with colours showing the preservation methods and shapes showing the incubation time.", fig.height = 8, fig.width = 10}
+annotate_figure(ggarrange(clr.pca.plots[["Bac"]], 
+          ggarrange(clr.pca.plots[["Bac_Organic"]],  
+          clr.pca.plots[["Bac_Mineral"]],
+          ncol = 2, nrow = 1, legend="right", legend.grob = get_legend(clr.pca.plots[["Bac_Mineral"]]), labels = c("Organic", "Mineral")), nrow = 2, heights = c(4, 4), labels = "AUTO"),
+          top = text_grob("Bacterial community structure", color = "black", size = 14))
+
+permanov.res <- permanov.res %>% 
+      mutate(significant = Pr..F.<0.05, 
+             origin = gsub("^.+\\.", "", origin))
+```
+
+
+
+```{r bac-perm, fig.cap= "Bacterial variance (Sum of Squares) compared to immediate extraction 1 to 3 weeks after preservation preservation method. Preservation methods are displayed using color and weeks are ordered 1-3 from right to left, except for Freezing, where only week three is displayed.", fig.width = 8, include=FALSE}
+ggplot(permanov.res %>% filter(set =="Bac" & type == "PERMANOVA"), aes(contrast, Sum.Sq, color = contrast, group = paste(week), shape = significant)) + 
+      geom_point(position = position_dodge(width = 1)) + 
+      facet_wrap(~origin, scales = "free_x")+
+      scale_color_manual(values= c(cust.cols)) + 
+      scale_shape_manual(values= c(4, 1)) +
+      theme_minimal()
+```
+
+
+
+```{r bac-bdisp, caption = "Bacterial beta-dispersion (Sum of Squares) compared to immediate extraction 1 to 3 weeks after preservation preservation method. Preservation methods are displayed using color and weeks are ordered 1-3 from right to left, except for Freezing, where only week three is displayed.", include=FALSE}
+ggplot(permanov.res %>% filter(set =="Bac" & type == "beta-dispersion"), aes(contrast, Mean.Sq, color = contrast, group = paste(week), shape = significant)) + 
+      geom_point(position = position_dodge(width = 1)) + 
+      facet_wrap(~origin, scales = "free_x")+
+      scale_color_manual(values= c(cust.cols)) + 
+      scale_shape_manual(values= c(4, 1)) +
+      theme_minimal()
+
+```
+
+
+
+
+```{r PCA2, fig.cap="PCA of Fungal community based on Aitchison distances for soil samples subjected to different storage conditions over time. A) Ordination for all preservation methods for the different soil types at all time points, B) Ordination for each soil type, with colours showing the preservation methods and shapes showing the incubation time.", fig.height = 8, fig.width = 10}
+annotate_figure(ggarrange(clr.pca.plots[["Fun"]], 
+          ggarrange(clr.pca.plots[["Fun_Organic"]], 
+          clr.pca.plots[["Fun_Mineral"]], 
+          ncol = 2, legend="right", legend.grob = get_legend(clr.pca.plots[["Fun_Organic"]]), labels = c("Organic", "Mineral")), nrow = 2, heights = c(4, 4), labels = "AUTO"),
+          top = text_grob("Fungal community structure", color = "black", size = 14))
+```
+
+
+
+```{r fun-perm, fig.cap = "Fungal variance (Sum of Squares) compared to immediate extraction 1 to 3 weeks after preservation preservation method. Preservation methods are displayed using color and weeks are ordered 1-3 from right to left, except for Freezing, where only week three is displayed.", fig.width=8, include =FALSE}
+ggplot(permanov.res %>% filter(set =="Fun" & type == "PERMANOVA"), aes(contrast, Sum.Sq, color = contrast, group = paste(week), shape = significant)) + 
+      geom_point(position = position_dodge(width = 1)) + 
+      facet_wrap(~origin, scales = "free_x")+
+      scale_color_manual(values= c(cust.cols)) + 
+      scale_shape_manual(values= c(4, 1)) +
+      theme_minimal()
+```
+
+
+```{r fun-bdisp, caption = "Fungal beta-dispersion (Mean square error) compared to immediate extraction 1 to 3 weeks after preservation.", include=FALSE}
+ggplot(permanov.res %>% filter(set =="Fun" & type == "beta-dispersion"), aes(contrast, Mean.Sq, color = contrast, group = paste(week), shape = significant)) + 
+      geom_point(position = position_dodge(width = 1)) + 
+      facet_wrap(~origin, scales = "free_x")+
+      scale_color_manual(values= c(cust.cols)) + 
+      scale_shape_manual(values= c(4, 1)) +
+      theme_minimal()
+
+```
+
+
+```{r ANCOMBC-chng, message=FALSE, warning=FALSE, cache=TRUE, include=FALSE}
+## This is a loop that constructs plots which can then be called in individual chunks in the RMarkdown.
+
+
+ANCOMBC.data <- data.frame()
+
+count <- 1
+
+
+for(ds_name in names(ds_list)){
+      
+      Orddf <- ds_list[[ds_name]]
+      rownames(Orddf) <- NULL
+      
+      tax_toadd <- Orddf[,c("#OTU ID", "taxonomy")] %>% 
+             mutate(domain = gsub("d__", "", str_extract(taxonomy, "d__[[:alnum:]-_]+")),
+                               phylum = gsub("p__", "", str_extract(taxonomy, "p__[[:alnum:]-_]+")),
+                               class = gsub("c__", "", str_extract(taxonomy, "c__[[:alnum:]-_]+")),
+                               order = gsub("o__", "", str_extract(taxonomy, "o__[[:alnum:]-_]+")),
+                               family = gsub("f__", "",str_extract(taxonomy, "f__[[:alnum:]-_]+")),
+                               genus = gsub("g__", "", str_extract(taxonomy, "g__[[:alnum:]-_]+")),
+                               species = gsub("s__", "", str_extract(taxonomy, "s__[[:alnum:]-_]+")))
+      
+      ## select just abundance columns & set ESV to rownames
+      Orddf <- Orddf %>%
+            column_to_rownames("#OTU ID")
+      
+      Orddf <- Orddf[, colnames(Orddf) %in% metadat$SampleID]
+      
+      
+      meta4phylo <- metadat[match(colnames(Orddf),metadat$SampleID), ]
+      
+      otutab<- otu_table(Orddf, taxa_are_rows = TRUE)
+      taxtab <- tax_table(tax_toadd %>% column_to_rownames("#OTU ID") %>% dplyr::select(-taxonomy) %>% as.matrix())
+      samtab <- sample_data(data.frame(meta4phylo, row.names = meta4phylo$SampleID ))
+      phy.obj <- phyloseq(otutab, taxtab, samtab)
+    
+      test.treatments <- unique(metadat$Treatment)[!unique(metadat$Treatment) %in% c("Extraction control", "PCR control", "Immediate extraction")]
+      
+      phy.obj@sam_data$Treatment <- factor(phy.obj@sam_data$Treatment, levels = c("Immediate extraction", test.treatments))
+      
+  
+      # Test 1 compare 1 week presence/absence from Immediate extraction -----
+      
+
+      test1wk.data <-metadat %>%
+            mutate(keep = Conservation_time_week == 1 | Conservation_time_week == 0) %>%
+            filter(keep & Treatment %in% test.treatments)
+      
+      
+      ## Different models for each distinct subset
+      
+          test1.test.func <- function(x){
+                
+                result <- subset_samples(phy.obj, Sample_type == x$Sample_type & ((Treatment == x$Treatment & Conservation_time_week == tm)| (Treatment == "Immediate extraction")))
+               
+                }
+      
+      
+      ## Models by sampletype and subtype
+           
+            test1.test.func <- function(x){
+                subset_samples(phy.obj, Sample_type == x$Sample_type & Soil.tree_type == x$Soil.tree_type & ((Treatment == x$Treatment & Conservation_time_week == tm)| (Treatment == "Immediate extraction")))}
+           
+             test1.subtype <- test1wk.data %>%
+            split(list(.$Sample_type, .$Treatment, .$Soil.tree_type), drop = TRUE) %>%
+            map(~ .x %>% dplyr::select(Sample_type, Treatment, Soil.tree_type) %>% distinct)
+      
+      toremove <- c()
+      
+      for(nm in names(test1.subtype)){
+            ## Have to do outside because subset samples calls to global environment wth
+            x <- test1.subtype[[nm]]
+            tm <- 1
+            test1.subtype[[nm]] <- test1.test.func(x)
+            if(length(unique(test1.subtype[[nm]]@sam_data$Treatment)) < 2){toremove <- c(toremove, nm)}
+      }
+            test1.subtype <- test1.subtype[!names(test1.subtype) %in% toremove]
+            
+          test1.subtype <- test1.subtype %>%
+                 map(~  ancombc(phyloseq = .x, formula = "Treatment")) %>%
+                  map(~ .x$res %>% as.data.frame()%>% setNames(c("beta","se","W","p_val","q_val", "diff_abn")) %>%rownames_to_column("zOTU")) %>%
+                bind_rows(.id = "name") %>% mutate(set = ds_name, Conservation_time_week = 1)
+ # Test 2 compare 1 week presence/absence from Immediate extraction -----
+      
+
+      test2wk.data <-metadat %>%
+            mutate(keep = Conservation_time_week == 2 | Conservation_time_week == 0) %>%
+            filter(keep & Treatment %in% test.treatments)
+      
+      
+      ## Different models for each distinct subset
+      
+          test2.test.func <- function(x){
+                
+                result <- subset_samples(phy.obj, Sample_type == x$Sample_type & ((Treatment == x$Treatment & Conservation_time_week == tm)| (Treatment == "Immediate extraction")))
+               
+                }
+      
+      
+      ## Models by sampletype and subtype
+           
+            test2.test.func <- function(x){
+                subset_samples(phy.obj, Sample_type == x$Sample_type & Soil.tree_type == x$Soil.tree_type & ((Treatment == x$Treatment & Conservation_time_week == tm)| (Treatment == "Immediate extraction")))}
+           
+             test2.subtype <- test2wk.data %>%
+            split(list(.$Sample_type, .$Treatment, .$Soil.tree_type), drop = TRUE) %>%
+            map(~ .x %>% dplyr::select(Sample_type, Treatment, Soil.tree_type) %>% distinct)
+      
+      toremove <- c()
+      
+      for(nm in names(test2.subtype)){
+            ## Have to do outside because subset samples calls to global environment wth
+            x <- test2.subtype[[nm]]
+            tm <- 2
+            test2.subtype[[nm]] <- test2.test.func(x)
+            if(length(unique(test2.subtype[[nm]]@sam_data$Treatment)) < 2){toremove <- c(toremove, nm)}
+      }
+            test2.subtype <- test2.subtype[!names(test2.subtype) %in% toremove]
+            
+          test2.subtype <- test2.subtype %>%
+                 map(~  ancombc(phyloseq = .x, formula = "Treatment")) %>%
+                  map(~ .x$res %>% as.data.frame() %>% setNames(c("beta","se","W","p_val","q_val", "diff_abn")) %>%rownames_to_column("zOTU")) %>%
+                bind_rows(.id = "name") %>% mutate(set = ds_name, Conservation_time_week = 2)
+# Test 3 compare 1 week presence/absence from Immediate extraction -----
+      
+
+      test3wk.data <-metadat %>%
+            mutate(keep = Conservation_time_week == 3 | Conservation_time_week == 0) %>%
+            filter(keep & Treatment %in% test.treatments)
+      
+      
+      ## Different models for each distinct subset
+      
+          test3.test.func <- function(x){
+                
+                result <- subset_samples(phy.obj, Sample_type == x$Sample_type & ((Treatment == x$Treatment & Conservation_time_week == tm)| (Treatment == "Immediate extraction")))
+               
+                }
+      
+      
+      ## Models by sampletype and subtype
+           
+            test3.test.func <- function(x){
+                subset_samples(phy.obj, Sample_type == x$Sample_type & Soil.tree_type == x$Soil.tree_type & ((Treatment == x$Treatment & Conservation_time_week == tm)| (Treatment == "Immediate extraction")))}
+           
+             test3.subtype <- test3wk.data %>%
+            split(list(.$Sample_type, .$Treatment, .$Soil.tree_type), drop = TRUE) %>%
+            map(~ .x %>% dplyr::select(Sample_type, Treatment, Soil.tree_type) %>% distinct)
+      
+      toremove <- c()
+      
+      for(nm in names(test3.subtype)){
+            ## Have to do outside because subset samples calls to global environment wth
+            x <- test3.subtype[[nm]]
+            tm <- 3
+            test3.subtype[[nm]] <- test3.test.func(x)
+            if(length(unique(test3.subtype[[nm]]@sam_data$Treatment)) < 2){toremove <- c(toremove, nm)}
+      }
+            test3.subtype <- test3.subtype[!names(test3.subtype) %in% toremove]
+            
+          test3.subtype <- test3.subtype %>%
+                 map(~  ancombc(phyloseq = .x, formula = "Treatment")) %>%
+                  map(~ .x$res %>% as.data.frame()%>% setNames(c("beta","se","W","p_val","q_val", "diff_abn")) %>% rownames_to_column("zOTU") ) %>%
+                bind_rows(.id = "name") %>% mutate(set = ds_name, Conservation_time_week = 3)
+      
+     
+ ### Compile the info into list 
+      
+      ANCOMBC.data <- rbind(ANCOMBC.data %>% as.data.frame()%>% rownames_to_column("remove") %>% dplyr::select(-remove),
+                            test1.subtype %>% as.data.frame()%>% rownames_to_column("remove") %>% dplyr::select(-remove), 
+                            test2.subtype %>% as.data.frame()%>% rownames_to_column("remove") %>% dplyr::select(-remove), 
+                            test3.subtype %>% as.data.frame()%>% rownames_to_column("remove") %>% dplyr::select(-remove))
+}
+
+
+   
+rm(ds_name, Orddf, count, test1.data, test2.data, test3.data, test1.overall, test2.overall, test3.overall, test1.subtype, test2.subtype, test3.subtype)
+```
+
+
+
+```{r ANCOMBCtaxa-tests-tables, results='asis', fig.height = 6, fig.width = 8, fig.cap="Percent of ASVs with significant differential abundance compared to immediate extraction. Lighter bars represent the percentage of organisms that had an abundance above 1% in either immediate extraction, or the preservation method, the remaining dark portion of the bar represents organisms in the rare biosphere (< 1% relative abundance). Preservation methods are displayed using color and weeks are ordered 1-3 from right to left, except for Freezing, where only week three is displayed."}
+
+ds_4summ <- data.frame()
+
+for(set in names(ds_list)){
+      temp <- ds_list[[set]] %>% 
+            pivot_longer(-c("#OTU ID", "taxonomy"), names_to = "SampleID", values_to = "abundance") %>%
+            left_join(metadat) %>%
+            ## get as relabundance
+            group_by(SampleID) %>%
+            mutate(relabund = abundance/sum(abundance)) %>% 
+            mutate(set = set) %>% 
+            rename(c("#OTU ID" = "zOTU")) %>% 
+            group_by(Treatment, Sample_type, Soil.tree_type, Conservation_time_week, set, zOTU) %>%
+            summarize(minrelabund = min(relabund), 
+                      maxrelabund = max(relabund))
+      ds_4summ = rbind(ds_4summ, temp)  
+}
+rm(set)
+
+Imm.ex <- ds_4summ %>% 
+      group_by() %>%
+      filter(Treatment == "Immediate extraction") %>%
+      rename(c("minrelabund" = "mincontrol", "maxrelabund" = "maxcontrol")) %>%
+      dplyr::select(-Treatment, -Conservation_time_week)
+
+
+ANCOMB.summ <- ANCOMBC.data %>% 
+      mutate(Treatment = str_extract(name, str_c(metadat$Treatment, collapse = "|")), 
+             Soil.tree_type = factor(str_extract(name, str_c(metadat$Soil.tree_type, collapse = "|")), c("Organic", "Mineral")), 
+             Sample_type = str_extract(name, str_c(metadat$Sample_type, collapse = "|"))) %>%
+      left_join(ds_4summ, by = c("Treatment", "Sample_type", "Soil.tree_type", "set", "Conservation_time_week", "zOTU")) %>%
+      filter(!is.na(Soil.tree_type)) %>%
+      left_join(Imm.ex) %>%
+      mutate(maxdiff = maxrelabund - maxcontrol, 
+             mindiff = minrelabund - mincontrol) %>%
+      group_by(Treatment, Soil.tree_type, Conservation_time_week, set) %>%
+      summarize(percent_change = sum(diff_abn)/n()*100, 
+                beta_range = str_c(range(beta[diff_abn]), collapse = " - "), 
+                mean_diff = mean(c(maxdiff, mindiff))*100,
+                mean_max = mean(c(maxdiff))*100,
+                mean_min = mean(c(mindiff))*100,
+                min_abund_min = min(mindiff[diff_abn])*100, 
+                max_abund_max = max(maxdiff[diff_abn])*100, 
+                percent_low = sum(maxrelabund[diff_abn] < 0.01 & maxcontrol[diff_abn] < 0.01)/n()*100) %>%
+      mutate(Treatment = factor(as.character(Treatment), levels = c("Immediate extraction", "Freeze", unique(Treatment[!Treatment %in% c("Immediate extraction", "Freeze")])))) %>%
+      mutate(set = ifelse(set == "Bac", "Bacterial", "Fungal"))
+
+
+#ggplot(ANCOMB.summ, aes(color = Treatment, group = paste(Treatment, Conservation_time_week)))+
+#      geom_point(aes(Treatment, mean_max), position = position_dodge(width = 1)) +
+#      geom_point(aes(Treatment, mean_min), position = position_dodge(width = 1)) +
+#      geom_errorbar(aes(Treatment, ymin = min_abund_min, ymax = max_abund_max), position = position_dodge(width = 1))  + 
+#      facet_wrap(set~Soil.tree_type, scales = "free_x")+
+#      scale_color_manual(values= c(cust.cols)) + 
+#      scale_shape_manual(values= c(4, 1)) +
+#      theme_minimal() + ylab("Change in Relative abundance (%)")
+
+
+ggplot(ANCOMB.summ, aes(fill = Treatment, group = paste(Treatment, Conservation_time_week)))+
+      geom_bar(aes(Treatment, percent_change), position = position_dodge(width = 1), stat="identity", alpha = 0.5) +
+      geom_bar(aes(Treatment, percent_low), position = position_dodge(width = 1), stat = "identity") +
+      #geom_errorbar(aes(Treatment, ymin = min_abund_min, ymax = max_abund_max), position = position_dodge(width = 1))  + 
+      facet_grid(Soil.tree_type~set)+
+      scale_fill_manual(values= c(cust.cols[unique(ANCOMB.summ$Treatment)])) +
+      theme_minimal() + ylab("Percentage of ASVs with significant changes") + xlab("")
+
+
+
+```
+
+
+
+```{r all-tests-tables}
+DNA.tests.4table <- DNA.Quality %>%
+      mutate(Significant = ifelse(grepl("Significant", significant) & Estimate > 0, "\\+", ifelse(grepl("Significant", significant), "\\-",  "")), 
+             type = "") %>%
+      dplyr::select(origin, parameter, week, type, test, Significant)%>%
+      filter(!parameter == "(Intercept)")
+
+diversity.tests.results.4table <- diversity.tests.results %>%
+      mutate(Significant =  ifelse(grepl("Significant", significant) & Estimate > 0, "\\+", ifelse(grepl("Significant", significant), "\\-",  ""))) %>%
+      dplyr::select(origin, parameter, week, test, Significant, type) %>%
+      filter(!parameter == "(Intercept)")
+
+permanov.res.4summ <- permanov.res %>% 
+      dplyr::rename(parameter = contrast, test = type, type = set) %>%
+      mutate(Significant = ifelse(significant, "\\*", "")) %>%
+      dplyr::select(origin, parameter, type, week, test, Significant) %>%
+      filter(!is.na(week))
+
+all.tests.table <- rbind(DNA.tests.4table, diversity.tests.results.4table, permanov.res.4summ) %>%
+      dplyr::select(origin, parameter, week, type, Significant, test) %>% 
+      filter((week == 2 & !parameter == "Freeze")| (parameter == "Freeze" & week == 3))%>%
+      dplyr::select(-week) %>%
+      mutate(parameter = str_replace_all(parameter, c("Dry" = "Dry & Dry", "EtOH" = "Ethanol", "LG" = "LifeGuard", "RL" = "RNALater", "Freeze" = "Freezing"))) %>% 
+      pivot_wider(values_from = Significant, names_from = parameter) %>%
+      dplyr::select(origin, type, test, Freezing, CD1, `Dry & Dry`, Ethanol, LifeGuard, RNALater)
+
+```
+
+
+## Preservation method performance by sample type
+
+### Organic soil
+
+In organic soil, Dry & Dry was overall the most effective preservation method for both bacterial and fungal communities, with no significant changes from immediate extraction for all measured parameters (Table \@ref(tab:organic-table).
+
+For DNA extraction and quality, CD1 and Dry & Dry were comparable to Freezing, and the three methods were shown to be the effective for both bacterial and fungal communities as there were no significant changes to DNA concentration and quality compared to immediate extraction (Fig \@ref(fig:DNA-tests), Table \@ref(tab:organic-table)). The Lifeguard, RNAlater, and Ethanol preservation methods had significantly lower DNA yields compared to immediate extraction. The Ethanol preservation method also significantly reduced DNA concentration and reduced 260/280 ratio (Fig \@ref(fig:DNA-tests), Table \@ref(tab:organic-table)). 
+
+Ethanol and LifeGuard were the only preservation methods that significantly affected bacterial alpha diversity in organic soils (Fig \@ref(fig:Bac-diversity-plot)). Ethanol significantly decreased all bacterial diversity metrics after three weeks of incubation, and ASV richness after two weeks of incubation. LifeGuard only reduced inverse Simpson's diversity after 3 weeks of incubation (Fig \@ref(fig:Bac-diversity-plot)). 
+
+In general, preservation methods had more effect on fungal ASV richness than bacterial alpha-diversity metrics. The CD1, Ethanol, RNAlater and LifeGuard preservation methods all caused significant decreases in fungal ASV richness in organic soils (Fig \@ref(fig:Fun-diversity-plot), Table \@ref(tab:organic-table)). 
+
+Although some groupings of samples by preservation treatment were observed in ordinations for both bacterial and fungal communities in organic soils, especially for the Ethanol and LIfeguard treatments (Fig \@ref(fig:PCA1), and \@ref(fig:PCA2)), no significant changes to overall community structure were detected, aside from changes in fungal beta-dispersion (Table \@ref(tab:organic-table)). Freezing, CD1, Dry-Dry and RNAlater had comparable percentages of bacterial ASVs which were differentially abundant compared to immediate extraction (Fig \@ref(fig:ANCOMBCtaxa-tests-tables)). The remaining two preservation methods had the highest percentage of ASVs that were differentially abundant in organic soils compared to immediate extraction: LifeGuard (~7.5% of bacterial ASVs, ~15% of fungal ASVs) and Ethanol (~20% of bacterial ASVs, ~20% of fungal ASVs)(Fig \@ref(fig:ANCOMBCtaxa-tests-tables)). 
+
+```{r organic-table}
+
+## Export Mineral Table
+
+knitr::kable(all.tests.table %>% 
+                   filter(origin == "Organic") %>%
+                   dplyr::select(-origin) %>%
+                   dplyr::rename("target" = type, "Parameter" = test) %>%
+                   as.data.frame(), 
+             caption = "Summary of the effect of preservation methods after two weeks of incubation compared to immediate extraction, in organic soil. Significant (p > 0.05) results are indicated with + (a significant increase compared to immediate extraction), - (a significant decrease compared to immediate extraction), * (a significant change from immediate extraction, with no direction).")
+
+```
+
+### Mineral Soil
+In mineral soil, Dry & Dry, CD1 and RNAlater were overall the most effective preservation methods for both bacterial and fungal communities, with no significant changes from immediate extraction aside from increased DNA concentration in CD1 solution (Table \@ref(tab:mineral-table)). 
+
+The Ethanol and Lifeguard preservation methods had negative effects on DNA yields in mineral soils. Ethanol had worse impacts than Lifegaurd, and also impacted the DNA quality (Fig \@ref(fig:DNA-tests)). The other preservation methods either had no impact, or slightly increased DNA yields when compared to immediate extraction, while having no significant effect on DNA quality (Fig \@ref(fig:DNA-tests), Table \@ref(tab:mineral-table)).
+
+All bacterial alpha-diversity metrics were significantly decreased due to the LifeGuard preservation method in mineral soils. Ethanol and CD1 also had a significant impact on bacterial Shannon and inverse Simpson's diversity after two weeks (Ethanol increase) and ASV richness after three weeks (CD1 decrease) (Fig \@ref(fig:Bac-diversity-plot)). For the fungal community, only the ethanol preservation had an effect on ASV richness: A significant decrease compares to immediate extraction was observed for fungal ASV richness in mineral soils (Fig \@ref(fig:Fun-diversity-plot)). 
+
+Grouping of samples by preservation treatment was also observed in ordinations for mineral soils (Fig \@ref(fig:PCA1), \@ref(fig:PCA2)), but again, there were no significant community structural changes aside from the Ethanol and LifeGuard preservation methods having a significant effect on beta-dispersion of bacterial communities (Table \@ref(tab:mineral-table)). Freezing, CD1, Dry & Dry and RNAlater had comparable percentages of differentially abundant bacterial ASVs compared to immediate extraction, while higher percentages were detected for Ethanol and Lifeguard (Fig \@ref(fig:ANCOMBCtaxa-tests-tables)). There were more differentially abundant fungal ASVs due to RNAlater than freezing and a higher amount of abundant (>1% abundant) fungal ASV responsesto the Ethanol and Lifeguard treatments than the freezing treatment (Fig \@ref(fig:ANCOMBCtaxa-tests-tables)). 
+
+```{r mineral-table}
+
+## Export Mineral Table
+
+knitr::kable(all.tests.table %>% 
+                   filter(origin == "Mineral") %>%
+                   dplyr::select(-origin) %>%
+                   dplyr::rename("Target" = type, "Parameter" = test), 
+             caption = "Summary of the effect of preservation methods after two weeks of incubation compared to immediate extraction, in mineral soil. Significant (p > 0.05) results are indicated with + (a significant increase compared to immediate extraction), - (a significant decrease compared to immediate extraction), * (a significant change from immediate extraction, with no direction).")
+
+```
+
+
+## Preservation stability over time
+
+Generally, the effect of storage time on DNA quality and concentration was consistent through time for CD1, Dry & Dry, LifeGuard and RNAlater preservation (i.e., these treatments only caused an initial change, and they did not have additional change afterwards). Ethanol shifted from no significant difference from immediate extraction to a significant (p-value < 0.05) quality difference by week three (Fig \@ref(fig:DNA-tests)).
+
+Differences in bacterial diversity estimates compared to immediate extraction were stable across time for all preservation methods aside from Ethanol. Ethanol preservation decreased bacterial diversity after one week (Fig \@ref(fig:Bac-diversity-plot)). 
+
+Fungal richness did not change much with incubation time in mineral and organic samples, generally maintaining a similar value to immediate extraction, or continuing to have significant decreases in diversity (Fig \@ref(fig:Fun-diversity-plot)).  
+
+While none of the preservation methods resulted in a significant difference in community structure for either bacterial or fungal communities, there was some indication in ordinations that Ethanol and LifeGuard preservation became more different from immediate extraction with longer incubation times in organic soil and that there were noticeable signs of fermentative metabolism in the LifeGuard samples (e.g., rotten egg smell) (Fig \@ref(fig:PCA1), \@ref(fig:PCA2). There were also higher percentages of differentially abundant ASVs from immediate extraction for both fungi and bacteria in older ethanol treated organic soil samples (Fig \@ref(fig:ANCOMBCtaxa-tests-tables)).
+
+
+## Overall preservation method performance
+
+Across all preservation methods and sample types, Dry & Dry and CD1 were the most similar to immediate extraction, and had increased yields or were comparable with freezing  in terms of the effects on DNA concentration or quality (Table \@ref(tab:overall-table)). Ethanol was the only preservation method in which the effects on quality and concentration of DNA extracted from samples resulted in poor sequencing; 9 ethanol-preserved samples had very poor recovery and sequencing results (less than 2500 reads/sample).
+
+Only Freezing and LifeGuard had significant effects on bacterial alpha diversity metrics (Shannon diversity, inverse Simpson’s diversity or richness). Dry & Dry and RNAlater were the best methods to preserve fungal ASV richness with no significant difference from immediate extraction after a week of incubation at room temperature. For two weeks of incubation, Dry & Dry and RNAlater preservation also had the fewest significant changes from immediate extraction aside from freezing.
+
+None of the preservation methods resulted in a significant difference in community structure for either bacteria or fungi when compared to immediate extraction, except for some significant changes in beta-dispersion in the CD1, Ethanol and LifeGuard preservation at week 2 (Table \@ref(tab:overall-table)). In addition, the variance associated with the difference from immediate extraction was 10^5^ times lower than the differences between sample types for both bacteria and fungi (Fig \@ref(fig:PCA1), \@ref(fig:PCA2)). 
+
+Freezing, Dry & Dry and RNAlater had comparable percentages of ASVs that with differential abundance compared to immediate extraction across both sample types. LifeGuard preservation method performed poorly across both sample types (Fig \@ref(fig:ANCOMBCtaxa-tests-tables)). 
+
+```{r overall-table}
+
+## Export Mineral Table
+
+knitr::kable(all.tests.table %>% 
+                   #filter(origin != "Rhizosphere") %>%
+                   pivot_longer(cols = c("CD1", "Dry & Dry", "Ethanol", "Freezing", "LifeGuard", "RNALater"), names_to = "parameter", values_to = "value") %>%
+                   mutate(test = factor(ifelse(test %in% c("Shannon", "richness", "Inv.Simpson"), 
+                                        "diversity^1^", 
+                                        ifelse(test %in% c("beta-dispersion", "PERMANOVA"), 
+                                               "community structure^2^",
+                                               test)), levels = c("DNA Concentration", "DNA Quality", "diversity^1^", "community structure^2^"))) %>% 
+                   group_by(parameter, type, test, value) %>% 
+                   mutate(value = ifelse(length(unique(origin)) == 1 & unique(origin)== "Rhizosphere" & value != "", paste0(value, "^a^"), value)) %>%
+                   group_by(parameter, type, test) %>%
+                   filter(!is.na(value)) %>%
+                   summarize(value = ifelse(length(unique(value)) > 1, str_c(unique(value[!value ==""]), collapse=", "), "")) %>%
+                   pivot_wider(names_from = parameter, values_from = value) %>%
+                   mutate(type = factor(type, levels = c("", "Bac", "Fun"))) %>%
+                   arrange(test, type) %>%
+                   dplyr::select(type, test,  Freezing, CD1, `Dry & Dry`, Ethanol, LifeGuard, RNALater) %>%
+                   dplyr::rename("Target" = type, "Parameter" = test), 
+             caption = "Results of 2 week preservative method incubations against immediate extractions across organic and mineral soil types, with the comparison to freezing at 3 weeks compared to immediate extraction.  Significant (p > 0.05) results are indicated with + (a significant increase compared to immediate extraction), - (a significant decrease compared to immediate extraction) or, * (a significant change from immediate extraction, with no direction).") 
+
+cat("\n^1^ Indicates if there were and Bacterials (Bac) or Fungal (Fun) changes across any of the three diversity metrics assessed (ESV richness, Shannon Diversity or inverse Simpson's diversity)")
+
+cat("\n^2^ Indicates if there were any changes in community structure (betadiversity or PERMANOVA)")
+
+```
+
+# Discussion
+
+## Which preservation methods can maintain soil microbial communities at room temperature? 
+
+Only two preservation methods were effective for both sample types assessed in this study: Dry & Dry and RNAlater were both effective at maintaining community diversity and structure for both bacteria and fungi, as well as DNA quality for organic and mineral soils. There was a loss of DNA concentration with RNAlater preservation, but only in the organic soil type, and this didn't appear to affect the DNA quality or microbial community.
+
+Storage of samples with Dry & Dry may be the most practical preservation method for organic and mineral soil samples. There are few complications involved with it's use aside from keeping the silica dry: it is lightweight, takes up little space, and it is less costly than the commercially available liquid preservatives tested in this study. Additionally, Dry & Dry performed as good or better than any of the commercially available liquid preservation methods and even freezing. Other studies have also found drying to be an effective preservation method for mineral and organic soil communities [@wang2021;@lane2022]. While microbial communities have been shown to respond to differences in drying-rewetting processes in the environment [@fierer2003;@barnard2013], some researchers have suggested that this method is effective because microbial communities are subjected to regular drying cycles, and so there are normal dormancy adaptations that occur when drying stress is applied, preventing community shift [@manzoni2014;@lebre2017]. Additionally, when the samples are dry enough, normal metabolic activities   are slowed or stopped, preventing degradation of extracellular DNA [@wang2021;@schimel2018;@sirois2019]. Either way, this method may require further validation if working with wet soils, or samples with low porosity or high clay content, as the preservation could be less effective if moisture is retained in the sample. Adding more silica gel packs to compensate for the additional moisture could be considered in that context. 
+
+Where liquid preservation is easily applied, RNAlater was effective (although not better than the Dry & Dry), even at a lower amount of solution than used by Schnecker *et al.* [-@schnecker2012], and the only downsides may be the lower DNA yields for organic soils and the logistical sampling constraints they introduce. Liquids, in general, are less desirable for remote field campaigns as they are difficult to manipulate (small tubes are used to reduce costs), allow for the collection of only small amounts of soil (so there is not as much back-up material), and require additional equipment and effort to use appropriately, which can be difficult in field settings. On the opposite spectrum, storage in LifeGuard at room temperature was not effective, leading to significant changes in alpha diversity and community structure when compared to immediate extraction. The 2:1 preservation solution to sample volume ratio used in this study was potentially too low for the LifeGuard solution to be effective for the mineral soil, which had a higher density than the organic soil, leading to a ratio of around 1 mL per gram, vs the suggested 2-2.5 mL per gram of soil. However, changes in microbial communities also occurred in the organic soil despite the use of a more appropriate solution-to-sample ratio (i.e., around 2 mL per gram soil, indicating that this solution may be less performant than RNAlater as well as other methods used in this study (freezing, CD1, Dry & Dry). Further increasing the volume of solution may have provided better results, but would have led to other issues, such as the need for larger containers to carry the samples, weight increases and maybe more importantly, higher costs. LifeGuard costs 3409.46 CAD per litre, which is approximately 8.53 CAD per sample at the suggested volume (2.5 mL per g soil) which can be prohibitive for large scale sampling campaigns. A previous study by Tatangelo et al, [-@tatangelo2014] also reported that LifeGuard preservation led to community shifts when used on soil samples according to the manufacturer instructions. While we can only speculate on the reason underlying these shifts in communities observed with the LifeGuard preservation method or the effect of CD1 preservation on fungal diversity and composition because of the proprietary formulations of these solutions, it is likely that these changes are linked to some metabolic activity occurring during the incubation at room temperature. In the case of LifeGuard, this was further confirmed by the presence of a rotten egg smell suggestive of sulfate-reducing metabolism during the incubation at room temperature. 
+
+Ethanol was not effective in the short or longer term. Rissanen *et al* [@rissanen2010] also found DNA yields decreased with Ethanol and RNAlater preservation. Ethanol is generally toxic at high concentrations, and inhibits cell growth of soil microorganisms at as low as 10% concentration [@voordeckers2020; @srivastava2014], but can be metabolized by some organisms [@chatterjee2006]. While other studies have investigated ethanol preservation and found it effective, they were usually only evaluating bacterial communities, while fungal richness was more impacted in our study [@harry2000]. The effect worsens over time, and resulted in large shifts in some highly abundant fungal ASVs. Since ethanol is toxic at high concentrations [@srivastava2014], and because the organisms that shifted are not known to metabolize ethanol (e.g., the ectomycorrhizal genus *Tylospora* was a higher proportion of the community in mineral soil preserved in ethanol) it is unlikely that these changes would be linked to metabolic activity occurring in the tubes. The generally poor extraction from the ethanol-preserved samples could have been due to interactions between ethanol and DNA that may have also led to the differences in community composition observed with this preservation method. Ethanol can precipitate DNA while dissolving other inhibitory compounds such as humic acids and proteins [@dong2017], which could be the possible mechanism of the DNA yield reductions. 
+
+The Dry-Dry or RNAlater preservation methods had no significant effects on community structure. Although there were differences in some specific ASVs with these two preservation methods, they were generally in the rare biosphere, which is comparable to the effect of the freezing preservation. While disturbance effects are generally lower than sample type differences in soil studies [@smenderovac2022; @smenderovac2017], these can be detected in samples subjected to freezing at -20°C, so will likely be detectable using Dry & Dry or RNAlater as preservatives. Some additional considerations of preservation may be the mimicking of natural processes. Freezing and Dry & Dry preservation may both be representative of normal seasonal processes [@sang2021;@lebre2017]. Smenderovac et al, [-@smenderovac2023] found that metabarcoding harvesting treatment responses were greater than any seasonal responses in boreal jack pine forest soils, so it may be that communities that experience these kinds of disturbances are resistant to short-term changes. Multi-barcode studies are common, but the proprietary preservation solutions and methodologies have historically been developed using 16S soil community profiles (LifeGuard and RNAlater both state that they have been tested for preservation of bacterial communities). These differential effects require consideration when designing sampling regimes, as a more generally applicable preservation that has a more easily interpreted effect, such as Dry & Dry, might be more appropriate for samples where more than just bacterial communities are being assessed.  
+
+
+## How long can these methods maintain sample community structure?
+
+Generally, the faster a sample is processed the better, but Ethanol and LifeGuard preservation methods were less stable than Dry & Dry, and RNAlater, while CD1 had caused an immediate shift after one week that did not change much afterwards. The occurrence of changes in community diversity metrics for some preservation methods in weeks two and three suggest that microbial DNA is only temporarily stabilized by the Ethanol and LifeGuard preservation solutions. Higher temperatures could exacerbate these kinds of responses, which may make them unsuitable for sampling where temperature control is limited. Samples should be frozen at -20 for time periods longer than 3 weeks, or processed within two weeks regardless of the preservation selected in order to avoid community shifts. Ivanova et al [@ivanova2017] found that long-term (> 1 year) dry storage of soils had possible large effects on soil community structure, but several researchers have found that community structure with drying is particularly stable up to one month [@wang2021; @lane2022]. Ethanol results from the organic and mineral soils suggest that caution should be taken if using ethanol, as it can interact with DNA and/or inhibitors in unexpected ways [@dong2017]. Additionally, the general extraction and amplification issues encountered with the Ethanol preservation could be exacerbated within an extended time-frame and is therefore not reccommended.
+
+
+
+# Conclusion
+
+There are many viable options for sample preservation in situations where immediate freezing may not be possible. Dry & Dry silica packs are logistically simple and cost effective, and effective for preserving bacterial and fungal DNA in organic and mineral soils. Sample preservation at room temperature with this method should be restricted to 2 weeks if possible, to reduce false inferences for diversity metrics. The comparability of Dry & Dry to frozen samples suggest it is appropriate for organic or mineral soils. It is not suggested that ethanol preservation is used, as there seem to be chemical interactions with the sample matrix that interfere with DNA extraction. These preservation methods should be studied on a greater range of soil samples, and with more barcodes commonly used in soil biodiversity assessment (e.g., CO1, F230 used for the study of invertebrates) to understand the possible influences of different soil matrices on extraction effects, and whether particular adaptive histories affect responses to different preservation strategies. Future studies should aim to test whether detection of preservation method effects of interest (e.g., climate gradients, forest management) are impacted by preservation selection and what inferences might be impacted by these preservation choices. While there are some limitations and usage considerations, silica gel packs may be useful tools that can either expand or enhance soil sampling efforts in logistically challenging conditions in temperate and boreal forests. 
+
+
+# Author Contributions
+
+
+
+# Data Availability statement
+All sequences used in this analysis are publically available in the NCBI Sequence Read Archive and are available under the project number PRJNA982550 with the Sample Record numbers SRR24892048 to SRR2482149 for 16S sequences, and SRR24894315 to SRR24894416 for the ITS sequences. The RMarkdown and tabular data inputs used for creation of this manuscript are accessible on the Soils branch of the https://github.com/Smendero/PRST repository.
+
+# References

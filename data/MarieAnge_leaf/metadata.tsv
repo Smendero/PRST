@@ -1,0 +1,41 @@
+SampleID	Localisation	Site	Espece	Age	circonference	Type_d'echantillon	Traitement 	Arbre (individu)
+T1-S1-A1-EPI-ITS	Base_plein_air_Ste-Foy	Base_plein_air_Ste-Foy	Populus_grandidentata	na	na	feuille - epiphyte	Echantillons_frais	arbre1
+T1-S1-A2-EPI-ITS	Base_plein_air_Ste-Foy	Base_plein_air_Ste-Foy	Populus_grandidentata	na	na	feuille - epiphyte	Echantillons_frais	arbre2
+T1-S1-A3-EPI-ITS	Base_plein_air_Ste-Foy	Base_plein_air_Ste-Foy	Populus_grandidentata	na	na	feuille - epiphyte	Echantillons_frais	arbre3
+T1-S2-A1-EPI-ITS	Chutes_de_la_Chaudiere_Levis	Chutes_de_la_Chaudiere_Levis	Populus_grandidentata	na	na	feuille - epiphyte	Echantillons_frais	arbre1
+T1-S2-A2-EPI-ITS	Chutes_de_la_Chaudiere_Levis	Chutes_de_la_Chaudiere_Levis	Populus_grandidentata	na	na	feuille - epiphyte	Echantillons_frais	arbre2
+T1-S2-A3-EPI-ITS	Chutes_de_la_Chaudiere_Levis	Chutes_de_la_Chaudiere_Levis	Populus_grandidentata	na	na	feuille - epiphyte	Echantillons_frais	arbre3
+T1-S3-A1-EPI-ITS	Boise_St-etienne	Boise_St-Etienne	Populus_grandidentata	na	na	feuille - epiphyte	Echantillons_frais	arbre1
+T1-S3-A2-EPI-ITS	Boise_St-etienne	Boise_St-Etienne	Populus_grandidentata	na	na	feuille - epiphyte	Echantillons_frais	arbre2
+T1-S3-A3-EPI-ITS	Boise_St-etienne	Boise_St-Etienne	Populus_grandidentata	na	na	feuille - epiphyte	Echantillons_frais	arbre3
+T2-S1-A1-EPI-ITS	Base_plein_air_Ste-Foy	Base_plein_air_Ste-Foy	Populus_grandidentata	na	na	feuille - epiphyte	Congelation_3_semaines	arbre1
+T2-S1-A2-EPI-ITS	Base_plein_air_Ste-Foy	Base_plein_air_Ste-Foy	Populus_grandidentata	na	na	feuille - epiphyte	Congelation_3_semaines	arbre2
+T2-S1-A3-EPI-ITS	Base_plein_air_Ste-Foy	Base_plein_air_Ste-Foy	Populus_grandidentata	na	na	feuille - epiphyte	Congelation_3_semaines	arbre3
+T2-S2-A1-EPI-ITS	Chutes_de_la_Chaudiere_Levis	Chutes_de_la_Chaudiere_Levis	Populus_grandidentata	na	na	feuille - epiphyte	Congelation_3_semaines	arbre1
+T2-S2-A2-EPI-ITS	Chutes_de_la_Chaudiere_Levis	Chutes_de_la_Chaudiere_Levis	Populus_grandidentata	na	na	feuille - epiphyte	Congelation_3_semaines	arbre2
+T2-S2-A3-EPI-ITS	Chutes_de_la_Chaudiere_Levis	Chutes_de_la_Chaudiere_Levis	Populus_grandidentata	na	na	feuille - epiphyte	Congelation_3_semaines	arbre3
+T2-S3-A1-EPI-ITS	Boise_St-etienne	Boise_St-Etienne	Populus_grandidentata	na	na	feuille - epiphyte	Congelation_3_semaines	arbre1
+T2-S3-A2-EPI-ITS	Boise_St-etienne	Boise_St-Etienne	Populus_grandidentata	na	na	feuille - epiphyte	Congelation_3_semaines	arbre2
+T2-S3-A3-EPI-ITS	Boise_St-etienne	Boise_St-Etienne	Populus_grandidentata	na	na	feuille - epiphyte	Congelation_3_semaines	arbre3
+T3-S1-A1-EPI-ITS	Base_plein_air_Ste-Foy	Base_plein_air_Ste-Foy	Populus_grandidentata	na	na	feuille - epiphyte	Sechage_1_semaine_congelation_3_semaine	arbre1
+T3-S1-A2-EPI-ITS	Base_plein_air_Ste-Foy	Base_plein_air_Ste-Foy	Populus_grandidentata	na	na	feuille - epiphyte	Sechage_1_semaine_congelation_3_semaine	arbre2
+T3-S1-A3-EPI-ITS	Base_plein_air_Ste-Foy	Base_plein_air_Ste-Foy	Populus_grandidentata	na	na	feuille - epiphyte	Sechage_1_semaine_congelation_3_semaine	arbre3
+T3-S2-A1-EPI-ITS	Chutes_de_la_Chaudiere_Levis	Chutes_de_la_Chaudiere_Levis	Populus_grandidentata	na	na	feuille - epiphyte	Sechage_1_semaine_congelation_3_semaine	arbre1
+T3-S2-A2-EPI-ITS	Chutes_de_la_Chaudiere_Levis	Chutes_de_la_Chaudiere_Levis	Populus_grandidentata	na	na	feuille - epiphyte	Sechage_1_semaine_congelation_3_semaine	arbre2
+T3-S2-A3-EPI-ITS	Chutes_de_la_Chaudiere_Levis	Chutes_de_la_Chaudiere_Levis	Populus_grandidentata	na	na	feuille - epiphyte	Sechage_1_semaine_congelation_3_semaine	arbre3
+T3-S3-A1-EPI-ITS	Boise_St-etienne	Boise_St-Etienne	Populus_grandidentata	na	na	feuille - epiphyte	Sechage_1_semaine_congelation_3_semaine	arbre1
+T3-S3-A2-EPI-ITS	Boise_St-etienne	Boise_St-Etienne	Populus_grandidentata	na	na	feuille - epiphyte	Sechage_1_semaine_congelation_3_semaine	arbre2
+T3-S3-A3-EPI-ITS	Boise_St-etienne	Boise_St-Etienne	Populus_grandidentata	na	na	feuille - epiphyte	Sechage_1_semaine_congelation_3_semaine	arbre3
+T4-S1-A1-EPI-ITS	Base_plein_air_Ste-Foy	Base_plein_air_Ste-Foy	Populus_grandidentata	na	na	feuille - epiphyte	Sechage_3_semaines_congelation_3_semaines	arbre1
+T4-S1-A2-EPI-ITS	Base_plein_air_Ste-Foy	Base_plein_air_Ste-Foy	Populus_grandidentata	na	na	feuille - epiphyte	Sechage_3_semaines_congelation_3_semaines	arbre2
+T4-S1-A3-EPI-ITS	Base_plein_air_Ste-Foy	Base_plein_air_Ste-Foy	Populus_grandidentata	na	na	feuille - epiphyte	Sechage_3_semaines_congelation_3_semaines	arbre3
+T4-S2-A1-EPI-ITS	Chutes_de_la_Chaudiere_Levis	Chutes_de_la_Chaudiere_Levis	Populus_grandidentata	na	na	feuille - epiphyte	Sechage_3_semaines_congelation_3_semaines	arbre1
+T4-S2-A2-EPI-ITS	Chutes_de_la_Chaudiere_Levis	Chutes_de_la_Chaudiere_Levis	Populus_grandidentata	na	na	feuille - epiphyte	Sechage_3_semaines_congelation_3_semaines	arbre2
+T4-S2-A3-EPI-ITS	Chutes_de_la_Chaudiere_Levis	Chutes_de_la_Chaudiere_Levis	Populus_grandidentata	na	na	feuille - epiphyte	Sechage_3_semaines_congelation_3_semaines	arbre3
+T4-S3-A1-EPI-ITS	Boise_St-etienne	Boise_St-Etienne	Populus_grandidentata	na	na	feuille - epiphyte	Sechage_3_semaines_congelation_3_semaines	arbre1
+T4-S3-A2-EPI-ITS	Boise_St-etienne	Boise_St-Etienne	Populus_grandidentata	na	na	feuille - epiphyte	Sechage_3_semaines_congelation_3_semaines	arbre2
+T4-S3-A3-EPI-ITS	Boise_St-etienne	Boise_St-Etienne	Populus_grandidentata	na	na	feuille - epiphyte	Sechage_3_semaines_congelation_3_semaines	arbre3
+ctrl-neg-extraction1-ITS	ctrl_neg_extraction	ctrl_neg_extraction	ctrl_neg_extraction	ctrl_neg_extraction	ctrl_neg_extraction	ctrl_neg_extraction	ctrl_neg_extraction	ctrl_neg_extraction
+ctrl-neg-extraction2-ITS	ctrl_neg_extraction	ctrl_neg_extraction	ctrl_neg_extraction	ctrl_neg_extraction	ctrl_neg_extraction	ctrl_neg_extraction	ctrl_neg_extraction	ctrl_neg_extraction
+ctrl-neg-PCR-ITS	ctrl_neg_PCR	ctrl_neg_PCR	ctrl_neg_PCR	ctrl_neg_PCR	ctrl_neg_PCR	ctrl_neg_PCR	ctrl_neg_PCR	ctrl_neg_PCR
+
