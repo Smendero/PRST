@@ -49829,5 +49829,1552 @@
 				]
 			]
 		}
+	},
+	{
+		"id": "carvalhais2021",
+		"type": "article-journal",
+		"abstract": "Culture-independent survey techniques are fundamental tools when assessing plant microbiomes. These methods rely on DNA that is carefully preserved after collecting samples to achieve meaningful results. Immediately freezing samples to -80°C after collection is considered one of the most robust methods for preserving samples before DNA extraction but is often impractical. Preservation solutions can solve this problem, but commercially available products are expensive, and there is limited data comparing their efficacy with other preservation methods. In this study, we compared the impact of three methods of sample preservation on plant microbiome surveys: (1) RNAlater, a proprietary preservative, (2) a home-made salt-saturated dimethyl sulphoxide preservation solution (DESS), and (3) freezing at -80°C. DESS-preserved samples, stored at room temperature for up to four weeks, did not show any significant differences to samples frozen at -80°C, while RNAlater inflated bacterial alpha diversity. Preservation treatments did not distinctively influence fungal alpha diversity. Our results demonstrate that DESS is a versatile and inexpensive preservative of DNA in plant material for diversity analyses of fungi and bacteria.",
+		"container-title": "Molecular Ecology Resources",
+		"DOI": "10.1111/1755-0998.13538",
+		"note": "DOI: 10.1111/1755-0998.13538\nMAG ID: 3208587146\nPMID: 34695303\nS2ID: 57c6fcb0960a0a80475cfd609b1afc0d7b560c56",
+		"title": "Simple solution to preserve plant samples for microbiome analyses.",
+		"author": [
+			{
+				"family": "Carvalhais",
+				"given": "Lilia C."
+			},
+			{
+				"family": "Dennis",
+				"given": "Paul G."
+			},
+			{
+				"literal": "Amrit Poudel"
+			},
+			{
+				"family": "Birt",
+				"given": "Henry W G"
+			},
+			{
+				"family": "Bhuiyan",
+				"given": "Shamsul A."
+			},
+			{
+				"family": "Bhuiyan",
+				"given": "Shamsul Arafin"
+			},
+			{
+				"family": "Card",
+				"given": "Stuart D."
+			},
+			{
+				"family": "Joyce",
+				"given": "P"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2021",
+					10,
+					25
+				]
+			]
+		}
+	},
+	{
+		"id": "pu-dongli2022",
+		"type": "article-journal",
+		"abstract": "Abstract Background Plants can recruit beneficial microbes to enhance their ability to defend against pathogens. However, in contrast to the intensively studied roles of the rhizosphere microbiome in suppressing plant pathogens, the collective community-level change and effect of the phyllosphere microbiome in response to pathogen invasion remains largely elusive. Results Here, we integrated 16S metabarcoding, shotgun metagenomics and culture-dependent methods to systematically investigate the changes in phyllosphere microbiome between infected and uninfected citrus leaves by Diaporthe citri , a fungal pathogen causing melanose disease worldwide. Multiple microbiome features suggested a shift in phyllosphere microbiome upon D . citri infection, highlighted by the marked reduction of community evenness, the emergence of large numbers of new microbes, and the intense microbial network. We also identified the microbiome features from functional perspectives in infected leaves, such as enriched microbial functions for iron competition and potential antifungal traits, and enriched microbes with beneficial genomic characteristics. Glasshouse experiments demonstrated that several bacteria associated with the microbiome shift could positively affect plant performance under D . citri challenge, with reductions in disease index ranging from 65.7 to 88.4%. Among them, Pantoea asv90 and Methylobacterium asv41 identified as “recruited new microbes” in the infected leaves, exhibited antagonistic activities to D . citri both in vitro and in vivo, including inhibition of spore germination and/or mycelium growth. Sphingomonas spp. presented beneficial genomic characteristics and were found to be the main contributor for the functional enrichment of iron complex outer membrane receptor protein in the infected leaves. Moreover, Sphingomonas asv20 showed a stronger suppression ability against D . citri in iron-deficient conditions than iron-sufficient conditions, suggesting a role of iron competition during their antagonistic action. Conclusions Overall, our study revealed how phyllosphere microbiomes differed between infected and uninfected citrus leaves by melanose pathogen, and identified potential mechanisms for how the observed microbiome shift might have helped plants cope with pathogen pressure. Our findings provide novel insights into understanding the roles of phyllosphere microbiome responses during pathogen challenge.",
+		"container-title": "Microbiome",
+		"DOI": "10.1186/s40168-022-01234-x",
+		"issue": "1",
+		"note": "DOI: 10.1186/s40168-022-01234-x\nMAG ID: 4226323283\nPMID: 35366955\nS2ID: c9a107d894cf64bbe9ab2aa2495e672a3556bf47",
+		"title": "The phyllosphere microbiome shifts toward combating melanose pathogen",
+		"volume": "10",
+		"author": [
+			{
+				"literal": "Pu-Dong Li"
+			},
+			{
+				"literal": "Zeng-Rong Zhu"
+			},
+			{
+				"literal": "Yunzeng Zhang"
+			},
+			{
+				"literal": "Jianping Xu"
+			},
+			{
+				"literal": "Hongkai Wang"
+			},
+			{
+				"literal": "Zhengyi Wang"
+			},
+			{
+				"family": "Li",
+				"given": "Hongye"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2022",
+					4,
+					2
+				]
+			]
+		}
+	},
+	{
+		"id": "berendsen2012",
+		"type": "article-journal",
+		"abstract": "The diversity of microbes associated with plant roots is enormous, in the order of tens of thousands of species. This complex plant-associated microbial community, also referred to as the second genome of the plant, is crucial for plant health. Recent advances in plant–microbe interactions research revealed that plants are able to shape their rhizosphere microbiome, as evidenced by the fact that different plant species host specific microbial communities when grown on the same soil. In this review, we discuss evidence that upon pathogen or insect attack, plants are able to recruit protective microorganisms, and enhance microbial activity to suppress pathogens in the rhizosphere. A comprehensive understanding of the mechanisms that govern selection and activity of microbial communities by plant roots will provide new opportunities to increase crop production.",
+		"container-title": "Trends in Plant Science",
+		"DOI": "10.1016/j.tplants.2012.04.001",
+		"issue": "8",
+		"note": "DOI: 10.1016/j.tplants.2012.04.001\nMAG ID: 2017387862\nPMID: 22564542",
+		"page": "478-486",
+		"title": "The rhizosphere microbiome and plant health",
+		"volume": "17",
+		"author": [
+			{
+				"family": "Berendsen",
+				"given": "Roeland L."
+			},
+			{
+				"family": "Pieterse",
+				"given": "Corné M. J."
+			},
+			{
+				"family": "Bakker",
+				"given": "Peter A. H. M."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2012",
+					8,
+					1
+				]
+			]
+		}
+	},
+	{
+		"id": "miura2020",
+		"type": "article-journal",
+		"abstract": "Abstract   Freeze-thaw and dry-wet cycles are common phenomena in temperate regions. Such events may have a significant influence on the functioning of the soil microbial community. Using non-targeted metabolomics, we compared the effects of a single freeze-thaw or dry-wet event on microbial metabolism in an agricultural soil with and without plants. We showed that a dry-wet cycle had a greater impact on solute and metabolite concentrations in the unplanted soil than a freeze-thaw cycle. Drying or freezing caused increases in dissolved organic C, sugars and polyols, suggesting enhanced microbial production to alleviate temperature or moisture stress. Increased nucleobase concentration in the unplanted soil after a dry-wet cycle, and increased amino acids following both stresses, suggested a breakdown of microbial DNA and proteins released from damaged cells. The impacts of stress on metabolites in the planted soil were less than in the unplanted soil. In conclusion, our findings indicate that the soil microbial community responds quickly to stress events by accumulating osmotic solutes (e.g. sugars and polyols) and that a freeze-thaw event causes less disruption than dry-rewetting, and that plants have a key role in the mitigation of the freezing or drying effects on soil microbial communities.",
+		"container-title": "Applied Soil Ecology",
+		"DOI": "10.1016/j.apsoil.2020.103636",
+		"note": "DOI: 10.1016/j.apsoil.2020.103636\nMAG ID: 3023438051\nS2ID: 556e541f6f3c8f2f98ba9c1d4b8c18d6f6a0a008",
+		"page": "103636",
+		"title": "Impact of a single freeze-thaw and dry-wet event on soil solutes and microbial metabolites",
+		"volume": "153",
+		"author": [
+			{
+				"family": "Miura",
+				"given": "Maki"
+			},
+			{
+				"family": "Hill",
+				"given": "Paul W."
+			},
+			{
+				"family": "Jones",
+				"given": "David R."
+			},
+			{
+				"family": "Jones",
+				"given": "Davey L."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2020",
+					9,
+					1
+				]
+			]
+		}
+	},
+	{
+		"id": "trivedi2020",
+		"type": "article-journal",
+		"abstract": "Healthy plants host diverse but taxonomically structured communities of microorganisms, the plant microbiota, that colonize every accessible plant tissue. Plant-associated microbiomes confer fitness advantages to the plant host, including growth promotion, nutrient uptake, stress tolerance and resistance to pathogens. In this Review, we explore how plant microbiome research has unravelled the complex network of genetic, biochemical, physical and metabolic interactions among the plant, the associated microbial communities and the environment. We also discuss how those interactions shape the assembly of plant-associated microbiomes and modulate their beneficial traits, such as nutrient acquisition and plant health, in addition to highlighting knowledge gaps and future directions. In this Review, Trivedi and colleagues explore the interactions between plants, their associated microbial communities and the environment, and also discuss how those interactions shape the assembly of plant-associated microbiomes and modulate their beneficial traits.",
+		"container-title": "Nature Reviews Microbiology",
+		"DOI": "10.1038/s41579-020-0412-1",
+		"issue": "11",
+		"note": "DOI: 10.1038/s41579-020-0412-1\nMAG ID: 3048805481\nPMID: 32788714\nS2ID: 818ac18ad7a46e5741cb7b1eb97ebc05f4e93d0c",
+		"page": "607-621",
+		"title": "Plant–microbiome interactions: from community assembly to plant health",
+		"volume": "18",
+		"author": [
+			{
+				"family": "Trivedi",
+				"given": "Pankaj"
+			},
+			{
+				"family": "Leach",
+				"given": "Jan E."
+			},
+			{
+				"family": "Tringe",
+				"given": "Susannah G."
+			},
+			{
+				"family": "Sa",
+				"given": "Tongmin"
+			},
+			{
+				"family": "Sa",
+				"given": "Tongmin"
+			},
+			{
+				"family": "Singh",
+				"given": "Brajesh K."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2020",
+					8,
+					12
+				]
+			]
+		}
+	},
+	{
+		"id": "annebrauer2022",
+		"type": "article-journal",
+		"abstract": "DNA extraction and preservation bias is a recurring topic in DNA sequencing-based microbial ecology. The different methodologies can lead to distinct outcomes, which has been demonstrated especially in studies investigating prokaryotic community composition. Eukaryotic microbes are ubiquitous, diverse, and increasingly a subject of investigation in addition to bacteria and archaea. However, little is known about how the choice of DNA preservation and extraction methodology impacts perceived eukaryotic community composition. In this study, we compared the effect of two DNA preservation methods and six DNA extraction methods on the community profiles of both eukaryotes and prokaryotes in phototrophic biofilms on seagrass (Zostera marina) leaves from the Baltic Sea. We found that, whereas both DNA preservation and extraction method caused significant bias in perceived community composition for both eukaryotes and prokaryotes, extraction bias was more pronounced for eukaryotes than for prokaryotes. In particular, soft-bodied and hard-shelled eukaryotes like nematodes and diatoms, respectively, were differentially abundant depending on the extraction method. We conclude that careful consideration of DNA preservation and extraction methodology is crucial to achieving representative community profiles of eukaryotes in marine biofilms and likely all other habitats containing diverse eukaryotic microbial communities.",
+		"container-title": "MicrobiologyOpen",
+		"DOI": "10.1002/mbo3.1323",
+		"issue": "5",
+		"note": "DOI: 10.1002/mbo3.1323\nMAG ID: 4298132398\nPMCID: 9524606\nPMID: 36314757\nS2ID: 3ac410a3a97e2e3a5b4e1d0c061bb4b1d2b4f7a7",
+		"title": "DNA extraction bias is more pronounced for microbial eukaryotes than for prokaryotes",
+		"volume": "11",
+		"author": [
+			{
+				"literal": "Anne Brauer"
+			},
+			{
+				"family": "Bengtsson",
+				"given": "Mia M."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2022",
+					9,
+					30
+				]
+			]
+		}
+	},
+	{
+		"id": "gomes2019",
+		"type": "article-journal",
+		"abstract": "In nature, pathogens live and interact with other microorganisms on plant tissues. Yet, the research area exploring interactions between bacteria-fungi and microbiota-plants, within the context of a pathobiome, is still scarce. In this study, the impact of olive knot (OK) disease caused by the bacteria Pseudomonas savastanoi pv. savastanoi (Psv) on the epiphytic and endophytic fungal communities of olive tree twigs from three different cultivars, was investigated in field conditions. The ITS-DNA sequencing of cultivable fungi, showed that OK disease disturbs the resident fungal communities, which may reflect changes in the habitat caused by Psv. In particular, a reduction on epiphyte abundance and diversity, and changes on their composition were observed. Compared to epiphytes, endophytes were less sensitive to OK, but their abundance, in particular of potential pathogens, was increased in plants with OK disease. Host genotype, at cultivar level, contributed to plant fungal assembly particularly upon disease establishment. Therefore, besides fungi - Psv interactions, the combination of cultivar - Psv also appeared to be critical for the composition of fungal communities in olive knots. Specific fungal OTUs were associated to the presence and absence of disease, and their role in the promotion or suppression of OK disease should be studied in the future.",
+		"container-title": "Scientific Reports",
+		"DOI": "10.1038/s41598-019-42391-8",
+		"issue": "1",
+		"note": "DOI: 10.1038/s41598-019-42391-8\nMAG ID: 2937218995\nPMCID: 6458152\nPMID: 30971758\nS2ID: 355c7d3a801f95bf2eacc73c2ebc0d5d30bdb07d",
+		"page": "5882-5882",
+		"title": "Bacterial disease induced changes in fungal communities of olive tree twigs depend on host genotype",
+		"volume": "9",
+		"author": [
+			{
+				"family": "Gomes",
+				"given": "Teresa"
+			},
+			{
+				"literal": "Teresa Gomes"
+			},
+			{
+				"family": "Pereira",
+				"given": "José Alberto"
+			},
+			{
+				"family": "Lino-Neto",
+				"given": "Teresa"
+			},
+			{
+				"family": "Bennett",
+				"given": "Alison E."
+			},
+			{
+				"family": "Baptista",
+				"given": "Paula"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2019",
+					4,
+					10
+				]
+			]
+		}
+	},
+	{
+		"id": "janssen2021",
+		"type": "article-journal",
+		"abstract": "Premise Within a broader study on leaf fossilization in freshwater environments, a long-term study on the development and microbiome composition of biofilms on the foliage of aquatic plants has been initiated to understand how microbes and biofilms contribute to leaf decay and preservation. Here, water lily leaves are employed as a study model to investigate the relationship between bacterial microbiomes, biodegradation, and fossilization. We compare four DNA extraction kits to reduce biases in interpretation and to identify the most suitable kit for the extraction of DNA from bacteria associated with biofilms on decaying water lily leaves for 16S rRNA amplicon analysis. Methods We extracted surface-associated DNA from Nymphaea leaves in early stages of decay at two water depth levels using four commercially available kits to identify the most suitable protocol for bacterial extraction, applying a mock microbial community standard to enable a reliable comparison of the kits. Results Kit 4, the FastDNA Spin Kit for Soil, resulted in high DNA concentrations with better quality and yielded the most accurate depiction of the mock community. Comparison of the leaves at two water depths showed no significant differences in community composition. Discussion The success of Kit 4 may be attributed to its use of bead beating with a homogenizer, which was more efficient in the lysis of Gram-positive bacteria than the manual vortexing protocols used by the other kits. Our results show that microbial composition on leaves during early decay remains comparable and may change only in later stages of decomposition.",
+		"container-title": "Applications in Plant Sciences",
+		"DOI": "10.1002/aps3.11444",
+		"issue": "8",
+		"note": "DOI: 10.1002/aps3.11444\nMAG ID: 3197737506\nPMCID: 8419396\nPMID: 34504737\nS2ID: 8c1a44092a6f6feae289e0a4789e803f373dac27",
+		"title": "Elucidating biofilm diversity on water lily leaves through 16S rRNA amplicon analysis: Comparison of four DNA extraction kits.",
+		"volume": "9",
+		"author": [
+			{
+				"family": "Janssen",
+				"given": "Kathrin"
+			},
+			{
+				"literal": "Shook Ling Low"
+			},
+			{
+				"family": "Low",
+				"given": "Shook Ling"
+			},
+			{
+				"family": "Wang",
+				"given": "Yan"
+			},
+			{
+				"literal": "Yan Wang"
+			},
+			{
+				"literal": "Qi-Yong Mu"
+			},
+			{
+				"family": "Mu",
+				"given": "Qi-Yong"
+			},
+			{
+				"family": "Bierbaum",
+				"given": "Gabriele"
+			},
+			{
+				"family": "Gee",
+				"given": "Carole T."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2021",
+					8,
+					1
+				]
+			]
+		}
+	},
+	{
+		"id": "nichapatkittiborwornkul2021",
+		"type": "article-journal",
+		"abstract": "Understanding in population structure of a plant’s root-associated microbiome is applied in good practices in agricultural activities to improve production yields and enhance plant immune responses. The molecular analysis of bacterial populations inhabited in soil faces difficulties in obtaining high yield and high purity of DNA, and different commercial DNA extraction kits have been developed for this purpose. This study focuses on the comparison of DNA extraction of six different rice root-associated bacterial consortium using three commercial kits with two key technologies, spin-column adsorption and magnetic bead adsorption. The quality and quantity of genomic DNA obtained from these extraction methods were analyzed and compared based on DNA concentration, DNA purity and efficiency to be used as a template for 16sRNA amplification. The results showed that the extraction kit with magnetic bead adsorption technology showed the highest concentration (101.32 ng/μl) compared to other DNA extraction kits (32.67 and 1.89 ng/μl). The purity values (A260/A280) were assessed by using Nano-drop spectrophotometer and resulted in purities of nucleic acids in the range of 1.4-1.7. Thus, it was concluded that the extracted DNA obtained from the extraction kit with magnetic bead adsorption technology can be valuable for molecular analysis of microbial communities present in the soil.",
+		"container-title": "E3S Web of Conferences",
+		"DOI": "10.1051/e3sconf/202130202014",
+		"note": "DOI: 10.1051/e3sconf/202130202014\nMAG ID: 3199173164\nS2ID: 4f1d8315adbd414620f2c9b2471103964ed48156",
+		"page": "02014",
+		"title": "Comparative evaluation of DNA extraction from rice’s root-associated bacterial consortium for population structure study",
+		"volume": "302",
+		"author": [
+			{
+				"literal": "Nichapat Kittiborwornkul"
+			},
+			{
+				"literal": "S.T Anne Sahithi"
+			},
+			{
+				"family": "Phetsom",
+				"given": "Jirapa"
+			},
+			{
+				"family": "Phusantisampan",
+				"given": "Theerawut"
+			},
+			{
+				"family": "Pongprayoon",
+				"given": "Wasinee"
+			},
+			{
+				"family": "Sriariyanun",
+				"given": "Malinee"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2021",
+					1,
+					1
+				]
+			]
+		}
+	},
+	{
+		"id": "simmons2018",
+		"type": "article-journal",
+		"abstract": "The intimate interaction between plant host and associated microorganisms is crucial in determining plant fitness, and can foster improved tolerance to abiotic stresses and diseases. As the plant microbiome can be highly complex, low-cost, high-throughput methods such as amplicon-based sequencing of the 16S rRNA gene are often preferred for characterizing its microbial composition and diversity. However, the selection of appropriate methodology when conducting such experiments is critical for reducing biases that can make analysis and comparisons between samples and studies difficult. This protocol describes in detail a standardized methodology for the collection and extraction of DNA from soil, rhizosphere, and root samples. Additionally, we highlight a well-established 16S rRNA amplicon sequencing pipeline that allows for the exploration of the composition of bacterial communities in these samples, and can easily be adapted for other marker genes. This pipeline has been validated for a variety of plant species, including sorghum, maize, wheat, strawberry, and agave, and can help overcome issues associated with the contamination from plant organelles.",
+		"container-title": "Journal of Visualized Experiments",
+		"DOI": "10.3791/57561",
+		"issue": "135",
+		"note": "DOI: 10.3791/57561\nMAG ID: 2802886693\nPMID: 29782021\nS2ID: 32b6cce0ea1d62fc84680827cd8b20fcfeaa07b5",
+		"page": "57561",
+		"title": "Exploring the Root Microbiome: Extracting Bacterial Community Data from the Soil, Rhizosphere, and Root Endosphere.",
+		"author": [
+			{
+				"family": "Simmons",
+				"given": "Tuesday"
+			},
+			{
+				"family": "Caddell",
+				"given": "Daniel F."
+			},
+			{
+				"family": "Deng",
+				"given": "Siwen"
+			},
+			{
+				"family": "Coleman-Derr",
+				"given": "Devin"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2018",
+					5,
+					2
+				]
+			]
+		}
+	},
+	{
+		"id": "ruiz-perez2017",
+		"type": "article-journal",
+		"abstract": "The plant phyllosphere, which represents all plant parts that are above the ground, is considered one of the most extensive ecosystems to be colonized by microorganisms, both at the surface as epiphytes or as endophytes within the plant. These plant-associated microbial communities are reservoirs of microbial diversity and they can be important for plant health. The characterization of microbial communities in diverse plants, such as Espeletia plants that are endemic to the Paramo ecosystem in the Andes Mountains, can shed light regarding possible interactions among microorganisms and microbial functional properties. Obtaining DNA from plant endophytic microbial communities involves various steps to ensure that samples are free of contamination from microorganisms present on the plant surface (epiphytes). Plant leaves are first surface sterilized, cut into pieces, homogenized using glass beads, and then used for DNA extraction using a commercially available kit. DNA samples are then quantified and analyzed using Qubit® 2.0 for use in PCR amplification of 16S rRNA genes.",
+		"DOI": "10.21769/bioprotoc.2142",
+		"issue": "4",
+		"note": "DOI: 10.21769/bioprotoc.2142\nMAG ID: 2591434465\nS2ID: b2b33d184990ac69a362595e2680e8ca19c33b80",
+		"title": "Endophytic Microbial Community DNA Extraction from the Plant Phyllosphere.",
+		"volume": "7",
+		"author": [
+			{
+				"family": "Ruiz-Perez",
+				"given": "Carlos A."
+			},
+			{
+				"family": "Zambrano",
+				"given": "María Mercedes"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2017",
+					2,
+					20
+				]
+			]
+		}
+	},
+	{
+		"id": "bailey1995",
+		"type": "article-journal",
+		"abstract": "The phyllosphere represents the largest surface area of any terrestrial habitat and is colonized by a diverse and specialized community of microorganisms which include epiphytes, saprophytes and phytopathogens (Andrews and Hirano 1991). This specialization has been reflected in studies which distinguish leaf isolates from soil or rhizosphere bacteria of the same genus (Thompson et al. 1993a). The phyllosphere is highly variable both within and between plant species where the diversity of microflora can be enhanced by non-resident colonisers dispersed by wind and rain and via animal faeces. To survive this harsh environment, leaf colonisers have to respond rapidly to extremes of temperature, humidity, ultraviolet irradiation and nutrient concentrations which fluctuate over short periods of time (O’Brian and Lindow 1988). The ability of bacteria to exhibit a broad range of phenotypes (phenotypic plasticity) by the habitat dependent expression of a subset of genes has been proposed as an important survival mechanism for bacteria in highly variable environments such as the leaf (Lindow 1993). Despite studies which describe microbial diversity and population succession in maturing plants, the microbiology of the leaf remains poorly understood. Of the common residents, pseudomonads have been best studied. Detailed investigations by extraction and plate count enumeration demonstrate that pseudomonads and other epiphytes exhibit diurnal fluctuations in population densities and a log-normal distribution in this habitat (Hirano and Upper 1989).",
+		"DOI": "10.1007/978-3-642-79050-8_6",
+		"note": "DOI: 10.1007/978-3-642-79050-8_6\nMAG ID: 185423642\nS2ID: af05c67df94a5dbf65de2a8195b8f84db22a7b1d",
+		"page": "89-109",
+		"title": "Extraction of DNA from the Phyllosphere",
+		"author": [
+			{
+				"family": "Bailey",
+				"given": "M. J."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"1995",
+					1,
+					1
+				]
+			]
+		}
+	},
+	{
+		"id": "giangacomo2021",
+		"type": "article-journal",
+		"abstract": "Plant-associated microbes play important roles in global ecology and agriculture. The most common method to profile these microbial communities is amplicon sequencing of the bacterial 16S ribosomal...",
+		"DOI": "10.1094/pbiomes-07-20-0055-r",
+		"issue": "2",
+		"note": "DOI: 10.1094/pbiomes-07-20-0055-r\nMAG ID: 3151889400\nS2ID: b43b9fa3d294597e5df3f8cec6b4a009cf4a6b63",
+		"page": "190-201",
+		"title": "Comparing DNA Extraction and 16S rRNA Gene Amplification Methods for Plant-Associated Bacterial Communities",
+		"volume": "5",
+		"author": [
+			{
+				"family": "Giangacomo",
+				"given": "Cecelia"
+			},
+			{
+				"family": "Mohseni",
+				"given": "Mohsen"
+			},
+			{
+				"family": "Kovar",
+				"given": "Lynsey"
+			},
+			{
+				"family": "Wallace",
+				"given": "Jason G."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2021"
+				]
+			]
+		}
+	},
+	{
+		"id": "suda2008",
+		"type": "article-journal",
+		"abstract": "We developed a method for direct DNA isolation from phyllosphere microbial communities, designated Direct-DIP. This method comprises DNA extraction from non-shredded leaves with benzyl chloride, and DNA purification by gel filtration. Scanning electron microscopy showed that epiphytic microorganisms were completely removed from the leaf surface after benzyl chloride treatment, while microstructures of the leaf were not damaged. Clear DGGE profiles were obtained regardless of the plant species. Shannon diversity indices of DGGE profiles by Direct-DIP were higher than those by a conventional method. Our findings suggest that Direct-DIP is a rapid, simple, and cost-effective method of extracting DNA from phyllosphere microbial communities.",
+		"container-title": "Microbes and Environments",
+		"DOI": "10.1264/jsme2.23.248",
+		"issue": "3",
+		"note": "DOI: 10.1264/jsme2.23.248\nMAG ID: 2063852307\nPMID: 21558716\nS2ID: a1c808d389a2f5dbb10c84b67f3803182a6579da",
+		"page": "248-252",
+		"title": "A Direct Method to Isolate DNA from Phyllosphere Microbial Communities without Disrupting Leaf Tissues",
+		"volume": "23",
+		"author": [
+			{
+				"family": "Suda",
+				"given": "Wataru"
+			},
+			{
+				"family": "Suda",
+				"given": "Wataru"
+			},
+			{
+				"family": "Oto",
+				"given": "Michiei"
+			},
+			{
+				"family": "Amachi",
+				"given": "Seigo"
+			},
+			{
+				"family": "Shinoyama",
+				"given": "Hirofumi"
+			},
+			{
+				"family": "Shishido",
+				"given": "Masahiro"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2008",
+					1,
+					1
+				]
+			]
+		}
+	},
+	{
+		"id": "bircher2020",
+		"type": "article-journal",
+		"abstract": "Biofilm-associated, sessile communities represent the major bacterial lifestyle, whereas planktonic cells mainly appear during initial colonization of new surfaces. Previous research, mainly performed with pathogens, demonstrated increased environmental stress tolerance of biofilm-growing compared to planktonic bacteria. The lifestyle-specific stress response of colonic microbiota, both natural and fermentation produced, has not been addressed before. Planktonic and sessile \"artificial\" colonic microbiota delivered by PolyFermS continuous fermentation models can provide a controllable and reproducible alternative to fecal transplantation in treating gastrointestinal disorders. We therefore characterized planktonic and sessile microbiota produced in two PolyFermS models inoculated with immobilized fecal microbiota and comparatively tested their levels of tolerance of frozen storage (-80 degrees C) and freeze-dried storage (4 degrees C) for 9 months to mimic preservation strategies for therapeutic applications. Sessile microbiota harbored next to shared taxa a unique community distinguishable from planktonic microbiota. Synergistetes and Proteobacteria were highly represented in sessile microbiota, while Firmicutes were more abundant in planktonic microbiota. The community structure and metabolic activity of both microbiota, monitored during standardized reactivation batch fermentations, were better preserved after frozen storage than dried storage, indicated by higher Bray-Curtis similarity and enhanced recovery of metabolite production. For both lifestyles, reestablishment of Bacteroidaceae was impaired after frozen and dried storage along with reduced propionate formation. In contrast, butyrate production was maintained after reactivation despite compositional rearrangements within the butyrate-producing community. Unexpectedly, the rate of recovery of metabolite production was lower after preservation of sessile than planktonic microbiota. We speculate that higher functional dependencies between microbes might have led to the lower stress tolerance of sessile than planktonic microbiota.IMPORTANCE Fecal microbiota transplantation has been successfully applied in the treatment of recurrent Clostridium difficile infection and has been suggested as an alternative therapy for other intestinal disorders such as inflammatory bowel disease or metabolic syndrome. \"Artificial\" colonic microbiota delivered by PolyFermS continuous fermentation models can provide a controllable and reproducible alternative to fecal transplantation, but effective preservation strategies must be developed. In this study, we systematically investigated the response of sessile and planktonic artificial colonic microbiota to cryopreservation and lyophilization. We suggest that functional redundancy is an important factor in providing functional stability with respect to exposure to stress during processing and storage. Functional redundancy in compositionally reduced microbial systems may be considered when designing microbial products for therapy.",
+		"container-title": "mSystems",
+		"DOI": "10.1128/msystems.00521-19",
+		"issue": "1",
+		"note": "DOI: 10.1128/msystems.00521-19\nMAG ID: 3001439101\nPMCID: 6977070\nPMID: 31964766\nS2ID: 345a92d284eb92ccfcca7279d46c836bb21452d2",
+		"title": "Planktonic and Sessile Artificial Colonic Microbiota Harbor Distinct Composition and Reestablish Differently upon Frozen and Freeze-Dried Long-Term Storage.",
+		"volume": "5",
+		"author": [
+			{
+				"family": "Bircher",
+				"given": "Lea"
+			},
+			{
+				"family": "Schwab",
+				"given": "Clarissa"
+			},
+			{
+				"literal": "Annelies Geirnaert"
+			},
+			{
+				"family": "Geirnaert",
+				"given": "Annelies"
+			},
+			{
+				"family": "Greppi",
+				"given": "Anna"
+			},
+			{
+				"family": "Lacroix",
+				"given": "Christophe"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2020",
+					1,
+					21
+				]
+			]
+		}
+	},
+	{
+		"id": "omprakash2020",
+		"type": "article-journal",
+		"abstract": "Microbes are mediators in almost all ecosystem processes and act as a pivotal game changer in various ecological activities, globally. Therefore, understanding of microbial community structure and related functions in different environmental and micro-environmental niches is not only critical, but also a matter of greatest importance. Due to our inability to cultivate and preserve all sorts of microorganisms, we are losing some ecologically and industrially relevant components of microbial community, due to extinction caused by environmental and climatic variations with time. Intact sample and microbiome preservation are crucial for future cultivation as well as to study the effects of ecological and climatic variations on community functionality and shift with time, using OMICS. Although, methods for pure culture preservation are almost optimized, the techniques of microbiome preservation still remain as an unsolved challenge for microbiologists due to technical and physiological constraints. Present article discusses, recent approaches of microbial preservation with special reference to intact sample, mixed culture and microbiome preservation. It also incorporates recent practices used to achieve the highest viability and metabolic activities in long-term preserved microbiome.",
+		"container-title": "Indian Journal of Microbiology",
+		"DOI": "10.1007/s12088-020-00880-9",
+		"issue": "3",
+		"note": "DOI: 10.1007/s12088-020-00880-9\nMAG ID: 3026772124\nS2ID: 236526d282f574b22daafd526579fe14e2f8a378",
+		"page": "297-309",
+		"title": "A Recent Overview of Microbes and Microbiome Preservation.",
+		"volume": "60",
+		"author": [
+			{
+				"literal": "Om Prakash"
+			},
+			{
+				"literal": "Om Prakash"
+			},
+			{
+				"family": "Prakash",
+				"given": "Om"
+			},
+			{
+				"family": "Prakash",
+				"given": "Om"
+			},
+			{
+				"family": "Nimonkar",
+				"given": "Yogesh"
+			},
+			{
+				"literal": "Dhananjay Desai"
+			},
+			{
+				"family": "Desai",
+				"given": "Dhananjay"
+			},
+			{
+				"literal": "Dhananjay Desai"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2020",
+					7,
+					1
+				]
+			]
+		}
+	},
+	{
+		"id": "fierer2003a",
+		"type": "article-journal",
+		"abstract": "The rapid rewetting of a dry soil often yields a pulse in soil CO 2  production that persists for 2 to 6 d. This phenomenon is a common occurrence in surface soils, yet the mechanism responsible for producing the CO 2  pulse has not been positively identified, We studied the effects of a single drying and rewetting event on soil C pools, to identify which specific C substrates are mineralized to produce the observed pulse in respiration rates. We labeled two soils with C-glucose and measured the enrichment and pool sizes of the released CO 2 , extractable biomass C, and extractable soil organic matter (SOM-C) throughout a drying and rewetting cycle. After rewetting, respiration rates were 475 to 370% higher than the rates measured before the dry down. The enrichment of the released CO 2  was 1 to 2 times higher than the enrichment of the extractable biomass C pools and 10 to 20 times higher than the enrichment of the extractable organic C, suggesting that the CO 2  pulse was generated entirely from the mineralization of microbial biomass C. However, there was no evidence of substantial microbial cell lysis on rewetting. We hypothesize that the pulse of CO 2  is generated by the rapid mineralization of highly enriched intracellular compounds as a response by the microbial biomass to the rapid increase in soil water potentials. The drying and rewetting process also releases physically protected SOM, increasing the amount of extractable SOM-C by up to 200%. The additional SOM-C rendered soluble by the rewetting event did not contribute substantially to the rewetting CO 2  pulse. Overall, the rapid rewetting of a dry soil can influence soil C cycling in the short-term, by increasing the microbial mineralization of cytoplasmic solutes, and in the longer-term, by decreasing the total amount of SOM physically protected within microaggregates.",
+		"container-title": "Soil Science Society of America Journal",
+		"DOI": "10.2136/sssaj2003.0798",
+		"issue": "3",
+		"note": "DOI: 10.2136/sssaj2003.0798\nMAG ID: 2038770226\nS2ID: 805f3aa5c1b2e3ab4fdb985509de9edcdc437ae6",
+		"page": "798-805",
+		"title": "A Proposed Mechanism for the Pulse in Carbon Dioxide Production Commonly Observed Following the Rapid Rewetting of a Dry Soil",
+		"volume": "67",
+		"author": [
+			{
+				"family": "Fierer",
+				"given": "Noah"
+			},
+			{
+				"family": "Schimel",
+				"given": "Joshua P."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2003",
+					5,
+					1
+				]
+			]
+		}
+	},
+	{
+		"id": "borken2009",
+		"type": "article-journal",
+		"abstract": "In the next decades, many soils will be subjected to increased drying/wetting cycles or modified water availability considering predicted global changes in precipitation and evapotranspiration. These changes may affect the turnover of C and N in soils, but the direction of changes is still unclear. The aim of the review is the evaluation of involved mechanisms, the intensity, duration and frequency of drying and wetting for the mineralization and fluxes of C and N in terrestrial soils. Controversial study results require a reappraisal of the present understanding that wetting of dry soils induces significant losses of soil C and N. The generally observed pulse in net C and N mineralization following wetting of dry soil (hereafter wetting pulse) is short-lived and often exceeds the mineralization rate of a respective moist control. Accumulated microbial and plant necromass, lysis of live microbial cells, release of compatible solutes and exposure of previously protected organic matter may explain the additional mineralization during wetting of soils. Frequent drying and wetting diminishes the wetting pulse due to limitation of the accessible organic matter pool. Despite wetting pulses, cumulative C and N mineralization (defined here as total net mineralization during drying and wetting) are mostly smaller compared with soil with optimum moisture, indicating that wetting pulses cannot compensate for small mineralization rates during drought periods. Cumulative mineralization is linked to the intensity and duration of drying, the amount and distribution of precipitation, temperature, hydrophobicity and the accessible pool of organic substrates. Wetting pulses may have a significant impact on C and N mineralization or flux rates in arid and semiarid regions but have less impact in humid and subhumid regions on annual time scales. Organic matter stocks are progressively preserved with increasing duration and intensity of drought periods; however, fires enhance the risk of organic matter losses under dry conditions. Hydrophobicity of organic surfaces is an important mechanism that reduces C and N mineralization in topsoils after precipitation. Hence, mineralization in forest soils with hydrophobic organic horizons is presumably stronger limited than in grassland or farmland soils. Even in humid regions, suboptimal water potentials often restrict microbial activity in topsoils during growing seasons. Increasing summer droughts will likely reduce the mineralization and fluxes of C and N whereas increasing summer precipitation could enhance the losses of C and N from soils.",
+		"container-title": "Global Change Biology",
+		"DOI": "10.1111/j.1365-2486.2008.01681.x",
+		"issue": "4",
+		"note": "DOI: 10.1111/j.1365-2486.2008.01681.x\nMAG ID: 2041671416\nS2ID: 34a4f048e2a0ed58108273922019b82df7017d33",
+		"page": "808-824",
+		"title": "Reappraisal of drying and wetting effects on C and N mineralization and fluxes in soils.",
+		"volume": "15",
+		"author": [
+			{
+				"family": "Borken",
+				"given": "Werner"
+			},
+			{
+				"family": "Matzner",
+				"given": "Egbert"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2009",
+					4,
+					1
+				]
+			]
+		}
+	},
+	{
+		"id": "manzanera2020",
+		"type": "article-journal",
+		"abstract": "The relevance of preserving microorganisms has been well accepted for several decades. Interest is now shifting towards investigating adequate preservation methods to improve microbial survival rates and to preserve new taxa of previously considered unculturable microorganisms. In addition, a growing interest in preserving fragile microbial consortia or communities with biotechnological interest motivates the improvement of preservation methods. In the present study, we reviewed the effect of water availability in microbial diversity shift. We describe the effect of drought on microorganisms at molecular level and their molecular responses to this life-threating challenge focusing on the production of xeroprotectants. We also review the interspecies interactions of those drought-tolerant microorganisms with other sensitive organisms including neighboring prokaryotes and eukaryotes such as plants, and the potential role of these microorganisms at determining the ecological composition of stressed environments. We emphasize the importance of applying the knowledge derived from the molecular mechanisms used by desiccation-tolerant microorganisms for the improvement of the preservation techniques. An overview of the current and newer techniques for preserving microorganisms and microbial communities is provided. The biotechnological interest in preserving pure cultures, microbial consortia and communities is also discussed. This article is protected by copyright. All rights reserved.",
+		"container-title": "Environmental Microbiology",
+		"DOI": "10.1111/1462-2920.15096",
+		"issue": "7",
+		"note": "DOI: 10.1111/1462-2920.15096\nMAG ID: 3032696835\nPMID: 32452073\nS2ID: 2c1dd6816f26775d580116ff944e0f610eb88595",
+		"page": "3351-3359",
+		"title": "Dealing with water stress and microbial preservation.",
+		"volume": "23",
+		"author": [
+			{
+				"family": "Manzanera",
+				"given": "Maximino"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2020",
+					6,
+					24
+				]
+			]
+		}
+	},
+	{
+		"id": "pavlovska2021",
+		"type": "article-journal",
+		"abstract": "Sample preservation is a critical procedure in any research that relies on molecular tools and is conducted in remote areas. Sample preservation options include low and room temperature storage, which require freezing equipment and specific buffering solutions, respectively. The aim of the present study was to investigate whether DNA/RNA Shield 1x from Zymo Research and DESS (Dimethyl sulfoxide, Ethylenediamine tetraacetic acid, Saturated Salt) solution performed similarly to snap freezing in liquid nitrogen. Soil samples were stored for 1 month in each of the buffers and without any solution at a range of temperatures: -20, +4, and +23°C. All treatments were compared to the \"optimal treatment\", namely, snap freezing in liquid nitrogen. The quality and quantity of DNA were analyzed, and the microbial community structure was investigated in all samples. The results obtained indicated that the quantity and integrity of DNA was preserved well in all samples; however, the taxonomic distribution was skewed in samples stored without any solution at ambient temperatures, particularly when analyses were performed at lower taxonomic levels. Although both solutions performed equally well, sequencing output and OTU numbers in DESS-treated samples were closer to those snap frozen with liquid nitrogen. Furthermore, DNA/RNA Shield-stored samples performed better for the preservation of rare taxa.",
+		"container-title": "Microbes and Environments",
+		"DOI": "10.1264/jsme2.me20134",
+		"issue": "1",
+		"note": "DOI: 10.1264/jsme2.me20134\nMAG ID: 3127640227\nPMCID: 7966943\nPMID: 33563868\nS2ID: 4e71fc4ba3289f4418778095d392243a0084ceb9",
+		"title": "Soil Sample Preservation Strategy Affects the Microbial Community Structure.",
+		"volume": "36",
+		"author": [
+			{
+				"family": "Pavlovska",
+				"given": "Mariia"
+			},
+			{
+				"family": "Prekrasna",
+				"given": "Ievgeniia"
+			},
+			{
+				"literal": "Ivan Parnikoza"
+			},
+			{
+				"family": "Parnikoza",
+				"given": "Ivan"
+			},
+			{
+				"family": "Dykyi",
+				"given": "Evgen"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2021"
+				]
+			]
+		}
+	},
+	{
+		"id": "weissbecker2017",
+		"type": "article-journal",
+		"abstract": "Aims Soil sample preservation is a challenging aspect in molecular studies on soil microbial communities. The demands for specialized sample storage equipment, chemicals and standardized protocols for nucleic acid extraction often require sample processing in a home laboratory that can be continents apart from sampling sites. Standard sampling procedures, especially when dealing with RNA, comprise immediate snap freezing of soils in liquid nitrogen and storage at −80°C until further processing. For these instances, organizing a reliable cooling chain to transport hundreds of soil samples between continents is very costly, if possible at all. In this study we tested the effect of soil sample preservation by freeze-drying with subsequent short-term storage at 4°C or ambient temperatures compared to −80°C freezing by comparative barcoding analyses of soil microbial communities. Methods Two grassland soil samples were collected in Central Germany in the Biodiversity Exploratory Hainich-Dün. Samples were freezedried or stored at −80°C as controls. Freeze-dried samples were stored at 4°C or ambient temperature. Investigated storage times for both storage temperatures were 1 and 7 days. Total DNA and RNA were extracted and bacterial and arbuscular mycorrhizal (AM) fungal communities were analyzed by amplicon 454 pyrosequencing of the 16S (V4-V5 variable region) and 18S (NS31-AM1 fragment) of ribosomal RNA (rRNA) marker genes, respectively. Important Findings Bacterial communities were sufficiently well preserved at the rDNA and rRNA level although storage effects showed as slightly decreased alpha diversity indices for the prolonged storage of freeze-dried samples for 7 days. AM fungal communities could be studied without significant changes at the rDNA and rRNA level. Our results suggest that proper sampling design followed by immediate freeze-drying of soil samples enables short-term transportation of soil samples across continents.",
+		"container-title": "Journal of Plant Ecology",
+		"DOI": "10.1093/jpe/rtw042",
+		"issue": "1",
+		"note": "DOI: 10.1093/jpe/rtw042\nMAG ID: 2583574721\nS2ID: 06bc157516b79ad4a88d0626e86c089362e2bb76",
+		"page": "81-90",
+		"title": "Preservation of nucleic acids by freeze-drying for next generation sequencing analyses of soil microbial communities",
+		"volume": "10",
+		"author": [
+			{
+				"family": "Weißbecker",
+				"given": "Christina"
+			},
+			{
+				"family": "Buscot",
+				"given": "François"
+			},
+			{
+				"family": "Wubet",
+				"given": "Tesfaye"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2017",
+					2,
+					1
+				]
+			]
+		}
+	},
+	{
+		"id": "bertilleburgunter-delamare2022",
+		"type": "article-journal",
+		"abstract": "Brown macroalgae, including the kelp Saccharina latissima, are of both ecological and increasing economic interest. Together with their microbiota, these organisms form a singular entity, the holobiont. Sampling campaigns are required to study the microbiome of algae in natural populations, but freezing samples in liquid nitrogen is complex in the field, particularly at remote locations. Here we tested two simple alternative methods for sampling the microbial diversity associated with the kelp S. latissima: silica gel conservation of tissue and swab samples preserved in DNA/RNA shield solution. We used these techniques to compare apex and meristem samples from Roscoff (Brittany, France) and evaluated their impact on the results of 16S rDNA metabarcoding experiments. Both methods were able to separate apex and meristem microbiomes, and the results were concordant with results obtained for flash-frozen samples. However, differences were observed for several rare genera and ASVs, and the detection of contaminant sequences in the silica gel-preserved samples underline the importance of including blank samples for this method. Globally, our results confirm that the silica gel technique and swabbing combined with DNA/RNA shield preservation are valid alternatives to liquid nitrogen preservation when sampling brown macroalgae in the field. However, they also underline that, regardless of the method, caution should be taken when interpreting data on rare sequences.",
+		"container-title": "Marine Genomics",
+		"DOI": "10.1016/j.margen.2022.100944",
+		"note": "DOI: 10.1016/j.margen.2022.100944\nMAG ID: 4220856301\nPMID: 35299055",
+		"page": "100944-100944",
+		"title": "Effects of sampling and storage procedures on 16S rDNA amplicon sequencing results of kelp microbiomes.",
+		"volume": "63",
+		"author": [
+			{
+				"literal": "Bertille Burgunter-Delamare"
+			},
+			{
+				"literal": "Gwenn Tanguy"
+			},
+			{
+				"literal": "Erwan Legeay"
+			},
+			{
+				"literal": "Catherine Boyen"
+			},
+			{
+				"literal": "Simon M Dittami"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2022",
+					3,
+					14
+				]
+			]
+		}
+	},
+	{
+		"id": "bhattacharjee2021",
+		"type": "article-journal",
+		"abstract": "Soil microbiome is a dynamic micro-ecosystem driving and fine-tuning several biological processes in the global macro-ecosystems. Its tremendous potential towards mediating sustainability in the ecosystem necessitates the urgent need to store it optimally and efficiently as “next-generation biologicals” for future applications via soil transplantation. The challenge, therefore, is to devise a strategy for the storage of soil microbiome such that its “functionality” is preservedfor later application. This review discusses the current endeavours made towards storage ofthe soil microbiome. The methods for assessing the integrity of soil microbiome by targeting the structural diversity and functional potential of the preserved microbiomes have also been discussed. Further, the success stories related to the storage of fecal microbiome for application in transplants have also been highlighted. This is done primarily with the objective of learning lessons, and parallel application of the knowledge gained, in bringing about improvement in the research domain of soil microbiome storage. Subsequently, the limitations of current techniques of preservation have also been delineated. Further, the open questions in the area have been critically discussed. In conclusion, possible alternatives for storage, comprehensive analyses of the composition of the stored microbiome and their potential have been presented.",
+		"container-title": "Environmental Science and Pollution Research",
+		"DOI": "10.1007/s11356-021-17164-4",
+		"note": "DOI: 10.1007/s11356-021-17164-4\nMAG ID: 3208814357\nPMID: 34718953",
+		"page": "1-13",
+		"title": "Storage of soil microbiome for application in sustainable agriculture: prospects and challenges",
+		"author": [
+			{
+				"family": "Bhattacharjee",
+				"given": "Annapurna"
+			},
+			{
+				"family": "Dubey",
+				"given": "Shubham"
+			},
+			{
+				"family": "Sharma",
+				"given": "Shilpi"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2021",
+					10,
+					31
+				]
+			]
+		}
+	},
+	{
+		"id": "schroeder2021",
+		"type": "article-journal",
+		"abstract": "Abstract   Pre-treatment of soil samples prior to analysis is acknowledged to affect microbial activity and community parameters, but recommendations are diverging and there are no best-practice or standardised laboratory protocols. For the microbial carbon use efficiency (CUE) as a ratio parameter of C allocated to anabolism over total metabolised C, the effects of sample pre-treatment are unpredictable because the underlying parameters of microbial metabolism may be affected differently. In treatment or land use comparisons, it is important to know whether soils are affected in a similar way by pre-treatment. Based on five different paired sites (each with cropland and forest), the effects of six common pre-treatments were evaluated on 18O-CUE and associated parameters, i.e. respiration rate, soil microbial biomass C, total DNA extracted, and estimated abundances of fungi, bacteria and archaea. The six common pre-treatments were: (i) immediate analysis of field-fresh soil samples, and analysis following 14d pre-incubation of soil samples that were (ii) field-fresh, (iii) air-dried, (iv) oven-dried (40°C), (v) frozen at −20°C and (vi) frozen in-situ (dry ice and subsequently liquid N2). The experiment revealed two main findings. The first was that pre-incubation of 14d had the most pronounced effect and reduced microbial respiration rate, growth rate and microbial biomass C by between 28% and 63% on average compared with field-fresh samples, suggesting an impact of the reduction in readily available substrates on microbial activity. The second finding was that even after 14 days of pre-incubation, drying & rewetting caused an increase in the microbial respiration rate in forest soil samples of 64±53% (air-drying) and 86±65% (oven-drying), known as the Birch effect. However, CUE as a ratio parameter was found to be unaffected by sample pre-treatment, with only minor changes after 14d of pre-incubation. Pre-treatment (including pre-incubation) affected cropland and forest samples similarly, with one exception: the estimated abundance of fungi increased only with drying & rewetting in forest soils. This suggests that dried cropland soils could potentially yield appropriate community data, while forest soils respond to soil drying in a more complex way. It was concluded that CUE values can be derived from soil samples regardless of whether they were dried & rewetted, frozen & thawed, or stored fresh.",
+		"container-title": "Soil Biology & Biochemistry",
+		"DOI": "10.1016/j.soilbio.2021.108321",
+		"note": "DOI: 10.1016/j.soilbio.2021.108321\nMAG ID: 3166265727",
+		"page": "108321",
+		"title": "Impact of common sample pre-treatments on key soil microbial properties",
+		"volume": "160",
+		"author": [
+			{
+				"family": "Schroeder",
+				"given": "Julia"
+			},
+			{
+				"family": "Kammann",
+				"given": "Lisa"
+			},
+			{
+				"family": "Helfrich",
+				"given": "Mirjam"
+			},
+			{
+				"family": "Tebbe",
+				"given": "Christoph C."
+			},
+			{
+				"family": "Poeplau",
+				"given": "Christopher"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2021",
+					9,
+					1
+				]
+			]
+		}
+	},
+	{
+		"id": "funk2017",
+		"type": "article-journal",
+		"abstract": "The introduction of Next Generation Sequencing into the disciplines of plant systematics, ecology, and metagenomics, among others, has resulted in a phenomenal increase in the collecting and storing of tissue samples and their respective vouchers. This manual suggests standard practices that will insure the quality and preservation of the tissue and vouchers and their respective data. Although written for use by the Smithsonian Institution botanists it suggests a framework for collecting tissues and vouchers that other research programs can adapt to their own needs. It includes information on collecting voucher specimens, collecting plant tissue intended for genomic analysis, how to manage these collections, and how to incorporate the data into a database management system. It also includes many useful references for collecting and processing collections. We hope it will be useful for a variety of botanists but especially those who know how to collect plants and want to collect tissue samples that will be useful for genomic research, and those who are ‡ ‡,§ § ‡ ‡",
+		"container-title": "Biodiversity Data Journal",
+		"DOI": "10.3897/bdj.5.e11625",
+		"issue": "5",
+		"note": "DOI: 10.3897/bdj.5.e11625\nMAG ID: 2582937216\nPMCID: 5345056\nPMID: 28325986\nS2ID: 0557b2fbc74497f0de85f5cbffe93326e1a87730",
+		"title": "Guidelines for collecting vouchers and tissues intended for genomic work (Smithsonian Institution): Botany Best Practices.",
+		"volume": "5",
+		"author": [
+			{
+				"family": "Funk",
+				"given": "Vicki A."
+			},
+			{
+				"family": "Gostel",
+				"given": "Morgan R."
+			},
+			{
+				"family": "Devine",
+				"given": "Amanda"
+			},
+			{
+				"family": "Devine",
+				"given": "Amanda"
+			},
+			{
+				"family": "Kelloff",
+				"given": "Carol L."
+			},
+			{
+				"family": "Wurdack",
+				"given": "Kenneth J."
+			},
+			{
+				"family": "Tuccinardi",
+				"given": "Chris"
+			},
+			{
+				"family": "Radosavljevic",
+				"given": "Aleks"
+			},
+			{
+				"family": "Peters",
+				"given": "Melinda"
+			},
+			{
+				"family": "Coddington",
+				"given": "Jonathan A."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2017",
+					1,
+					30
+				]
+			]
+		}
+	},
+	{
+		"id": "castano2016",
+		"type": "article-journal",
+		"abstract": "Drying soil samples before DNA extraction is commonly used for specific fungal DNA quantification and metabarcoding studies, but the impact of different drying procedures on both the specific fungal DNA quantity and the fungal community composition has not been analyzed. We tested three different drying procedures (freeze-drying, oven-drying, and room temperature) on 12 different soil samples to determine (a) the soil mycelium biomass of the ectomycorrhizal species Lactarius vinosus using qPCR with a specifically designed TaqMan® probe and (b) the fungal community composition and diversity using the PacBio® RS II sequencing platform. Mycelium biomass of L. vinosus was significantly greater in the freeze-dried soil samples than in samples dried at oven and room temperature. However, drying procedures had no effect on fungal community composition or on fungal diversity. In addition, there were no significant differences in the proportions of fungi according to their functional roles (moulds vs. mycorrhizal species) in response to drying procedures. Only six out of 1139 operational taxonomic units (OTUs) had increased their relative proportions after soil drying at room temperature, with five of these OTUs classified as mould or yeast species. However, the magnitude of these changes was small, with an overall increase in relative abundance of these OTUs of approximately 2 %. These results suggest that DNA degradation may occur especially after drying soil samples at room temperature, but affecting equally nearly all fungi and therefore causing no significant differences in diversity and community composition. Despite the minimal effects caused by the drying procedures at the fungal community composition, freeze-drying resulted in higher concentrations of L. vinosus DNA and prevented potential colonization from opportunistic species.",
+		"container-title": "Mycorrhiza",
+		"DOI": "10.1007/s00572-016-0714-3",
+		"issue": "8",
+		"note": "DOI: 10.1007/s00572-016-0714-3\nMAG ID: 2427750281\nPMID: 27317489\nS2ID: 69b7919c1130ded47d6149c8bb11500117994d4c",
+		"page": "799-808",
+		"title": "Soil drying procedure affects the DNA quantification of Lactarius vinosus but does not change the fungal community composition.",
+		"volume": "26",
+		"author": [
+			{
+				"family": "Castaño",
+				"given": "Carles"
+			},
+			{
+				"family": "Parladé",
+				"given": "Javier"
+			},
+			{
+				"family": "Pera",
+				"given": "Joan"
+			},
+			{
+				"family": "Aragón",
+				"given": "Juan Martínez",
+				"non-dropping-particle": "de"
+			},
+			{
+				"family": "Alday",
+				"given": "Josu G."
+			},
+			{
+				"family": "Bonet",
+				"given": "José Antonio"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2016",
+					6,
+					18
+				]
+			]
+		}
+	},
+	{
+		"id": "rastogi2013",
+		"type": "article-journal",
+		"abstract": "The phyllosphere is an ecologically and economically important ecosystem that hosts a large and diverse microbial community. Phyllosphere microbiota play a critical role in protecting plants from diseases as well as promoting their growth by various mechanisms. There are serious gaps in our understanding of how and why microbiota composition varies across spatial and temporal scales, the ecology of leaf surface colonizers and their interactions with their host, and the genetic adaptations that enable phyllosphere survival of microorganisms. These gaps are due in large part to past technical limitations, as earlier studies were restricted to the study of culturable bacteria only and used low-throughput molecular techniques to describe community structure and function. The availability of high-throughput and cost-effective molecular technologies is changing the field of phyllosphere microbiology, enabling researchers to begin to address the dynamics and composition of the phyllosphere microbiota across a large number of samples with high, in-depth coverage. Here, we discuss and connect the most recent studies that have used next-generation molecular techniques such as metagenomics, proteogenomics, genome sequencing, and transcriptomics to gain new insights into the structure and function of phyllosphere microbiota and highlight important challenges for future research.",
+		"container-title": "Fems Microbiology Letters",
+		"DOI": "10.1111/1574-6968.12225",
+		"issue": "1",
+		"note": "DOI: 10.1111/1574-6968.12225\nMAG ID: 2128146795\nPMID: 23895412\nS2ID: 8d7a10718d5bd6eafb9eeea4e78844c4edb1080f",
+		"page": "1-10",
+		"title": "New insights into the structure and function of phyllosphere microbiota through high-throughput molecular approaches.",
+		"volume": "348",
+		"author": [
+			{
+				"family": "Rastogi",
+				"given": "Gurdeep"
+			},
+			{
+				"literal": "Gitta Coaker"
+			},
+			{
+				"family": "Coaker",
+				"given": "Gitta"
+			},
+			{
+				"family": "Leveau",
+				"given": "Johan H. J."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2013",
+					11,
+					1
+				]
+			]
+		}
+	},
+	{
+		"id": "s.yang2023",
+		"type": "article-journal",
+		"container-title": "Journal of Microbiological Methods",
+		"DOI": "10.1016/j.mimet.2023.106677",
+		"note": "DOI: 10.1016/j.mimet.2023.106677\nPMID: 36716930\nS2ID: d34c2bcaad6930b6dd455eae3498fa21f5924195",
+		"title": "Evaluation and optimization of lysis method for microbial DNA extraction from epiphytic phyllosphere samples.",
+		"author": [
+			{
+				"literal": "S. Yang"
+			},
+			{
+				"literal": "Jaejin Lee"
+			},
+			{
+				"literal": "Maheen Mahmood"
+			},
+			{
+				"literal": "Doohong Min"
+			},
+			{
+				"literal": "Jeongdae Im"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2023"
+				]
+			]
+		}
+	},
+	{
+		"id": "dent2004",
+		"type": "article-journal",
+		"abstract": "The composition of microbial communities on and within seeds may effect their storage and field performance, whether they are indigenous or applied as biocontrol agents. In this study, we have explored the usefulness of profiling small subunit ribosomal (SSR) gene fragments for studying the microflora associated with seeds. DNA was amplified by the polymerase chain reaction (PCR) and the amplicons separated using denaturing gradient gel electrophoresis (DGGE). Primers targeting eukaryotic SSRs were used to investigate fungal communities, and primers targeting bacterial SSRs were employed to study the eubacterial microflora. As a case study, we attempted to profile the fungi and bacteria associated with seeds of Beta vulgaris (sugar beet) to permit an insight into the varying field performance of several well-characterised commercial seed lots. Serious interference with the microbial signals was observed from the plant's own nuclear 18S rRNA genes and chloroplast 16S rRNA genes using standard PCR conditions and DNA extracted from whole seeds as template. Hot-start and touchdown PCR made no appreciable improvement to these signals. Seed imbibition and dissection into operculum and fruit wall and true seed prior to DNA extraction improved signal recovery in the fruit fraction. With primer modification, bacteria and fungi were detected in an excess of plant DNA of 100:1 and 10:1, respectively. With this method, microbial communities on seeds could be profiled, however, it is likely that targeted depletion of plant rDNA targets will be a necessary extra step before this approach can be used to screen seeds routinely.",
+		"container-title": "Journal of Microbiological Methods",
+		"DOI": "10.1016/j.mimet.2003.09.001",
+		"issue": "1",
+		"note": "DOI: 10.1016/j.mimet.2003.09.001\nMAG ID: 2092567661\nPMID: 14706747\nS2ID: 781e40063fb70d8e0ae4bcd8f255ab6edd86b0f5",
+		"page": "17-26",
+		"title": "Molecular profiling of microbial communities associated with seeds of Beta vulgaris subsp. Vulgaris (sugar beet).",
+		"volume": "56",
+		"author": [
+			{
+				"family": "Dent",
+				"given": "Katherine C."
+			},
+			{
+				"literal": "John R. Stephen"
+			},
+			{
+				"family": "Stephen",
+				"given": "John R."
+			},
+			{
+				"family": "Finch-Savage",
+				"given": "William E."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2004",
+					1,
+					1
+				]
+			]
+		}
+	},
+	{
+		"id": "ghyselinck2013",
+		"type": "article-journal",
+		"abstract": "Different regions of the bacterial 16S rRNA gene evolve at different evolutionary rates. The scientific outcome of short read sequencing studies therefore alters with the gene region sequenced. We wanted to gain insight in the impact of primer choice on the outcome of short read sequencing efforts. All the unknowns associated with sequencing data, i.e. primer coverage rate, phylogeny, OTU-richness and taxonomic assignment, were therefore implemented in one study for ten well established universal primers (338f/r, 518f/r, 799f/r, 926f/r and 1062f/r) targeting dispersed regions of the bacterial 16S rRNA gene. All analyses were performed on nearly full length and in silico generated short read sequence libraries containing 1175 sequences that were carefully chosen as to present a representative substitute of the SILVA SSU database. The 518f and 799r primers, targeting the V4 region of the 16S rRNA gene, were found to be particularly suited for short read sequencing studies, while the primer 1062r, targeting V6, seemed to be least reliable. Our results will assist scientists in considering whether the best option for their study is to select the most informative primer, or the primer that excludes interferences by host-organelle DNA. The methodology followed can be extrapolated to other primers, allowing their evaluation prior to the experiment.",
+		"container-title": "PLOS ONE",
+		"DOI": "10.1371/journal.pone.0071360",
+		"issue": "8",
+		"note": "DOI: 10.1371/journal.pone.0071360\nMAG ID: 2043921953\nPMCID: 3747265\nPMID: 23977026\nS2ID: db652344307797cfb2699a7614fa79c045355dc5",
+		"title": "The Effect of Primer Choice and Short Read Sequences on the Outcome of 16S rRNA Gene Based Diversity Studies",
+		"volume": "8",
+		"author": [
+			{
+				"family": "Ghyselinck",
+				"given": "Jonas"
+			},
+			{
+				"family": "Pfeiffer",
+				"given": "Stefan"
+			},
+			{
+				"family": "Heylen",
+				"given": "Kim"
+			},
+			{
+				"family": "Heylen",
+				"given": "Kim"
+			},
+			{
+				"family": "Sessitsch",
+				"given": "Angela"
+			},
+			{
+				"family": "De Vos",
+				"given": "Paul"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2013",
+					8,
+					19
+				]
+			]
+		}
+	},
+	{
+		"id": "lakay2007",
+		"type": "article-journal",
+		"abstract": "Aim: To establish a rapid, improved soil environmental DNA extraction and purification protocol. Methods and Results: Three different soil DNA isolation and four purification strategies were compared on different soil samples with variable rates of success. Bead beating extraction gave significantly higher DNA yields than microwave-based and liquid nitrogen grinding DNA extraction methods. The inclusion of soil washing prior to cell lysis decreased the amount of purification steps required. Although these soil types differed, polyvinylpolypyrrolidone (PVPP)-sepharose 2B column elution was sufficient for all three samples, yielding DNA pure enough for successful application in molecular studies. One soil sample retained 80% of the initial DNA after successful purification. Conclusions: Optimization of a purification protocol confirmed that only a combination of previously described methods proved sufficient in yielding pure environmental DNA from humic-rich soils. Total processing time for DNA extraction and subsequent purification from multiple samples was considerably more rapid than the previously described methods. Significance and Impact of the Study: This study developed a new optimized soil DNA extraction and purification protocol that is suitable for different environmental sources that are rich in humic acid content.",
+		"container-title": "Journal of Applied Microbiology",
+		"DOI": "10.1111/j.1365-2672.2006.03052.x",
+		"issue": "1",
+		"note": "DOI: 10.1111/j.1365-2672.2006.03052.x\nMAG ID: 2086408159\nPMID: 17184343\nS2ID: 64e9c98c6be104c47c88e18578b86c1aea5bbd17",
+		"page": "265-273",
+		"title": "Comparative analysis of environmental DNA extraction and purification methods from different humic acid-rich soils.",
+		"volume": "102",
+		"author": [
+			{
+				"family": "Lakay",
+				"given": "Francisco"
+			},
+			{
+				"family": "Botha",
+				"given": "Adele"
+			},
+			{
+				"family": "Botha",
+				"given": "Alfred"
+			},
+			{
+				"family": "Prior",
+				"given": "Bernard A."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2007",
+					1,
+					1
+				]
+			]
+		}
+	},
+	{
+		"id": "guerrieri2020",
+		"type": "article-journal",
+		"abstract": "Environmental DNA metabarcoding is becoming a key tool for biodiversity monitoring over large geographical or taxonomic scales and for elusive taxa like soil organisms. Increasing sample sizes and interest in remote or extreme areas often require the preservation of soil samples and thus deviations from optimal standardized protocols. However, we still ignore the impact of different methods of soil sample preservation on the results of metabarcoding studies and there is no guideline for best practices so far. Here, we assessed the impact of four methods of soil sample preservation that can be conveniently used also in metabarcoding studies targeting remote or difficult to access areas. Tested methods include: preservation at room temperature for 6h, preservation at 4°C for three days, desiccation immediately after sampling and preservation for 21 days, and desiccation after 6h at room temperature and preservation for 21 days. For each preservation method, we benchmarked resulting estimates of taxon diversity and community composition of three different taxonomic groups (bacteria, fungi and eukaryotes) in three different habitats (forest, river bank and grassland) against results obtained under ideal conditions (i.e. extraction of eDNA right after sampling). Overall, the different preservation methods only marginally impaired results and only under certain conditions. When rare taxa were considered, we detected small but significant changes in MOTU richness of bacteria, fungi and eukaryotes across treatments, but MOTUs richness was similar across preservation methods if rare taxa were not considered. All the approaches were able to identify differences in community structure among habitats, and the communities retrieved using the different preservation conditions were extremely similar. We propose guidelines on the selection of the optimal soil sample preservation conditions for metabarcoding studies, depending on the practical constraints, costs and ultimate research goals.",
+		"container-title": "Molecular Ecology",
+		"DOI": "10.1111/mec.15674",
+		"issue": "13",
+		"note": "DOI: 10.1111/mec.15674\nMAG ID: 3092434901\nPMID: 33034070\nS2ID: 067013f0373ff79fa301c1fd182457266371ae3f",
+		"page": "3313-3325",
+		"title": "Effects of soil preservation for biodiversity monitoring using environmental DNA.",
+		"volume": "30",
+		"author": [
+			{
+				"family": "Guerrieri",
+				"given": "Alessia"
+			},
+			{
+				"family": "Bonin",
+				"given": "Aurélie"
+			},
+			{
+				"literal": "Aurélie Bonin"
+			},
+			{
+				"literal": "Tamara Münkemüller"
+			},
+			{
+				"literal": "Tamara Münkemüller"
+			},
+			{
+				"family": "Münkemüller",
+				"given": "Tamara"
+			},
+			{
+				"family": "Gielly",
+				"given": "Ludovic"
+			},
+			{
+				"literal": "Ludovic Gielly"
+			},
+			{
+				"literal": "Wilfried Thuiller"
+			},
+			{
+				"literal": "Wilfried Thuiller"
+			},
+			{
+				"family": "Thuiller",
+				"given": "Wilfried"
+			},
+			{
+				"family": "Ficetola",
+				"given": "Gentile Francesco"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2020"
+				]
+			]
+		}
+	},
+	{
+		"id": "froslev2022",
+		"type": "article-journal",
+		"abstract": "Biodiversity of soil is routinely assessed with environmental DNA—most often by massive parallel sequencing of marker genes (eDNA metabarcoding). Soil biodiversity may be investigated in relation to biodiversity research or as a tool in forensic investigations. After sampling, the taxonomic composition of soil biotic communities may change. In order to minimize community changes, it is desirable to reduce biological activity, e.g., by freezing immediately after sampling. However, this may be impossible due to remoteness of study sites or, in forensic cases, where soil has been attached to an item of interest for protracted periods of time. Here, we investigated the effect of storage duration and conditions on the assessment of the soil biota with eDNA metabarcoding. We extracted eDNA from freshly collected soil samples and again from the same samples after storage under contrasting temperature conditions and contrasting exposure (open/closed tubes). We used four different primer sets targeting bacteria, fungi, protists (cercozoans), and general eukaryotes. We quantified differences in richness, evenness, and community composition. Subsequently, we tested whether we could correctly infer habitat type and original sample identity after storage using a large reference dataset. We found stronger community composition differences with extended storage time and with higher storage temperature, and differences between open and closed tubes. However, for samples stored <28 days at a maximum of 20°C, changes were generally insignificant. Classification models successfully assigned most samples to their exact location of origin and correct habitat type even after 480 days storage. Even samples showing larger changes generally retained the original sample as the best match. For most biodiversity and forensic applications, storage of samples for days and even several weeks may thus not be a problem, if storage temperature does not exceed 20°C.",
+		"container-title": "Environmental DNA",
+		"DOI": "10.1002/edn3.367",
+		"note": "DOI: 10.1002/edn3.367\nMAG ID: 4304780932",
+		"title": "Treated like dirt: Robust forensic and ecological inferences from soil <scp>eDNA</scp> after challenging sample storage",
+		"author": [
+			{
+				"family": "Frøslev",
+				"given": "Tobias Guldberg"
+			},
+			{
+				"literal": "Rasmus Ejrnæs"
+			},
+			{
+				"literal": "Anders J. Hansen"
+			},
+			{
+				"literal": "Hans Henrik Bruun"
+			},
+			{
+				"literal": "Ida Broman Nielsen"
+			},
+			{
+				"literal": "Flemming Ekelund"
+			},
+			{
+				"literal": "Mette Vestergård"
+			},
+			{
+				"literal": "Rasmus Kjøller"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2022",
+					10,
+					12
+				]
+			]
+		}
+	},
+	{
+		"id": "froslev2021",
+		"type": "article-journal",
+		"abstract": "Biodiversity of soil microbiota is routinely assessed with environmental DNA-based methods, among which amplification and massive parallel sequencing of marker genes (eDNA metabarcoding) is the most common. Soil microbiota may for example be investigated in relation to biodiversity research or as a tool in forensic investigations. After sampling, the taxonomic composition of soil biotic communities may change. In order to minimize community changes after sampling, it is desirable to reduce biological activity, e.g. by freezing immediately after sampling. However, this may be impossible due to remoteness of study sites or, in forensic cases, where soil has been attached to a questioned item for protracted periods of time. Here we investigated the effect of storage duration and conditions on the assessment of the soil biota with eDNA metabarcoding. We extracted eDNA from freshly collected soil samples and again from the same samples after storage under contrasting temperature conditions. We used five different primer sets targeting bacteria, fungi, protists (cercozoans), general eukaryotes, and plants. For these groups, we quantified differences in richness, evenness and community composition. Subsequently, we tested whether we could correctly infer habitat type and original sample identity after storage using a large reference dataset. We found increased community composition differences with extended storage time and with higher storage temperature. However, for samples stored less than 28 days at a maximum of 20 C, changes were generally insignificant. Classification models could successfully assign most stored samples to their exact location of origin and correct habitat type even after weeks of storage. Even samples showing larger compositional changes generally retained the original sample as the best match (relative similarity). Our results show that for most biodiversity and forensic applications, storage of samples for days and even several weeks may not be a problem, if storage temperature does not exceed 20 C. Even after suboptimal storage conditions, significant patterns can be reproduced.",
+		"DOI": "10.1101/2021.12.22.473824",
+		"note": "DOI: 10.1101/2021.12.22.473824\nMAG ID: 4200241729",
+		"title": "Treated like dirt: Robust forensic and ecological inferences from soil eDNA after challenging sample storage",
+		"author": [
+			{
+				"family": "Frøslev",
+				"given": "Tobias Guldberg"
+			},
+			{
+				"family": "Ejrnæs",
+				"given": "Rasmus"
+			},
+			{
+				"family": "Hansen",
+				"given": "Anders J."
+			},
+			{
+				"family": "Bruun",
+				"given": "Hans Henrik"
+			},
+			{
+				"family": "Nielsen",
+				"given": "Ida Broman"
+			},
+			{
+				"literal": "Flemming Ekelund"
+			},
+			{
+				"family": "Vestergård",
+				"given": "Mette"
+			},
+			{
+				"family": "Kjøller",
+				"given": "Rasmus"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2021",
+					12,
+					23
+				]
+			]
+		}
+	},
+	{
+		"id": "kumar2020",
+		"type": "article-journal",
+		"abstract": "Environmental DNA (eDNA) is rapidly growing in popularity as a tool for community assessments and species detection. While eDNA approaches are now widely applied, there is not yet agreement on best practices for sample collection and processing. Investigators looking to integrate eDNA approaches into their research programme are required to examine a growing collection of disparate studies to make an often uncertain decision about which protocols best fit their needs. To promote the application of eDNA approaches and to encourage the generation of high-quality data, here we review the most common techniques for the collection, preservation and extraction of metazoan eDNA from water samples. Specifically, we focus on experimental studies that compare various methods and outline the numerous challenges associated with eDNA. While the diverse applications of eDNA do not lend themselves to a one-size-fits-all recommendation, in most cases, capture/concentration of eDNA on cellulose nitrate filters (with pore size determined by water turbidity), followed by storage of filters in Longmire's buffer and extraction with a DNeasy Blood & Tissue Kit (or similar) has been shown to provide sufficient, high-quality DNA. However, we also emphasize the importance of testing and optimizing protocols for the system of interest.",
+		"container-title": "Molecular Ecology Resources",
+		"DOI": "10.1111/1755-0998.13107",
+		"issue": "1",
+		"note": "DOI: 10.1111/1755-0998.13107\nMAG ID: 2982156882\nPMID: 31633859\nS2ID: 0d29ccd95fc0b1fc68e3b0343b93c7345e147ae9",
+		"page": "29-39",
+		"title": "A practical guide to sample preservation and pre-PCR processing of aquatic environmental DNA.",
+		"volume": "20",
+		"author": [
+			{
+				"family": "Kumar",
+				"given": "Girish"
+			},
+			{
+				"family": "Kumar",
+				"given": "Girish"
+			},
+			{
+				"family": "Eble",
+				"given": "Jeff E."
+			},
+			{
+				"family": "Gaither",
+				"given": "Michelle R."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2020",
+					1,
+					1
+				]
+			]
+		}
+	},
+	{
+		"id": "clasen2020",
+		"type": "article-journal",
+		"abstract": "Storage of soil samples prior to metagenomic analysis presents a problem. If field sites are remote or if samples are collected by third parties, transport to analytical laboratories may take several days or even weeks. The bulk of such samples and requirement for later homogenisation precludes the convenient use of a stabilisation buffer, so samples are usually cooled or frozen during transit. There has been limited testing of the most appropriate storage methods for later study of soil organisms by eDNA approaches. Here we tested a range of storage methods on two contrasting soils, comparing these methods to the control of freezing at -80 °C, followed by freeze-drying. To our knowledge, this is the first study to examine the effect of storage conditions on eukaryote DNA in soil, including both viable organisms (fungi) and DNA contained within dying/dead tissues (plants). For fungi, the best storage regimes (closest to the control) were storage at 4 °C (for up to 14 d) or active air-drying at room temperature. The worst treatments involved initial freezing, followed by thawing which led to significant later spoilage. The key spoilage organisms were identified as Metarhizium carneum and Mortierella spp., with a general increase in saprotrophic fungi and reduced abundances of mycorrhizal/biotrophic fungi. Plant data showed a similar pattern, but with greater variability in community structure, especially in the freeze-thaw treatments, probably due to stochastic variation in substrates for fungal decomposition, algal proliferation and some seed germination. In the absence of freeze drying facilities, samples should be shipped refrigerated, but not frozen if there is any risk of thawing.",
+		"DOI": "10.3897/mbmg.4.58365",
+		"note": "DOI: 10.3897/mbmg.4.58365\nMAG ID: 3108849594",
+		"title": "Soil stabilisation for DNA metabarcoding of plants and fungi. Implications for sampling at remote locations or via third-parties",
+		"volume": "4",
+		"author": [
+			{
+				"family": "Clasen",
+				"given": "Lina A."
+			},
+			{
+				"family": "Detheridge",
+				"given": "Andrew P."
+			},
+			{
+				"literal": "John Scullion"
+			},
+			{
+				"literal": "John Scullion"
+			},
+			{
+				"family": "Scullion",
+				"given": "John"
+			},
+			{
+				"family": "Griffith",
+				"given": "Gareth W."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2020"
+				]
+			]
+		}
+	},
+	{
+		"id": "bainard2010",
+		"type": "article-journal",
+		"abstract": "Abstract   A wide range of methods are commonly used for preserving environmental samples prior to molecular analyses. However, the effect of these preservation methods on fungal DNA is not understood. The objective of this study was to test the effect of eight different preservation methods on the quality and yield of DNA extracted from Bromus inermis and Daucus carota roots colonized by the arbuscular mycorrhizal (AM) fungus, Glomus intraradices. The total DNA concentration in sample extracts was quantified using spectrophotometry. Samples that were frozen (−80oC and −20oC), stored in 95% ethanol, or silica gel dried yielded total (plant and fungal) DNA concentrations that were not significantly different from fresh samples. In contrast, samples stored in CTAB solution or freeze-dried resulted in significantly reduced DNA concentrations compared with fresh samples. The preservation methods had no effect on the purity of the sample extracts for both plant species. However, the DNA of the dried samples (silica gel dried, freeze-dried, heat dried) appeared to be slightly more degraded compared with samples that remained hydrated (frozen, stored in ethanol or CTAB solutions) during storage when visualized on a gel. The concentration of AM fungal DNA in sample extracts was quantified using TaqMan real time PCR. Methods that preserved samples in hydrated form had similar AM fungal DNA concentrations as fresh samples, except D. carota samples stored in ethanol. In contrast, preservation methods that involved drying the samples had very low concentrations of AM fungal DNA for B. inermis, and nearly undetectable for D. carota samples. The drying process appears to be a major factor in the degradation of AM fungal DNA while having less of an impact on plant DNA. Based on these results, samples that need to be preserved prior to molecular analysis of AM fungi should be kept frozen to minimize the degradation of plant and AM fungal DNA.",
+		"container-title": "Journal of Microbiological Methods",
+		"DOI": "10.1016/j.mimet.2010.05.001",
+		"issue": "2",
+		"note": "DOI: 10.1016/j.mimet.2010.05.001\nMAG ID: 2004385594\nPMID: 20470836\nS2ID: 96c1c3c357084aca704bdf2083c0d697680653a9",
+		"page": "124-130",
+		"title": "Differential effect of sample preservation methods on plant and arbuscular mycorrhizal fungal DNA.",
+		"volume": "82",
+		"author": [
+			{
+				"family": "Bainard",
+				"given": "Luke D."
+			},
+			{
+				"family": "Klironomos",
+				"given": "John N."
+			},
+			{
+				"family": "Hart",
+				"given": "Miranda M."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2010",
+					8,
+					1
+				]
+			]
+		}
+	},
+	{
+		"id": "aakanchhajain2020",
+		"type": "article-journal",
+		"DOI": "10.1007/978-1-4939-9861-6_30",
+		"note": "DOI: 10.1007/978-1-4939-9861-6_30\nMAG ID: 3008986252\nS2ID: a648b604fce535c215bddcb0d49719587da15740",
+		"page": "105-110",
+		"title": "Preservation of Microorganisms: Stabs, Slants, Lyophilization and Cryopreservation",
+		"author": [
+			{
+				"literal": "Aakanchha Jain"
+			},
+			{
+				"family": "Jain",
+				"given": "Aakanchha"
+			},
+			{
+				"family": "Jain",
+				"given": "Richa"
+			},
+			{
+				"family": "Jain",
+				"given": "Sourabh"
+			},
+			{
+				"family": "Jain",
+				"given": "Sourabh"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2020",
+					1,
+					1
+				]
+			]
+		}
 	}
 ]
