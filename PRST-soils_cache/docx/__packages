@@ -7,15 +7,10 @@ purrr
 dplyr
 stringr
 forcats
+lubridate
 permute
 lattice
 vegan
-MASS
-survival
-NADA
-truncnorm
-zCompositions
-ALDEx2
 BiocGenerics
 S4Vectors
 IRanges
@@ -29,4 +24,8 @@ DESeq2
 ANCOMBC
 ggpubr
 phyloseq
-lubridate
+MASS
+survival
+NADA
+truncnorm
+zCompositions
