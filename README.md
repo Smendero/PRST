@@ -21,6 +21,11 @@ the documents as code-chunks.
     DNA-based microbial community analyses: a comparative study
   - Markdown: PRST soils.Rmd
   - Paper pre-print: PRST-soils.docx
+- Paper 2
+  - Title: Desiccation as a suitable alternative to cold storage of
+    phyllosphere samples for DNA-based microbial community analyses
+  - Markdown PRST phyllospherev1.0.Rmd
+  - Paper pre-print: PRST-phyllospherev1.0.docx
 
 # Data
 

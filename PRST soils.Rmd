@@ -3,8 +3,8 @@ title: "Drying as an effective method to store soil samples for DNA-based microb
 author:
 - \* Emily Smenderovac (corresponding author), Canadian Forest Service, Natural Resources Canada, emily.smenderovac@nrcan-rncan.gc.ca
 - Caroline Emilson, Canadian Forest Service, Natural Resources Canada, caroline.emilson@nrcan-rncan.gc.ca
-- Karelle Rheault,  Canadian Forest Service, Natural Resources Canada, karh@ign.ku.dk
-- Élodie Brazeau,Canadian Forest Service, Natural Resources Canada, elodie.brazeau@gmail.com
+- Karelle Rheault, Canadian Forest Service, Natural Resources Canada, karh@ign.ku.dk
+- Élodie Brazeau, Canadian Forest Service, Natural Resources Canada, elodie.brazeau@gmail.com
 - Marie-Josée Morency, Canadian Forest Service, Natural Resources Canada, marie-josee.morency@nrcan-rncan.gc.ca
 - Patrick Gagné, Canadian Forest Service, Natural Resources Canada, patrick.gagne@nrcan-rncan.gc.ca
 - Lisa Venier, Canadian Forest Service, Natural Resources Canada, lisa.venier@nrcan-rncan.gc.ca
