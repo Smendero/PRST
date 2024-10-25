@@ -18,6 +18,7 @@ Each paper produced from this series of experiments is saved under a different R
   + Title: Drying as an effective method to store soil samples for DNA-based microbial community analyses: a comparative study
   + Markdown: PRST soils.Rmd
   + Paper pre-print: PRST-soils.docx
+  + DOI: https://doi.org/10.1038/s41598-023-50541-2
   
 - Paper 2 
   + Title: Desiccation as a suitable alternative to cold storage of phyllosphere samples for DNA-based microbial community analyses
