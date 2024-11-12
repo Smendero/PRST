@@ -17959,10 +17959,9 @@
 	},
 	{
 		"id": "rudz",
-		"type": "article-journal",
+		"type": "thesis",
 		"abstract": "Downed woody debris (DWD) is a carbon-rich form of forest litter and plays a unique role in carbon and nutrient cycling. I present a novel modeling approach describing DWD decomposition and nutrient storage in a managed northern hardwood forest. The predicted half-life of DWD carbon was 7 years, less than previously observed in similar northern hardwood forests. A stage-based nutrient model indicated that harvest slash DWD was a net nitrogen and phosphorus sink for eight years following harvest and accumulated calcium during decay. Field observations of respiration and leaching supported model results with a respired C half-life of 8 years, while leached carbon export constituted 1.37% of the respired flux. DWD leachate carbon and nitrogen concentrations were 11× and 2× greater than from litter, respectively, and DWD leachate contributed disproportionately to soil C stocks. This work represents an expedient means of forecasting DWD abundance and partitioning carbon flux from DWD.",
 		"language": "en",
-		"page": "64",
 		"source": "Zotero",
 		"title": "Carbon and Nutrient Dynamics of Downed Woody Debris in a Northern Hardwood Forest",
 		"author": [
@@ -28603,39 +28602,6 @@
 		}
 	},
 	{
-		"id": "vanderannemiekewal2015",
-		"type": "article-journal",
-		"abstract": "Decomposition of wood is an important component of global carbon cycling. Most wood decomposition models are based on tree characteristics and environmental conditions; however, they do not include community dynamics of fungi that are the major wood decomposers. We examined the factors explaining variation in sapwood decay in oak tree stumps two and five years after cutting. Wood moisture content was significantly correlated with sapwood decay in younger stumps, whereas ITS-based composition and species richness of the fungal community were the best predictors for mass loss in the older stumps. Co-occurrence analysis showed that, in freshly cut trees and in younger stumps, fungal communities were nonrandomly structured, whereas fungal communities in old stumps could not be separated from a randomly assembled community. These results indicate that the most important factors explaining variation in wood decay rates can change over time and that the strength of competitive interactions between fungi in decaying tree stumps may level off with increased wood decay. Our field analysis further suggests that ascomycetes may have a prominent role in wood decay, but their wood-degrading abilities need to be further tested under controlled conditions. The next challenging step will be to integrate fungal community assembly processes in wood decay models to improve carbon sequestration estimates of forests.",
-		"container-title": "Ecology",
-		"DOI": "10.1890/14-0242.1",
-		"issue": "1",
-		"note": "DOI: 10.1890/14-0242.1\nMAG ID: 2150320307\nPMID: 26236897",
-		"page": "124-133",
-		"title": "Neglected role of fungal community composition in explaining variation in wood decay rates",
-		"volume": "96",
-		"author": [
-			{
-				"literal": "van der Annemieke Wal"
-			},
-			{
-				"family": "Ottosson",
-				"given": "E.G.B."
-			},
-			{
-				"literal": "de Wietse Boer"
-			}
-		],
-		"issued": {
-			"date-parts": [
-				[
-					"2015",
-					1,
-					1
-				]
-			]
-		}
-	},
-	{
 		"id": "juutilainen2014",
 		"type": "article-journal",
 		"abstract": "Abstract   Forest management has caused severe ecological degradation throughout the Globe. One of its most prominent consequences is the drastic change in dead wood profile and consequently in the dead wood dependent biota. Wood-inhabiting fungi are, considering ecosystem functions, the most important species group utilizing dead wood, because they take care of majority of the decaying process. The earlier research focusing on the effects of forest management on wood-inhabiting fungi has strongly focused on large dead wood pieces (i.e. coarse woody debris, CWD), even though it has been shown that a major part of fungal diversity utilizes (also) small dead wood pieces (i.e. [very] fine woody debris, [V]FWD). In this paper, we studied the effects of earlier forest management on the wood-inhabiting fungi occupying all dead wood diameter fractions including the smallest pieces. The study was conducted in boreal pine and spruce dominated forests in Finland. Altogether we surveyed corticioid and polyporoid fungi from 113,269 dead wood pieces in 8 previously managed and 8 natural forests. The composition of fungal community varied between the forest types (pine vs. spruce; managed vs. natural) and according to the diameter of the dead wood substrate. However, the fungal diversity occupying CWD, and some diameter fractions of FWD, was clearly lower in managed than natural spruce dominated forests. Moreover, most of the rare species were detected only in natural forests, especially spruce dominated, and based on the species accumulation curves these sites were also the ones where largest proportion of community remained undetected. The effects of earlier forest management are evident also in fungal communities occupying FWD. The effects are, however, clearly stronger in CWD and especially in spruce dominated forests. Consequently, the main focus in forest conservation and restoration efforts may still be targeted on increasing CWD volume in managed landscapes, but simultaneously attention must be targeted on retaining reasonable volume of FWD to ensure that the species specialized in utilizing it will not be driven to local extinctions. Combining this recommendation with increasing pressure for energy wood harvesting will remain as a challenge.",
@@ -29051,7 +29017,7 @@
 		}
 	},
 	{
-		"id": "antoniotomao2020",
+		"id": "tomao2020",
 		"type": "article-journal",
 		"abstract": "Abstract   The influence of forest management on fungal diversity and community composition has been the subject of a wide number of studies over the last two decades. However, the difficulty of studying the complex kingdom of fungi under real forest conditions has led to rather scattered scientific knowledge. Here, we provide the current state of knowledge suggesting future research directions regarding (i) stand structure attributes (age, tree cover, stand density, tree species composition), (ii) management history (managed vs unmanaged), (iii) silvicultural treatments (thinning, clearcutting, shelterwood methods, selective cutting) and (iv) other anthropogenic disturbances (mushroom picking, salvage logging, prescribed burning, fertilization) affecting fungal diversity and community composition. The reviewed studies reported a positive correlation between fungal diversity and stand structure variables such as canopy cover, basal area of the stand and tree species diversity, particularly for mycorrhizal species. Abundance and diversity in size, tree species and decomposition stage of deadwood are reported as positively related to richness of wood-inhabiting fungi. The main findings about the effects of silvicultural practices suggest that the higher is the management intensity the lower is the diversity of ectomycorrhizal and wood-inhabiting species, at least in the short term. We have therefore reported those silvicultural practices which may reduce trade-offs between timber harvesting and fungal diversity conservation. Indeed, fungal diversity can be conserved in managed forests if (i) low impact logging operations are performed; (ii) stand structural complexity and late-successional forest characteristics are enhanced; (iii) deadwood amount and diversity is promoted, (iv) landscape heterogeneity and connectivity is improved or maintained.",
 		"container-title": "Forest Ecology and Management",
@@ -29061,9 +29027,6 @@
 		"title": "How does forest management affect fungal diversity and community composition? Current knowledge and future perspectives for the conservation of forest fungi",
 		"volume": "457",
 		"author": [
-			{
-				"literal": "Antonio Tomao"
-			},
 			{
 				"family": "Tomao",
 				"given": "Antonio"
@@ -40194,7 +40157,7 @@
 		}
 	},
 	{
-		"id": "anitac.risch2013",
+		"id": "risch2013",
 		"type": "article-journal",
 		"abstract": "Forest cover has increased in mountainous areas of Europe over the past decades because of the abandonment of agricultural areas (land-use change). For this reason, understanding how land-use change affects carbon (C) source–sink strength is of great importance. However, most studies have assessed mountainous systems C stocks, and less is known about C turnover rates, especially of “fresh” organic material (OM). We studied the decomposition of wood stakes of trembling aspen (Populus tremuloides Michx.) and loblolly pine (Pinus taeda L.) placed on the litter layer and in the mineral soil of five ecosystem types (pastures and forests) — representing the successional development after land abandonment in the eastern Swiss Alps — for 6 years. Wood stake decomposition rates were generally highest in pastures and lowest in early successional forests. Aspen stakes decomposed more rapidly than pine stakes, especially in the mineral soil. Soil temperature (and to a smaller extent soil phosphorus (P) concentration)...",
 		"container-title": "Canadian Journal of Forest Research",
@@ -40206,28 +40169,16 @@
 		"volume": "43",
 		"author": [
 			{
-				"literal": "Anita C. Risch"
-			},
-			{
 				"family": "Risch",
 				"given": "Anita C."
-			},
-			{
-				"literal": "Martin F. Jürgensen"
 			},
 			{
 				"family": "Jurgensen",
 				"given": "Martin F."
 			},
 			{
-				"literal": "Deborah S. Page‐Dumroese"
-			},
-			{
 				"family": "Page-Dumroese",
 				"given": "Deborah S."
-			},
-			{
-				"literal": "Martin Schütz"
 			},
 			{
 				"family": "Schütz",
@@ -40245,7 +40196,7 @@
 		}
 	},
 	{
-		"id": "marybethadams2021",
+		"id": "adams2021",
 		"type": "article-journal",
 		"abstract": "Abstract   Organic matter (OM) is an integral part of site productivity for a forest, and understanding the effects of OM removal on various forms of carbon (C) cycling is important for land managers and for policy makers. In this study, we utilized the Lake States Long-Term Soil Productivity (LTSP) study sites, located along a gradient in soil texture (clay, silt loam and sand) and high to low productivity, to evaluate the impacts of two OM removal treatments on belowground wood decomposition. In 2013, approximately 20years after the LTSP treatments had been installed, we placed standardized aspen and loblolly pine wood stakes in the mineral soil of plots receiving the bole only harvesting treatment (BO) and the whole tree harvesting with forest floor removal treatment (WT+FF), and in plots in an adjacent unharvested reference area (1350 wood stakes total). Soil was also sampled to characterize the microbial community composition in the various treatments. From 2014 to 2018, wood stakes were removed from each treatment, and mass loss determined. We found significant differences in wood stake decomposition among the three sites, and between the two wood species, but little impact of timber harvesting and surface OM removals on decomposition. Soil microbial composition also reflected site differences in stake decomposition. We conclude that clearcut harvest and surface OM removal had little effect on stake mass loss in the mineral soil 20years after the treatments were initiated, and the inherent soil factors are now controlling decomposition.",
 		"container-title": "Forest Ecology and Management",
@@ -40256,42 +40207,24 @@
 		"volume": "496",
 		"author": [
 			{
-				"literal": "Mary Beth Adams"
-			},
-			{
 				"family": "Adams",
 				"given": "Mark Raymond"
 			},
 			{
 				"family": "Adams",
-				"given": "M. B."
-			},
-			{
-				"literal": "Mary Beth Adams"
-			},
-			{
-				"literal": "Martin F. Jürgensen"
+				"given": "Mary Beth"
 			},
 			{
 				"family": "Jurgensen",
 				"given": "Martin F."
 			},
 			{
-				"literal": "Brian J. Palik"
-			},
-			{
 				"family": "Palik",
 				"given": "Brian J."
 			},
 			{
-				"literal": "Chris A. Miller"
-			},
-			{
 				"family": "Miller",
 				"given": "Chris A."
-			},
-			{
-				"literal": "Deborah S. Page‐Dumroese"
 			},
 			{
 				"family": "Page-Dumroese",
@@ -40309,7 +40242,7 @@
 		}
 	},
 	{
-		"id": "calvinm.smyth2016",
+		"id": "smyth2016a",
 		"type": "article-journal",
 		"abstract": "Aims and Methods\nWe measured changes in mass and in carbon (C), nitrogen (N) and phosphorus (P) concentrations and content of surface-placed and buried wood blocks decomposing over 12 years at 21 sites across Canada to evaluate the influence of the environment on C, N, and P dynamics.",
 		"container-title": "Plant and Soil",
@@ -40321,42 +40254,24 @@
 		"volume": "409",
 		"author": [
 			{
-				"literal": "Calvin M. Smyth"
-			},
-			{
 				"family": "Smyth",
 				"given": "C. E."
-			},
-			{
-				"literal": "Brian Titus"
 			},
 			{
 				"family": "Titus",
 				"given": "Brian D."
 			},
 			{
-				"literal": "J. A. Trofymow"
-			},
-			{
 				"family": "Trofymow",
 				"given": "John A."
-			},
-			{
-				"literal": "Tim R. Moore"
 			},
 			{
 				"family": "Moore",
 				"given": "Tim R."
 			},
 			{
-				"literal": "Caroline M. Preston"
-			},
-			{
 				"family": "Preston",
 				"given": "Caroline M."
-			},
-			{
-				"literal": "Cindy E. Prescott"
 			},
 			{
 				"family": "Prescott",
@@ -40374,7 +40289,7 @@
 		}
 	},
 	{
-		"id": "m.t.moroni2015",
+		"id": "moroni2015",
 		"type": "article-journal",
 		"abstract": "Buried wood (BW: downed deadwood buried more than 50% by soil, litter, or ground vegetation) is a common but understudied part of forest ecosystems. We reviewed the literature and conducted a meta-analysis of BW that included new data from Australia, Belarus, Canada, Germany, Japan, Norway, Russia, Slovakia, Sweden, the USA, and Wales. Buried wood occurred in a wide range of forest types of natural and anthropogenic origin. In some forests, BW was effectively preserved and volumes of BW exceeded the volume of all other live and deadwood combined. Boreal and oroboreal coniferous forests contained large amounts of BW, whereas hardwood forests appeared to contain little BW due to differences in ground vegetation, wood decomposition pathways, and climatic and edaphic conditions. Coniferous forests growing on paludified ground represent areas with a large capacity to store BW. The largest quantity of BW reported was 935 m3 ha−1 in paludified black spruce (Picea mariana (Mill.)) forests, where typically mature live bole volumes are only 150 m3 ha−1. Buried wood can accumulate over several disturbance cycles (centuries), due to greatly reduced rates of decomposition following burial. As such, BW can represent a large forest C pool that is currently not recognized in forest C accounting using field measurements or models. Failing to account for wood burial can lead to underestimates of ecosystem deadwood stocks as well as misinterpretations of ecosystem dynamics. Buried wood and the burial process should be included in forest measurement and models, particularly for boreal and oroboreal ecosystems, to reduce uncertainty and improve accuracy in forest C accounting. This will require improvements to existing field sampling protocols and collection of long-term data on processes creating BW.",
 		"container-title": "Ecosystems",
@@ -40386,77 +40301,40 @@
 		"volume": "18",
 		"author": [
 			{
-				"literal": "M. T. Moroni"
-			},
-			{
 				"family": "Moroni",
 				"given": "Martin T."
-			},
-			{
-				"literal": "David Morris"
 			},
 			{
 				"family": "Morris",
 				"given": "Dave M."
 			},
 			{
-				"literal": "Cindy Shaw"
-			},
-			{
 				"family": "Shaw",
 				"given": "Cindy"
-			},
-			{
-				"literal": "Jogeir N. Stokland"
 			},
 			{
 				"family": "Stokland",
 				"given": "J. N."
 			},
 			{
-				"literal": "Mark E. Harmon"
-			},
-			{
 				"family": "Harmon",
 				"given": "Mark E."
-			},
-			{
-				"literal": "Nicole J. Fenton"
 			},
 			{
 				"family": "Fenton",
 				"given": "Nicole J."
 			},
 			{
-				"literal": "Katarína Merganičová"
-			},
-			{
 				"family": "Merganičová",
 				"given": "Katarína"
-			},
-			{
-				"literal": "Ján Merganič"
 			},
 			{
 				"family": "Merganič",
 				"given": "Ján"
 			},
 			{
-				"literal": "Kimiko Okabe"
-			},
-			{
 				"family": "Okabe",
 				"given": "K."
-			},
-			{
-				"family": "Hagemann",
-				"given": "Ulrike"
-			},
-			{
-				"literal": "Ulrike Hagemann"
-			},
-			{
-				"literal": "U. Hagemann"
 			},
 			{
 				"family": "Hagemann",
@@ -40474,7 +40352,7 @@
 		}
 	},
 	{
-		"id": "gregoiret.freschet2012",
+		"id": "freschet2012",
 		"type": "article-journal",
 		"abstract": "Summary 1. While the importance of wood decay for the global carbon balance is widely recognized, surprisingly little is known about its long-term dynamics and its abiotic and biotic drivers. Progress in this field is hindered by the long time-scales inherent to the low decay rates of wood and the lack of short-term methods to assess long-term decomposition dynamics in standardized field conditions. 2. Here, we present such a method, which relies on the sampling and short-term incubation of wood from several decay stages covering the entire decay process. Together these short-term decay steps are used to model and discriminate between three potential decay dynamics (linear, exponential and sigmoid) using an iterative optimization procedure. We applied this method to analyse long-term wood decay of six subarctic tree species (six stems and two roots) and test the hypotheses that (i) different wood species follow distinct decay dynamics and (ii) interspecific variation in wood traits controls variation in wood decay rates in a standardized environment. 3. We found interspecific variation in long-term wood decay dynamics: decay of Alnus and Salix stems was best described by exponential models, whereas decay of Sorbus stems and Betula and Pinus roots was best fitted by linear models and Betula, Pinus and Populus stems each displayed a sigmoid decay dynamics (up to 5-year initial lag phase). A six-fold variation was observed between the decomposition half-lives of all eight wood types, from 6.8 years (6.1–7.5, 95% C.I.) for Alnus stems to 41.3 years (34.5–51.8) for Pinus roots. Initial wood traits such as pH (R 2 = 0.92), dry matter content (R 2 =0 .79) and lignin ( R 2 = 0.73) were good predictors of long-term wood decay rates.",
 		"container-title": "Journal of Ecology",
@@ -40485,9 +40363,6 @@
 		"title": "Interspecific differences in wood decay rates: insights from a new short-term method to study long-term wood decomposition",
 		"volume": "100",
 		"author": [
-			{
-				"literal": "Grégoire T. Freschet"
-			},
 			{
 				"family": "Freschet",
 				"given": "Grégoire T."
@@ -40533,7 +40408,7 @@
 		}
 	},
 	{
-		"id": "marka.bradford2014",
+		"id": "bradford2014",
 		"type": "article-journal",
 		"abstract": "spatial scale from which they are inferred. We show that the common assumption that climate is a predominant control on decomposition is supported only when local-scale variation is aggregated into mean values. Disaggregated data instead reveal that local-scale factors explain 73% of the variation in wood decomposition, and climate only 28%. Further, the temperature sensitivity of decomposition estimated from local versus mean analyses is 1.3-times greater. Fundamental issues with mean correlations were highlighted decades ago 9,10 , yet mean climate‐decomposition relationships are used to generate simulations that inform management and adaptation under environmental change. Our results suggest that to predict accurately how decomposition will respond to climate change, models must account for local-scale factors that control regional dynamics. Climate is traditionally thought to be the predominant control on decomposition rates at global and regional scales, with biotic factors controlling only local rates 2,4 . Biotic factors are divided into decomposer organisms, such as soil microbes, and the quality (for example, chemical composition) of the plant litter they decompose. Recent work suggests that litter quality may be more important than climate in controlling decomposition rates across biomes worldwide 3,11 , but the influence of decomposer organisms is still assumed limited across broad climate gradients 12 . A core reason for this assumption is that climate is considered a primary control on the activity of decomposers. As such, across climate gradients, mean temperature and moisture availability are assumed to explain much of the variation in the activity of decomposer organisms and hence decomposition rates of organic matter. These climatedecomposition relationships are used to parameterize and evaluate Earth-system models 13 . It is therefore important to test the assumption that climate drives decomposer activities because proper understanding of these activities is needed to inform model projections such as carbon cycleclimate",
 		"container-title": "Nature Climate Change",
@@ -40545,66 +40420,36 @@
 		"volume": "4",
 		"author": [
 			{
-				"literal": "Mark A. Bradford"
-			},
-			{
 				"family": "Bradford",
 				"given": "Mark A."
-			},
-			{
-				"literal": "Robert J. Warren"
-			},
-			{
-				"literal": "Robert J. Warren"
 			},
 			{
 				"family": "Warren",
 				"given": "Robert J."
 			},
 			{
-				"literal": "Petr Baldrián"
-			},
-			{
 				"family": "Baldrian",
 				"given": "Petr"
-			},
-			{
-				"literal": "Thomas W. Crowther"
 			},
 			{
 				"family": "Crowther",
 				"given": "Thomas W."
 			},
 			{
-				"literal": "Daniel S. Maynard"
-			},
-			{
 				"family": "Maynard",
 				"given": "Daniel S."
-			},
-			{
-				"literal": "Emily E. Oldfield"
 			},
 			{
 				"family": "Oldfield",
 				"given": "Emily E."
 			},
 			{
-				"literal": "William R. Wieder"
-			},
-			{
 				"family": "Wieder",
 				"given": "William R."
 			},
 			{
-				"literal": "Stephen A. Wood"
-			},
-			{
 				"family": "Wood",
 				"given": "Stephen A."
-			},
-			{
-				"literal": "Joshua R. King"
 			},
 			{
 				"family": "King",
@@ -40622,7 +40467,7 @@
 		}
 	},
 	{
-		"id": "jodia.forrester2012",
+		"id": "forrester2012",
 		"type": "article-journal",
 		"abstract": "Coarse woody debris (CWD) and canopy gaps are thought to be important structural components that influence forest ecosystem processes, yet few studies have assessed whether these features interact to influence decay dynamics, and we know of none that does so under controlled experimental canopy gap conditions. By manipulating forest structure to create canopy openings, we tested whether canopy gaps, through their influence on microclimate, affect the respiration rate of CWD in a mature second- growth northern hardwood forest of Wisconsin, USA. We sought to determine the relative contribution of moisture or temperature as predictors of respiration, and to provide estimates of the annual C emission from CWD in these treatments. Differences in the surface temperature of CWD were apparent immedi- ately following gap treatments, with debris in gaps staying significantly warmer than beneath undis- turbed canopy. Coarse woody debris moisture content differed more between gaps and undisturbed canopy in the second post-treatment year due to higher insolation and temperature in gaps relative to undisturbed canopy. The gap treatment increased respiration rates and altered the relationship with CWD temperature and moisture in complex ways. The impacts of gap creation on C fluxes from CWD depended on the range of temperature and moisture being examined. The interaction of the temperature and moisture of the debris in combination with the decay class explained 60% of the observed variation in CWD respiration beneath undisturbed canopies. In gaps, only 23% of the variation of flux could be explained by environmental variables. Annual C fluxes were 128.2 g C kg � 1",
 		"container-title": "Forest Ecology and Management",
@@ -40633,28 +40478,16 @@
 		"volume": "265",
 		"author": [
 			{
-				"literal": "Jodi A. Forrester"
-			},
-			{
 				"family": "Forrester",
 				"given": "Jodi A."
-			},
-			{
-				"literal": "David J. Mladenoff"
 			},
 			{
 				"family": "Mladenoff",
 				"given": "David J."
 			},
 			{
-				"literal": "Stith T. Gower"
-			},
-			{
 				"family": "Gower",
 				"given": "Stith T."
-			},
-			{
-				"literal": "Jennifer L. Stoffel"
 			},
 			{
 				"family": "Stoffel",
@@ -40714,7 +40547,7 @@
 		}
 	},
 	{
-		"id": "calvinm.smyth2011",
+		"id": "smyth2011",
 		"type": "article-journal",
 		"abstract": "Abstract   Decomposition of plant detritus and humified organic matter in terrestrial ecosystems is a primary source of atmospheric carbon dioxide (CO 2 ), yet the dynamics of decomposition are not well understood, particularly their response to climate change. The Carbon Budget Model of the Canadian Forest Sector (CBM-CFS3) presently includes a sub-model to simulate the decomposition of dead organic matter carbon pools using base decay rates modified by temperature quotients. In this study, representation of litter decomposition was improved in the CBM-CFS3 by reducing decay rates under limited moisture conditions. Water stress effects were determined from comparisons of model predictions with data from a 12-year national litterbag decomposition study—the Canadian Intersite Decomposition Experiment (CIDET). Several simple water-stress modifiers based on precipitation and potential evapotranspiration were tested, and parameters were simultaneously fit by minimizing the least-squared error. The best-fitting formulation used the annual average of the ratio of monthly precipitation to monthly potential evapotranspiration, and increased the explained variance by 8%. Water-stress modifiers were applied to decay rates to predict carbon stocks at 516 ground plots from a national soil plot database. The addition of the water-stress modifier modestly increased litter and humified organic matter carbon stocks at dry locations and decreased these carbon stocks at non-water-stressed locations. The new ability to lower decay rates of certain dead organic matter pools under limited moisture conditions in the CBM-CFS3 has the potential to reduce bias in carbon flux predictions for those regions and for future climate change scenarios where moisture limits decomposition processes.",
 		"container-title": "Ecological Modelling",
@@ -40726,21 +40559,12 @@
 		"volume": "222",
 		"author": [
 			{
-				"literal": "Calvin M. Smyth"
-			},
-			{
 				"family": "Smyth",
 				"given": "C. E."
 			},
 			{
-				"literal": "Werner A. Kurz"
-			},
-			{
 				"family": "Kurz",
 				"given": "Werner A."
-			},
-			{
-				"literal": "J. A. Trofymow"
 			},
 			{
 				"family": "Trofymow",
@@ -40758,7 +40582,7 @@
 		}
 	},
 	{
-		"id": "marke.harmon2009",
+		"id": "harmon2009",
 		"type": "article-journal",
 		"abstract": "Decomposition is a critical process in global carbon cycling. During decomposition, leaf and fine root litter may undergo a later, relatively slow phase; past long-term experiments indicate this phase occurs, but whether it is a general phenomenon has not been examined. Data from Long-term Intersite Decomposition Experiment Team, representing 27 sites and nine litter types (for a total of 234 cases) was used to test the frequency of this later, slow phase of decomposition. Litter mass remaining after up to 10 years of decomposition was fit to models that included (dual exponential and asymptotic) or excluded (single exponential) a slow phase. The resultant regression equations were evaluated for goodness of fit as well as biological realism. Regression analysis indicated that while the dual exponential and asymptotic models statistically and biologically fit more of the litter type‐site combinations than the single exponential model, the latter was biologically reasonable for 27‐65% of the cases depending on the test used. This implies that a slow phase is common, but not universal. Moreover, estimates of the decomposition rate of the slowly decomposing component averaged 0.139‐0.221year � 1 (depending on method), higher than generally observed for mineral soil organic matter, but one-third of the faster phase of litter decomposition. Thus, this material may be slower than the earlier phases of litter decomposition, but not as slow as mineral soil organic matter. Comparison of the long-term integrated decomposition rate (which included all phases of decomposition) to that for the first year of decomposition indicated the former was on average 75% that of the latter, consistent with the presence of a slow phase of decomposition. These results indicate that the global store of litter estimated using short-term decomposition rates would be underestimated by at least one-third.",
 		"container-title": "Global Change Biology",
@@ -40769,9 +40593,6 @@
 		"title": "Long-term patterns of mass loss during the decomposition of leaf and fine root litter: an intersite comparison",
 		"volume": "15",
 		"author": [
-			{
-				"literal": "Mark E. Harmon"
-			},
 			{
 				"family": "Harmon",
 				"given": "Mark E."
@@ -40837,7 +40658,7 @@
 		}
 	},
 	{
-		"id": "astridtaylor2016",
+		"id": "taylor2016",
 		"type": "article-journal",
 		"abstract": "In Sweden, tree stumps are currently considered as a potential resource for bioenergy production. However, environmental effects of stump harvesting – in particular when applied on a larger scale – are regarded as a potential threat to biodiversity in forests but are only poorly investigated. This is especially true for the numerous non-coleopteran macroarthropod groups inhabiting stumps. The aim of the present study was to investigate if a reduction in available dead wood due to stump harvesting in boreal coniferous forests has a negative effect on Diplopoda (millipedes) and Chilopoda (centipedes). We compared abundance, species richness and community composition (dominance patterns and similarity) of these groups on 3-year-old stumps remaining on stump-harvested (SH) clearcuts and non-harvested ‘control’ (C) clearcuts at 2 locations in central Sweden. For each investigated stump, animals were extracted from the total bark area (including the space between bark and wood), enumerated and determined to species level. Stump harvesting significantly decreased diplopod abundance per stump by 52% and changed community composition compared to clearcuts. Stump harvesting predominantly affected the abundance of two species (Polyxenus lagurus and Proteroiulus fuscus) that strongly dominated the diplopod communities on stumps. Mean species richness of diplopods on individual stumps was low (1–2 species depending on clearcut type and region) and was not affected by stump harvesting. Overall, eight diplopod species were found on stumps at both SH and C clearcuts. Only two species of chilopods were found on the stumps, occurring in low abundances and revealing no response to stump harvesting. The significant loss of diplopod specimens per stump after stump harvesting may be linked to a corresponding loss in function, particularly the mechanical breakdown of woody substrates. The results indicate that a reduction of habitats for stump species with low dispersal ability can both reduce their abundance per unit substrate and potentially also change the stump decomposition rate compared to sites with higher stump densities. Our results therefore highlight a need for careful consideration of increased intensity of stump harvesting at the landscape level.",
 		"container-title": "Forest Ecology and Management",
@@ -40848,18 +40669,12 @@
 		"volume": "371",
 		"author": [
 			{
-				"literal": "Astrid Taylor"
-			},
-			{
 				"family": "Taylor",
 				"given": "Astrid"
 			},
 			{
 				"family": "Sverdrup-Thygeson",
 				"given": "Anne"
-			},
-			{
-				"literal": "Jonas Victorsson"
 			},
 			{
 				"family": "Victorsson",
@@ -40916,7 +40731,7 @@
 		}
 	},
 	{
-		"id": "sinierajaa2010",
+		"id": "erajaa2010",
 		"type": "article-journal",
 		"abstract": "Logging residue and cut stumps are increasingly used as a renewable energy source known as forest fuel. Forest fuel harvesting obviously reduces the volume of dead wood and is likely to alter the dead wood composition, but the magnitude of the change is not known. Such information is important for the evaluation of the effects of forest fuel harvesting on biodiversity because a large proportion of forest dwelling species are directly dependent on dead wood. We measured the volume and characteristics of all dead wood units with a minimum diameter of 2 cm and a minimum length of 20 cm on 10 forest-fuel harvested and 10 traditional (control) clear-cuts. The total volume of dead wood at forest fuel harvested and control clear-cuts was 26.0 and 42.3 m 3 /ha, respectively. The volumes were much greater than expected suggesting that the volume of dead wood on clear-cuts has been underestimated in previous studies. Forest fuel harvested clear-cuts had 42% less branches and 81% less cut stumps than control clear-cuts but there were no differences in the volume of logs and pieces of logs, snags or roots. The volume of fine woody debris was negatively affected by forest fuel harvesting. We conclude that fine woody debris and cut stumps form a considerable resource on clear-cuts that is reduced by forest fuel harvesting. These components of dead wood have potential to be of importance in managed forests and thus deserve more attention in future biodiversity studies.",
 		"container-title": "Silva Fennica",
@@ -40928,35 +40743,20 @@
 		"volume": "44",
 		"author": [
 			{
-				"literal": "Sini Eräjää"
-			},
-			{
 				"family": "Eräjää",
 				"given": "Sini"
-			},
-			{
-				"literal": "Panu Halme"
 			},
 			{
 				"family": "Halme",
 				"given": "Panu"
 			},
 			{
-				"literal": "Janne S. Kotiaho"
-			},
-			{
 				"family": "Kotiaho",
 				"given": "Janne S."
 			},
 			{
-				"literal": "Anni Markkanen"
-			},
-			{
 				"family": "Markkanen",
 				"given": "Anni"
-			},
-			{
-				"literal": "Tero Toivanen"
 			},
 			{
 				"family": "Toivanen",
@@ -40974,7 +40774,7 @@
 		}
 	},
 	{
-		"id": "brendannicholasmarais2020",
+		"id": "marais2020",
 		"type": "article-journal",
 		"abstract": "Factors relevant to degradation are important in every wood application. For wood used in ground and water contact; well documented abiotic factors (or agents) include exposure to temperature and m...",
 		"container-title": "Wood Material Science and Engineering",
@@ -40984,32 +40784,12 @@
 		"title": "Wood durability in terrestrial and aquatic environments – A review of biotic and abiotic influence factors",
 		"author": [
 			{
-				"literal": "Brendan Nicholas Marais"
-			},
-			{
 				"family": "Marais",
 				"given": "Brendan Nicholas"
 			},
 			{
-				"literal": "Christian Brischke"
-			},
-			{
 				"family": "Brischke",
 				"given": "Christian"
-			},
-			{
-				"family": "Brischke",
-				"given": "Christian"
-			},
-			{
-				"literal": "Holger Militz"
-			},
-			{
-				"family": "Militz",
-				"given": "Holger"
-			},
-			{
-				"literal": "Holger Militz"
 			},
 			{
 				"family": "Militz",
@@ -41027,7 +40807,7 @@
 		}
 	},
 	{
-		"id": "christianbrischke2021",
+		"id": "brischke2021",
 		"type": "article-journal",
 		"abstract": "A Correction to this paper has been published: 10.1007/s00253-020-10479-1",
 		"container-title": "Applied Microbiology and Biotechnology",
@@ -41038,13 +40818,6 @@
 		"title": "Correction to: Wood-water relationships and their role for wood susceptibility to fungal decay.",
 		"volume": "105",
 		"author": [
-			{
-				"literal": "Christian Brischke"
-			},
-			{
-				"family": "Brischke",
-				"given": "Christian"
-			},
 			{
 				"family": "Brischke",
 				"given": "Christian"
@@ -42694,7 +42467,7 @@
 		}
 	},
 	{
-		"id": "abdelwahabbessaad2021",
+		"id": "bessaad2021",
 		"type": "article-journal",
 		"abstract": "Forest biomass is a sustainable source of renewable energy and a valuable alternative to finite fossil fuels. However, its overharvesting may lead to soil nutrient depletion and threaten future stand productivity, as well as affect the habitat for biodiversity. This paper provides quantitative data on biomass removal, fine woody debris [d ≤ 7 cm], and coarse woody debris [d > 7 cm] left on the forest floor in whole tree harvesting systems. Using tree allometric equations and inventory field methods for woody debris estimation, we assessed biomass removal on nine fuelwood harvesting sites in Central France, as well as fine and coarse woody debris left on the sites. The aboveground biomass estimates showed a high variability between the studied sites, it varied between 118 and 519 Mg ha−1. However, less variability was found among sites managed as coppice-with-standards 174 ± 56 Mg ha−1. Exported biomass was 107 ± 42 Mg ha−1 on average, including 35 ± 9% of fine wood. The amounts of both fine and coarse woody debris left on sites were generally less than 10% of the total harvested biomass in 2/3 of the studied sites. These amounts are lower than the minimum retention levels recommended by the sustainable forest biomass harvesting guidelines. Therefore, more technical effort and additional management measures should be taken to ensure more woody debris, especially in poor forest soils and thus, to guarantee a sustainable biomass harvesting.",
 		"container-title": "Forests",
@@ -42706,21 +42479,12 @@
 		"volume": "12",
 		"author": [
 			{
-				"literal": "Abdelwahab Bessaad"
-			},
-			{
 				"family": "Bessaad",
 				"given": "Abdelwahab"
 			},
 			{
-				"literal": "Isabelle Bilger"
-			},
-			{
 				"family": "Bilger",
 				"given": "Isabelle"
-			},
-			{
-				"literal": "Nathalie Korboulewsky"
 			},
 			{
 				"family": "Korboulewsky",
@@ -42738,7 +42502,7 @@
 		}
 	},
 	{
-		"id": "sarahr.fritts2014",
+		"id": "fritts2014a",
 		"type": "article-journal",
 		"abstract": "Abstract   Our objective was to determine if a retention area-based Biomass Harvesting Guideline (BHG) strategy maintained desired volumes of downed woody debris (DWD) following woody biomass harvests. We implemented six randomly-assigned treatments in four clearcuts in loblolly pine plantations in the Coastal Plain physiographic region of North Carolina during 2010–2011: 1) woody biomass harvest with no BHGs (NOBHG); 2) 15% retention with woody biomass dispersed (15DISP); 3) 15% retention with woody debris clustered (15CLUS); 4) 30% retention with woody biomass dispersed (30DISP); 5) 30% retention with woody biomass clustered (30CLUS); and 6) no woody biomass harvest (i.e., clearcut only; NOBIOHARV). Prior to harvesting, we flagged 15% or 30% of the treatment area to serve as woody biomass retention sources for the four BHG treatments, and all woody biomass from the flagged area were retained and distributed across that entire treatment area. We examined effects of treatments on: 1) fraction estimated volume of pre-harvest standing volume (total and woody biomass) retained as residual DWD; and 2) fraction retained DWD in treatments 2–5 relative to retained DWD in the NOBHGS and NOBIOHARV treatments. Adding a woody biomass harvest reduced volume of residual DWD by 81% in NOBHG compared to NOBIOHARV. Estimates based on the second metric were most similar to target retentions with retention percentages at 18.8% in 15CLUS, 14.1% in 15DISP, 39.0% in 30CLUS, and 38.0% in 30DISP. Treatments resulted in retention of DWD fractions approximate to those prescribed, suggesting BHGs can be implemented successfully in an operational setting.",
 		"container-title": "Biomass & Bioenergy",
@@ -42749,28 +42513,16 @@
 		"volume": "70",
 		"author": [
 			{
-				"literal": "Sarah R. Fritts"
-			},
-			{
 				"family": "Fritts",
 				"given": "Sarah R."
-			},
-			{
-				"literal": "Christopher E. Moorman"
 			},
 			{
 				"family": "Moorman",
 				"given": "Christopher E."
 			},
 			{
-				"literal": "Dennis W. Hazel"
-			},
-			{
 				"family": "Hazel",
 				"given": "Dennis W."
-			},
-			{
-				"literal": "Brian D. Jackson"
 			},
 			{
 				"family": "Jackson",
@@ -42788,7 +42540,7 @@
 		}
 	},
 	{
-		"id": "inkenkrueger2017",
+		"id": "krueger2017",
 		"type": "article-journal",
 		"abstract": "The effect of forest conservation on the organic carbon (C) stock of temperate forest soils is hardly investigated. Coarse woody debris (CWD) represents an important C reservoir in unmanaged forests and potential source of C input to soils. Here, we compared aboveground CWD and soil C stocks at the stand level of three unmanaged and three adjacent managed forests in different geological and climatic regions of Bavaria, Germany. CWD accumulated over 40–100 years and yielded C stocks of 11 Mg C ha−1 in the unmanaged spruce forest and 23 and 30 Mg C ha−1 in the two unmanaged beech–oak forests. C stocks of the organic layer were smaller in the beech–oak forests (8 and 19 Mg C ha−1) and greater in the spruce forest (36 Mg C ha−1) than the C stock of CWD. Elevated aboveground CWD stocks did not coincide with greater C stocks in the organic layers and the mineral soils of the unmanaged forests. However, radiocarbon signatures of the Oe and Oa horizons differed among unmanaged and managed beech–oak forests. We attributed these differences to partly faster turnover of organic C, stimulated by greater CWD input in the unmanaged forest. Alternatively, the slower turnover of organic C in the managed forests resulted from lower litter quality following thinning or different tree species composition. Radiocarbon signatures of water-extractable dissolved organic carbon (DOC) from the top mineral soils point to CWD as potent DOC source. Our results suggest that 40–100 years of forest protection is too short to generate significant changes in C stocks and radiocarbon signatures of forest soils at the stand level.",
 		"container-title": "European Journal of Forest Research",
@@ -42800,21 +42552,12 @@
 		"volume": "136",
 		"author": [
 			{
-				"literal": "Inken Krueger"
-			},
-			{
 				"family": "Krueger",
 				"given": "Inken"
 			},
 			{
-				"literal": "Christoph Schulz"
-			},
-			{
 				"family": "Schulz",
 				"given": "Christoph"
-			},
-			{
-				"literal": "Werner Borken"
 			},
 			{
 				"family": "Borken",
@@ -42832,7 +42575,7 @@
 		}
 	},
 	{
-		"id": "lorenzomenichetti2021",
+		"id": "menichetti2021",
 		"type": "article-journal",
 		"abstract": "There is a trade-off between leaving coarse woody debris (CWD) in the stand, providing desirable ecosystem services, and harvesting it. To consider this trade-off, forest management needs to model describing the decomposition of CWD. When a trunk is lying on the ground, it can be attacked by microorganisms faster than when it is still standing. Current decomposition models fail to account for these local differences in processes, which may give rise to errors in the estimation of stand C balance. We extended the Q decomposition model to represent the influences of tree species and the local position of the wood. We utilized data from two studies on long-term deadwood decomposition in forests. We first calibrated the model on the whole dataset, and then divided the data into different CWD decomposition classes, and then allowed some of the parameters to vary between different CWD decomposition classes. The calibrations were performed within a Bayesian framework, which allowed for a statistically sound comparison of the calibration results. The difference between the remaining C mass predicted by the two versions of the model, one considering one single calibration for all decomposition classes and one specific to decomposition classes, depended on the CWD class but was in general substantial. Some classes, when modeled with a specific parameterization, resulted in C stocks after 50 yr 1–5 times less than that predicted by the single parameterization model. Logs decayed faster than snags, and birch wood much faster than pine and spruce wood, with little difference between the two conifers. Russian spruce wood decomposed somewhat faster than Finnish spruce wood. Incorporating our calibration, describing specifically the processes driving the wood decay locally, into a C balance model of forests may change model estimates substantially.",
 		"container-title": "Ecosphere",
@@ -42842,9 +42585,6 @@
 		"title": "Modeling persistence of coarse woody debris residuals in boreal forests as an ecological property",
 		"volume": "12",
 		"author": [
-			{
-				"literal": "Lorenzo Menichetti"
-			},
 			{
 				"family": "Menichetti",
 				"given": "Lorenzo"
@@ -42888,7 +42628,7 @@
 		}
 	},
 	{
-		"id": "davem.morris2014",
+		"id": "morris2014a",
 		"type": "article-journal",
 		"abstract": "With a growing interest in the diversification (e.g., bioenergy, biochemicals) of the forest industry beyond the traditional product streams, concerns that higher harvest utilization levels may com...",
 		"container-title": "Canadian Journal of Forest Research",
@@ -42900,21 +42640,12 @@
 		"volume": "44",
 		"author": [
 			{
-				"literal": "Dave M. Morris"
-			},
-			{
 				"family": "Morris",
 				"given": "Dave M."
 			},
 			{
-				"literal": "Martin M. Kwiaton"
-			},
-			{
 				"family": "Kwiaton",
 				"given": "Martin M."
-			},
-			{
-				"literal": "Dan R. Duckert"
 			},
 			{
 				"family": "Duckert",
@@ -42932,7 +42663,7 @@
 		}
 	},
 	{
-		"id": "runai.magnusson2016",
+		"id": "magnusson2016",
 		"type": "article-journal",
 		"abstract": "Worldwide, forests have absorbed around 30% of global anthropogenic emissions of carbon dioxide (CO2) annually, thereby acting as important carbon (C) sinks. It is proposed that leaving large fragments of dead wood, coarse woody debris (CWD), in forest ecosystems may contribute to the forest C sink strength. CWD may take years to centuries to degrade completely, and non-respired C from CWD may enter the forest soil directly or in the form of dissolved organic C. Although aboveground decomposition of CWD has been studied frequently, little is known about the relative size, composition and fate of different C fluxes from CWD to soils under various substrate-specific and environmental conditions. Thus, the exact contribution of C from CWD to C sequestration within forest soils is poorly understood and quantified, although understanding CWD degradation and stabilization processes is essential for effective forest C sink management. This review aims at providing insight into these processes on the interface of forest ecology and soil science, and identifies knowledge gaps that are critical to our understanding of the effects of CWD on the forest soil C sink. It may be seen as a “call-to-action” crossing disciplinary boundaries, which proposes the use of compound-specific analytical studies and manipulation studies to elucidate C fluxes from CWD. Carbon fluxes from decaying CWD can vary considerably due to interspecific and intraspecific differences in composition and different environmental conditions. These variations in C fluxes need to be studied in detail and related to recent advances in soil C sequestration research. Outcomes of this review show that the presence of CWD may enhance the abundance and diversity of the microbial community and constitute additional fluxes of C into the mineral soil by augmented leaching of dissolved organic carbon (DOC). Leached DOC and residues from organic matter (OM) from later decay stages have been shown to be relatively enriched in complex and microbial-derived compounds, which may also be true for CWD-derived OM. Emerging knowledge on soil C stabilization indicates that such complex compounds may be sorbed preferentially to the mineral soil. Moreover, increased abundance and diversity of decomposer organisms may increase the amount of substrate C being diverted into microbial biomass, which may contribute to stable C pools in the forest soil.",
 		"container-title": "Forest Ecology and Management",
@@ -42943,35 +42674,20 @@
 		"volume": "377",
 		"author": [
 			{
-				"literal": "Rúna Í. Magnússon"
-			},
-			{
 				"family": "Magnússon",
 				"given": "Rúna Í."
-			},
-			{
-				"literal": "Albert Tietema"
 			},
 			{
 				"family": "Tietema",
 				"given": "Albert"
 			},
 			{
-				"literal": "Johannes H. C. Cornelissen"
-			},
-			{
 				"family": "Cornelissen",
 				"given": "Johannes H. C."
 			},
 			{
-				"literal": "Mariet M. Hefting"
-			},
-			{
 				"family": "Hefting",
 				"given": "Mariet M."
-			},
-			{
-				"literal": "Karsten Kalbitz"
 			},
 			{
 				"family": "Kalbitz",
@@ -42984,60 +42700,6 @@
 					"2016",
 					10,
 					1
-				]
-			]
-		}
-	},
-	{
-		"id": "scotta.wiebe2014",
-		"type": "article-journal",
-		"abstract": "Abstract: This study was designed as a log-scale examination of the influence that decomposing coarse woody debris (CWD in situ for 15 y following harvesting) had on soil carbon and nutrient levels. The study included 4 study sites representing 2 soil types: loamy tills versus sandy outwashes. The mature, fire-origin mixed conifer stands occupying these sites were clearcut harvested in 1994. In 2009, estimates of both total soil carbon and total and available nutrient pools were compared in locations under versus away from CWD. The presence of decaying CWD (now decay classes 3–4) significantly increased soil carbon (+85 %) and nitrogen (+49 %) pools. Estimates of inorganic N from a fresh soil 2M KCL extraction, however, were lower underneath the logs, suggesting that N immobilization is occurring as part of the decomposition process. In contrast, the presence of CWD had no significant effect on P, K, Ca, or Mg soil pools. Although there were marked differences in soil nutrient pools between the 2 soil typ...",
-		"container-title": "Ecoscience",
-		"DOI": "10.2980/21-1-3647",
-		"issue": "1",
-		"note": "DOI: 10.2980/21-1-3647\nMAG ID: 2056703744\nS2ID: 2511bdc374186b5445e26156bb29de1df2d95752",
-		"page": "11-20",
-		"title": "The influence of coarse woody debris on soil carbon and nutrient pools 15 years after clearcut harvesting in black spruce—dominated stands in northwestern Ontario, Canada",
-		"volume": "21",
-		"author": [
-			{
-				"literal": "Scott A. Wiebe"
-			},
-			{
-				"family": "Wiebe",
-				"given": "Scott A."
-			},
-			{
-				"literal": "Dave M. Morris"
-			},
-			{
-				"literal": "Dave M. Morris"
-			},
-			{
-				"family": "Morris",
-				"given": "Dave M."
-			},
-			{
-				"literal": "Nancy Luckai"
-			},
-			{
-				"family": "Luckai",
-				"given": "Nancy"
-			},
-			{
-				"literal": "Douglas E. B. Reid"
-			},
-			{
-				"family": "Reid",
-				"given": "Douglas E. B."
-			}
-		],
-		"issued": {
-			"date-parts": [
-				[
-					"2014",
-					12,
-					16
 				]
 			]
 		}
@@ -43388,21 +43050,6 @@
 					"2002",
 					3,
 					15
-				]
-			]
-		}
-	},
-	{
-		"id": "zotero-2671",
-		"type": "webpage",
-		"title": "Modeling persistence of coarse woody debris residuals in boreal forests as an ecological property - Menichetti - 2021 - Ecosphere - Wiley Online Library",
-		"URL": "https://esajournals.onlinelibrary.wiley.com/doi/10.1002/ecs2.3792",
-		"accessed": {
-			"date-parts": [
-				[
-					"2024",
-					6,
-					18
 				]
 			]
 		}
@@ -44340,52 +43987,6 @@
 		}
 	},
 	{
-		"id": "sardans2021a",
-		"type": "article-journal",
-		"abstract": "Potassium, mostly as a cation (K+), together with calcium (Ca2+) are the most abundant inorganic chemicals in plant cellular media, but they are rarely discussed. K+ is not a component of molecular or macromolecular plant structures, thus it is more difficult to link it to concrete metabolic pathways than nitrogen or phosphorus. Over the last two decades, many studies have reported on the role of K+ in several physiological functions, including controlling cellular growth and wood formation, xylem–phloem water content and movement, nutrient and metabolite transport, and stress responses. In this paper, we present an overview of contemporary findings associating K+ with various plant functions, emphasizing plant-mediated responses to environmental abiotic and biotic shifts and stresses by controlling transmembrane potentials and water, nutrient, and metabolite transport. These essential roles of K+ account for its high concentrations in the most active plant organs, such as leaves, and are consistent with the increasing number of ecological and agricultural studies that report K+ as a key element in the function and structure of terrestrial ecosystems, crop production, and global food security. We synthesized these roles from an integrated perspective, considering the metabolic and physiological functions of individual plants and their complex roles in terrestrial ecosystem functions and food security within the current context of ongoing global change. Thus, we provide a bridge between studies of K+ at the plant and ecological levels to ultimately claim that K+ should be considered at least at a level similar to N and P in terrestrial ecological studies.",
-		"container-title": "Plants",
-		"DOI": "10.3390/plants10020419",
-		"ISSN": "2223-7747",
-		"issue": "2",
-		"journalAbbreviation": "Plants",
-		"language": "en",
-		"license": "https://creativecommons.org/licenses/by/4.0/",
-		"page": "419",
-		"source": "DOI.org (Crossref)",
-		"title": "Potassium Control of Plant Functions: Ecological and Agricultural Implications",
-		"title-short": "Potassium Control of Plant Functions",
-		"URL": "https://www.mdpi.com/2223-7747/10/2/419",
-		"volume": "10",
-		"author": [
-			{
-				"family": "Sardans",
-				"given": "Jordi"
-			},
-			{
-				"family": "Peñuelas",
-				"given": "Josep"
-			}
-		],
-		"accessed": {
-			"date-parts": [
-				[
-					"2024",
-					10,
-					16
-				]
-			]
-		},
-		"issued": {
-			"date-parts": [
-				[
-					"2021",
-					2,
-					23
-				]
-			]
-		}
-	},
-	{
 		"id": "soge2021",
 		"type": "article-journal",
 		"abstract": "It has been established that wood decay and cavities in tree stems contribute significantly to tree failures. Several techniques have been reported by researchers for detecting wood decay and cavities in living trees. These techniques are reviewed in this study under two broad categories: invasive and noninvasive methods. The invasive methods include traditional (decay detecting drill, increment borer, and boroscope), radiographic, acoustic, and electrical resistivity techniques. The noninvasive methods comprise microwave scanning, magnetic resonance imaging, X-ray tomography, and traditional techniques involving the use of mallets. Two or more methods are usually combined to investigate the health status of a tree for comparison and validation of results. The prospects and challenges of the various techniques in diagnosing wood decay, cavities, and other structural defects in living trees are reported. This review aims to help researchers in this field identify areas of further work towards the efficient monitoring and management of forest and urban trees.",
@@ -44483,21 +44084,6 @@
 		}
 	},
 	{
-		"id": "zotero-2705",
-		"type": "webpage",
-		"title": "Wood decomposition, higher fungi, and their role in nutrient redistribution",
-		"URL": "https://cdnsciencepub.com/doi/abs/10.1139/b95-400",
-		"accessed": {
-			"date-parts": [
-				[
-					"2024",
-					10,
-					16
-				]
-			]
-		}
-	},
-	{
 		"id": "lindahl2001",
 		"type": "article-journal",
 		"abstract": "• Translocation of nutrients through fungal mycelia has mainly been viewed in terms of unidirectional movement from sources to sinks. This paper describes an experiment designed to test the possibility of bidirectional phosphorus transport in mycelial cords of the white rot fungus Hypholoma fasciculare growing in soil microcosms. • A novel technique is described that uses the different energy spectra of the radioactive phosphorus isotopes 32 P and 33 P, in combination with nondestructive electronic autoradiography, to monitor the distribution of the two isotopes within single mycelial cord systems. The tracer isotopes were applied to pairs of wood blocks connected by mycelial cords, and isotope translocations were monitored during a 29-d period. • Significant amounts of phosphorus were transported in both directions simultaneously between the two colonized wood blocks. • Simultaneous, bidirectional translocation of phosphorus occurs in mycelial cords of H. fasciculare . Such circulation of nutrients in fungal mycelia should equalize differences in nutrient concentrations in different parts of the mycelia, enabling net translocation of nutrients from areas of high nutrient availability to those of high nutrient demand.",
@@ -44539,21 +44125,6 @@
 			"date-parts": [
 				[
 					"2001"
-				]
-			]
-		}
-	},
-	{
-		"id": "zotero-2710",
-		"type": "webpage",
-		"title": "Two-way translocation of cations by the brown rot fungus Gloeophyllum trabeum - ScienceDirect",
-		"URL": "https://www.sciencedirect.com/science/article/abs/pii/S096483059700019X",
-		"accessed": {
-			"date-parts": [
-				[
-					"2024",
-					10,
-					16
 				]
 			]
 		}
@@ -45386,6 +44957,590 @@
 			"date-parts": [
 				[
 					"2019"
+				]
+			]
+		}
+	},
+	{
+		"id": "vanderwal2015",
+		"type": "article-journal",
+		"abstract": "Decomposition of wood is an important component of global carbon cycling. Most wood decomposition models are based on tree characteristics and environmental conditions; however, they do not include community dynamics of fungi that are the major wood decomposers. We examined the factors explaining variation in sapwood decay in oak tree stumps two and five years after cutting. Wood moisture content was significantly correlated with sapwood decay in younger stumps, whereas ITS‐based composition and species richness of the fungal community were the best predictors for mass loss in the older stumps. Co‐occurrence analysis showed that, in freshly cut trees and in younger stumps, fungal communities were nonrandomly structured, whereas fungal communities in old stumps could not be separated from a randomly assembled community. These results indicate that the most important factors explaining variation in wood decay rates can change over time and that the strength of competitive interactions between fungi in decaying tree stumps may level off with increased wood decay. Our field analysis further suggests that ascomycetes may have a prominent role in wood decay, but their wood‐degrading abilities need to be further tested under controlled conditions. The next challenging step will be to integrate fungal community assembly processes in wood decay models to improve carbon sequestration estimates of forests.",
+		"container-title": "Ecology",
+		"DOI": "10.1890/14-0242.1",
+		"ISSN": "0012-9658, 1939-9170",
+		"issue": "1",
+		"journalAbbreviation": "Ecology",
+		"language": "en",
+		"license": "http://onlinelibrary.wiley.com/termsAndConditions#vor",
+		"page": "124-133",
+		"source": "DOI.org (Crossref)",
+		"title": "Neglected role of fungal community composition in explaining variation in wood decay rates",
+		"URL": "https://esajournals.onlinelibrary.wiley.com/doi/10.1890/14-0242.1",
+		"volume": "96",
+		"author": [
+			{
+				"family": "Van Der Wal",
+				"given": "A."
+			},
+			{
+				"family": "Ottosson",
+				"given": "E."
+			},
+			{
+				"family": "De Boer",
+				"given": "W."
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2024",
+					10,
+					29
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2015",
+					1
+				]
+			]
+		}
+	},
+	{
+		"id": "boddy1995",
+		"type": "article-journal",
+		"abstract": "Dead wood litter input to mature forest ecosystems represents 30–40% of the total biomass, containing about 1–4 and 0.1–0.8 kg/(ha∙year), of N and P, respectively. However, since wood decomposes relatively slowly, it represents a much larger proportion of the standing crop of plant litter on the forest floor, forming a large reservoir of mineral nutrients, which are unavailable for primary producers until they are released by decomposer organisms, primarily basidiomycetes and to a lesser extent ascomycetes. Readily available nutrients are utilized rapidly leaving other nutrients locked up in the recalcitrant lignocellulose complex. As decomposition proceeds the relative concentration of N and P in wood increases (i.e., carbon/nutrient ratio decreases), as C is lost as CO\n              2\n              , but these nutrients are rapidly sequestered in mycelial biomass. Formerly it was thought that nutrients were released when the carbon/nutrient ratio of the wood approximated that of mycelium. However, fungi are inherently greedy using excess nutrients for production of reproductive structures and foraging mycelium. The latter, which is often aggregated to form rhizomorphs or cords, grows out of wood in search of new resources, often forming extensive long-lived networks that exhibit remarkable patterns of reallocation of fungal biomass and nutrients. Within these systems, nutrients are conserved and are often relocated for many metres and may aid in establishment of mycelia in new resources. Nutrients are probably largely released when mycelia are grazed upon by invertebrates, nonbiotically damaged, interact with other fungi and bacteria, or die. Key words: ecology, lignocellulose, basidiomycetes, rhizomorph, translocation.",
+		"container-title": "Canadian Journal of Botany",
+		"DOI": "10.1139/b95-400",
+		"ISSN": "0008-4026",
+		"issue": "S1",
+		"journalAbbreviation": "Can. J. Bot.",
+		"language": "en",
+		"license": "http://www.nrcresearchpress.com/page/about/CorporateTextAndDataMining",
+		"page": "1377-1383",
+		"source": "DOI.org (Crossref)",
+		"title": "Wood decomposition, higher fungi, and their role in nutrient redistribution",
+		"URL": "http://www.nrcresearchpress.com/doi/10.1139/b95-400",
+		"volume": "73",
+		"author": [
+			{
+				"family": "Boddy",
+				"given": "Lynne"
+			},
+			{
+				"family": "Watkinson",
+				"given": "Sarah C."
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2024",
+					10,
+					29
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"1995",
+					12,
+					31
+				]
+			]
+		}
+	},
+	{
+		"id": "connolly1997",
+		"type": "article-journal",
+		"container-title": "International Biodeterioration & Biodegradation",
+		"DOI": "10.1016/S0964-8305(97)00019-X",
+		"ISSN": "09648305",
+		"issue": "2-3",
+		"journalAbbreviation": "International Biodeterioration & Biodegradation",
+		"language": "en",
+		"license": "https://www.elsevier.com/tdm/userlicense/1.0/",
+		"page": "181-188",
+		"source": "DOI.org (Crossref)",
+		"title": "Two-way translocation of cations by the brown rot fungus Gloeophyllum trabeum",
+		"URL": "https://linkinghub.elsevier.com/retrieve/pii/S096483059700019X",
+		"volume": "39",
+		"author": [
+			{
+				"family": "Connolly",
+				"given": "Jon H."
+			},
+			{
+				"family": "Jellison",
+				"given": "Jody"
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2024",
+					10,
+					29
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"1997",
+					1
+				]
+			]
+		}
+	},
+	{
+		"id": "work2023a",
+		"type": "article-journal",
+		"abstract": "Forest biomass harvest has the potential to provide feedstocks for energy production to offset fossil fuel consumption. However, concerns have been raised regarding the ecological sustainability of removing additional biomass from forests, in particular the impacts on biodiversity. In this paper, we used a suite of ground-dwelling arthropod taxa (ground beetles, spiders, and rove beetles) to measure community compositional changes along a gradient of biomass removal treatments 7 years postharvest, and compared against reference. Based on multivariate regression trees, changes in species composition reflected the intensity gradient of the biomass removal treatments or stand attributes associated with the level of forest floor disturbance across all arthropod groups. For each arthropod group, changes in composition were defined primarily by reductions or loss of abundant forest associated species and increases in the number and abundance of species associated with more xeric conditions and increased disturbance intensity. There were no differences between full-tree and tree-length treatments. Overall, results indicated a strong arthropod response to the removal of overstory, forest floor disturbance, and reductions in understory cover mostly resulting from the glyphosate applications. Arthropod recovery would benefit from overstory retention, reduction in forest floor disturbance, and judicious use of glyphosate.",
+		"container-title": "Canadian Journal of Forest Research",
+		"DOI": "10.1139/cjfr-2023-0018",
+		"ISSN": "0045-5067",
+		"issue": "11",
+		"journalAbbreviation": "Can. J. For. Res.",
+		"note": "publisher: NRC Research Press",
+		"page": "931-952",
+		"source": "cdnsciencepub.com (Atypon)",
+		"title": "Cumulative effects of biomass harvesting and herbicide application on litter-dwelling arthropod communities in jack pine-dominated forests: 7th year postharvest assessment",
+		"title-short": "Cumulative effects of biomass harvesting and herbicide application on litter-dwelling arthropod communities in jack pine-dominated forests",
+		"URL": "https://cdnsciencepub.com/doi/full/10.1139/cjfr-2023-0018",
+		"volume": "53",
+		"author": [
+			{
+				"family": "Work",
+				"given": "Timothy T."
+			},
+			{
+				"family": "Morris",
+				"given": "Dave M."
+			},
+			{
+				"family": "Loboda",
+				"given": "S."
+			},
+			{
+				"family": "Klimaszewski",
+				"given": "J."
+			},
+			{
+				"family": "Wainio-Keizer",
+				"given": "K."
+			},
+			{
+				"family": "Venier",
+				"given": "Lisa"
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2024",
+					10,
+					29
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2023",
+					11
+				]
+			]
+		}
+	},
+	{
+		"id": "lindahl2015",
+		"type": "article-journal",
+		"abstract": "Although hypothesized for many years, the involvement of ectomycorrhizal fungi in decomposition of soil organic matter remains controversial and has not yet been fully acknowledged as an important factor in the regulation of soil carbon (C) storage. Here, we review recent findings, which support the view that some ectomycorrhizal fungi have the capacity to oxidize organic matter, either by ‘brown-rot’ Fenton chemistry or using ‘white-rot’ peroxidases. We propose that ectomycorrhizal fungi benefit from organic matter decomposition primarily through increased nitrogen mobilization rather than through release of metabolic C and question the view that ectomycorrhizal fungi may act as facultative saprotrophs. Finally, we discuss how mycorrhizal decomposition may influence organic matter storage in soils and mediate responses of ecosystem C sequestration to environmental changes. Contents Summary 1443 I. Introduction 1443 II. New insights from genomics, transcriptomics and spectroscopy 1444 III. What do mycorrhizal fungi gain from decomposition? 1445 IV. Ectomycorrhizal fungi as regulators of soil C dynamics 1446 V. Conclusions 1446 Acknowledgements 1446 References 1447",
+		"container-title": "New Phytologist",
+		"DOI": "10.1111/nph.13201",
+		"ISSN": "1469-8137",
+		"issue": "4",
+		"language": "en",
+		"license": "© 2014 The Authors. New Phytologist © 2014 New Phytologist Trust",
+		"note": "_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/nph.13201",
+		"page": "1443-1447",
+		"source": "Wiley Online Library",
+		"title": "Ectomycorrhizal fungi – potential organic matter decomposers, yet not saprotrophs",
+		"URL": "https://onlinelibrary.wiley.com/doi/abs/10.1111/nph.13201",
+		"volume": "205",
+		"author": [
+			{
+				"family": "Lindahl",
+				"given": "Björn D."
+			},
+			{
+				"family": "Tunlid",
+				"given": "Anders"
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2024",
+					10,
+					29
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		}
+	},
+	{
+		"id": "schuppenhauer2019",
+		"type": "article-journal",
+		"abstract": "Background: \nOribatida and Collembola are an important part of the soil food web and increase soil fertility by contributing to the recycling of nutrients out of dead organic matter. Active locomotion enables only limited dispersal in these tiny, wingless arthropods, while passive dispersal plays an important role for long-distance dispersal. Previous investigations have focused on passive transport by wind, other animals, or sea currents, whereas studies on transport via running water are missing. However, previous observation of the long survival of submerged terrestrial microarthropods makes passive dispersal with running water very likely.\n\nMethods:\nBy combining field and lab experiments, we studied the potential for passive dispersal of oribatid mites with running water. We investigated terrestrial Oribatida and Collembola: (1) along a stream taking soil and moss samples, (2) in a stream using sticky covers and aquarium nets, and (3) studied their ability to colonise new soil after aquatic transport with the help of floating islands. Furthermore, we investigated the survival of submerged Oribatida species and their floating capabilities in lab experiments to predict dispersal distances with running water. We tested for differences between species using Kruskal-Wallis test for equal medians and Mann-Whitney pairwise-comparison and χ2-test for the influence of body size on aquatic dispersal.\n\nResults:\nSoil and moss samples revealed a pool of 52 oribatid mite species at the stream bank. Within the stream, we caught 180 individuals from 36 oribatid mite species. Only 14 of those species were also found in the soil and moss samples, whereas the remaining 22 were of unknown origin. Based on material caught on sticky covers, an average of 63.9 (± 54.6) oribatid mite individuals fell on one m2 stream water per week. Four species of Collembola (27 individuals) and 21 species of oribatid mites (47 individuals) were collected with aquarium nets. Eight microarthropod species (Oribatida + Collembola) successfully colonised new soil in the floating islands after aquatic dispersal. Lab experiments showed that Oribatida can float for at least 14 hours at the surface of running water and may survive for more than 365 days when submerged. The floating abilities and survival rates were largely species-specific.\n\nConclusion:\nThis is the first study to demonstrate successful passive dispersal with running water for two groups of terrestrial soil microarthropods, including subsequent colonisation of new soil. We show that submersion survival, as well as floating abilities, and therefore dispersal capability, are not only high in oribatid mites, but also species-specific. Running waters obviously serve as long-distance dispersal highways for many of these less mobile soil-living animals.",
+		"container-title": "Movement Ecology",
+		"DOI": "10.1186/s40462-019-0165-5",
+		"journalAbbreviation": "Movement Ecology",
+		"source": "ResearchGate",
+		"title": "Slow-moving soil organisms on a water highway: aquatic dispersal and survival potential of Oribatida and Collembola in running water",
+		"title-short": "Slow-moving soil organisms on a water highway",
+		"volume": "7",
+		"author": [
+			{
+				"family": "Schuppenhauer",
+				"given": "Meike"
+			},
+			{
+				"family": "Lehmitz",
+				"given": "Ricarda"
+			},
+			{
+				"family": "Xylander",
+				"given": "Willi"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2019",
+					7,
+					2
+				]
+			]
+		}
+	},
+	{
+		"id": "webster2021c",
+		"type": "article-journal",
+		"abstract": "Forest residue left on the ground following harvesting (i.e., “slash”) plays an important role in moderating the physical and chemical environment of the soil for future forest growth. Leaving too little slash can leave the soil exposed to extreme fluctuations in soil conditions and fewer nutrients that may hinder future forest growth, while leaving too much slash makes it difficult for new trees to establish or increases fire hazard. This study investigated the impacts of blading and different loadings of slash (0, 15, 30 and 60 Mg ha−1 dry mass) on soil physical (temperature and moisture), chemical (soil solution) and biological (soil respiration and net ecosystem exchange) processes over 4 summers at a harvested jack pine stand within the Island Lake Biomass Harvest Experiment in northeastern Ontario. Soil temperature and moisture were highest in the bladed and lowest in the 60 Mg ha−1 slash loading. Soil solution chemistry was generally similar among the 0, 15 and 30 Mg ha−1 slash loadings. However, total organic carbon and potassium had higher concentrations at 60 Mg ha−1 treatment and lower concentrations in the bladed treatment, the opposite trend occurred for pH and nitrate. Over three years the concentrations of cations decreased and nitrogen species increased for bladed to 30 Mg ha−1 treatments. The 60 Mg ha−1 treatment had increases in some solutes over time suggesting there is a lag effect as needles and bark are incorporated into the soil. The soil respiration data showed that lowest rates of CO2 production occurred in the bladed treatment, but increased over time as the forest floor developed. CO2 production was highest in the 60 Mg ha−1 slash loading, with high rates of soil respiration in the first year, as fine debris from slash deposited onto the soil, however little photosynthesis occurred in these treatments. Thus retention of small to moderate amounts of slash seem to be sufficient for maintaining a suitable balance of soil conditions for a regenerating forest over the short term.",
+		"container-title": "Forest Ecology and Management",
+		"DOI": "10.1016/j.foreco.2021.119517",
+		"ISSN": "0378-1127",
+		"journalAbbreviation": "Forest Ecology and Management",
+		"page": "119517",
+		"source": "ScienceDirect",
+		"title": "The effect of boreal jack pine harvest residue retention on soil environment and processes",
+		"URL": "https://www.sciencedirect.com/science/article/pii/S0378112721006071",
+		"volume": "497",
+		"author": [
+			{
+				"family": "Webster",
+				"given": "K. L."
+			},
+			{
+				"family": "Hazlett",
+				"given": "P. W."
+			},
+			{
+				"family": "Brand",
+				"given": "G."
+			},
+			{
+				"family": "Nelson",
+				"given": "S. A."
+			},
+			{
+				"family": "Primavera",
+				"given": "M. J."
+			},
+			{
+				"family": "Weldon",
+				"given": "T. P."
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2024",
+					10,
+					30
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2021",
+					10,
+					1
+				]
+			]
+		}
+	},
+	{
+		"id": "whitson2005",
+		"type": "article-journal",
+		"abstract": "Through its effect on vegetation, forest harvesting affects soil moisture storage, water movement processes, and soil temperature. The effects of harvest on water storage and movement patterns and on soil temperature during the snowmelt period were studied 3 years after harvest on hillslopes in northern Alberta, Canada. Measurements of soil water content, soil temperature, and bromide tracer concentrations were made at 11 pairs of forested and harvested plots, which are all dominated by Gray Luvisol soils but possess a range of topographic characteristics. Compared with forested sites, harvested sites were expected to have higher soil water content, display more interflow, and thaw earlier. Harvested sites were wetter on only one of four dates sampled, reflecting dry weather and rapid aspen regrowth. Greater loss and shallower penetration of bromide tracer in plots indicate that harvested sites had more interflow than forested sites. Despite a trend to higher temperatures, harvested sites did not thaw earlier than forested sites. Our inability to detect dramatic treatment effects reflects the need for large sample sizes for soil properties that display high local spatial and temporal variability. Key words: forest harvest, soil moisture, soil thaw, bromide, interflow, boreal.",
+		"container-title": "Journal of Environmental Engineering and Science",
+		"DOI": "10.1139/s04-081",
+		"ISSN": "1496-256X",
+		"issue": "6",
+		"journalAbbreviation": "J. Environ. Eng. Sci.",
+		"note": "publisher: NRC Research Press",
+		"page": "429-439",
+		"source": "cdnsciencepub.com (Atypon)",
+		"title": "Effect of forest harvest on soil temperature and water storage and movement patterns on Boreal Plain hillslopes",
+		"URL": "https://cdnsciencepub.com/doi/abs/10.1139/s04-081",
+		"volume": "4",
+		"author": [
+			{
+				"family": "Whitson",
+				"given": "I R"
+			},
+			{
+				"family": "Chanasyk",
+				"given": "D S"
+			},
+			{
+				"family": "Prepas",
+				"given": "E E"
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2024",
+					10,
+					30
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2005",
+					11
+				]
+			]
+		}
+	},
+	{
+		"id": "hynes2013",
+		"type": "article-journal",
+		"abstract": "Soil productivity is, to a large extent, governed by the microbial communities inhabiting the soil and is an important priority within the forestry industry. This study assessed community level changes in microbial community size and composition in conjunction with nutrient bioavailability to clear cutting. Soils from the Boreal Plain of central Alberta were sampled from the LFH and mineral Ae horizons using a time series approach. Phospholipid fatty acid analysis was utilized to determine changes in microbial community size and composition in soils of a cutblock area over three growing seasons spanning pre- and post-harvest conditions, and in situ N, P, K, and Ca were measured. Results indicated that there was no loss of microbial biomass detected until 2yrs post-harvest, while the community composition was altered immediately post-harvest in both the LFH and Ae. A post-harvest ‘flush’ of N, P and K was observed in these soils, though soil C, moisture content and microbial biomass did not indicate significant change over the three growing seasons post-harvest. Nutrient and microbial differences observed between the LFH and Ae horizons indicate that for objectives seeking relative comparisons, homogenization is sufficient, but for those seeking absolute values, distinct horizons should be analyzed separately.",
+		"container-title": "Forest Ecology and Management",
+		"DOI": "10.1016/j.foreco.2013.06.006",
+		"ISSN": "0378-1127",
+		"journalAbbreviation": "Forest Ecology and Management",
+		"page": "88-95",
+		"source": "ScienceDirect",
+		"title": "Impact of clear cutting on soil microbial communities and bioavailable nutrients in the LFH and Ae horizons of Boreal Plain forest soils",
+		"URL": "https://www.sciencedirect.com/science/article/pii/S0378112713003745",
+		"volume": "306",
+		"author": [
+			{
+				"family": "Hynes",
+				"given": "Holly M."
+			},
+			{
+				"family": "Germida",
+				"given": "James J."
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2024",
+					10,
+					30
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2013",
+					10,
+					15
+				]
+			]
+		}
+	},
+	{
+		"id": "sewell2020",
+		"type": "article-journal",
+		"abstract": "Storing a significant portion of the global carbon (C) stocks, soils of the boreal forest display a high degree of spatial heterogeneity across the landscape, arising from variation in forest structure and landscape morphology, as well as natural and anthropogenic disturbances. Because of this high degree of variability, accurately quantifying C storage in this ecosystem poses a challenge. Forestry is an important feature of Canada’s natural resource-based economy, but there is still considerable uncertainty on how management practices will affect boreal soil C sequestration in the long-term. With increasing pressures due to a changing climate and intensified forest management, developing better tools and techniques to quantify soil C dynamics is of paramount importance. In this study, we measured soil C stocks and associated properties in the forest floors and mineral soils (0–7 cm) of conifer-dominated and deciduous (broadleaf)-dominated boreal forest stands, 17 years following variable retention harvest. We investigated if the Wet Areas Mapping-based depth-to-water (DTW) index, derived from remotely sensed Light Detection and Ranging (LiDAR) data, was related to soil properties of unharvested stands. In addition, relationships between harvest-induced changes in soil properties and the DTW index were examined. In unharvested stands, several forest floor properties were related to DTW. However, these relationships were stand-specific. In unharvested conifer-dominated stands, forest floor C stocks were positively related to site wetness, while in harvested stands there was no relationship; this suggests that C was differentially lost from wetter sites following harvesting. Conversely, in unharvested deciduous-dominated stands, there was no relationship between forest floor C stocks and site wetness, but in harvested stands, wetter sites had higher C stocks. The DTW index was more strongly related to soil properties in the mineral soil (0–7 cm) than in the forest floor. In both forest cover types, mineral soil C and N concentrations, and C stocks, increased with increasing wetness. Relationships between mineral soil properties and DTW were not stand-specific, and were of similar magnitude under deciduous-dominated and conifer-dominated cover. In addition, harvest and forest regeneration had limited impact on the relationships between DTW and mineral soil properties. This study highlights the potential of using remote sensing and the DTW index to model forest floor and mineral soil properties in the boreal forest. In turn, this approach may be utilized in effective forest management strategies that aim to conserve boreal C stocks.",
+		"container-title": "Forest Ecology and Management",
+		"DOI": "10.1016/j.foreco.2020.117986",
+		"ISSN": "0378-1127",
+		"journalAbbreviation": "Forest Ecology and Management",
+		"page": "117986",
+		"source": "ScienceDirect",
+		"title": "Long-term effects of harvest on boreal forest soils in relation to a remote sensing-based soil moisture index",
+		"URL": "https://www.sciencedirect.com/science/article/pii/S0378112719322613",
+		"volume": "462",
+		"author": [
+			{
+				"family": "Sewell",
+				"given": "Paul D."
+			},
+			{
+				"family": "Quideau",
+				"given": "Sylvie A."
+			},
+			{
+				"family": "Dyck",
+				"given": "Miles"
+			},
+			{
+				"family": "Macdonald",
+				"given": "Ellen"
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2024",
+					10,
+					30
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2020",
+					4,
+					15
+				]
+			]
+		}
+	},
+	{
+		"id": "li2024",
+		"type": "article-journal",
+		"abstract": "Dissolved organic matter (DOM) is a pivotal component of the biogeochemical cycles and can combine with metal ions through chelation or complexation. Understanding this process is crucial for tracing metal solubility, mobility, and bioavailability. Fluorescence excitation emission matrix (EEM) and parallel factor analysis (PARAFAC) has emerged as a popular tool in deciphering DOM-metal interactions. In this review, we primarily discuss the advantages of EEM-PARAFAC compared with other algorithms and its main limitations in studying DOM-metal binding, including restrictions in spectral considerations, mathematical assumptions, and experimental procedures, as well as how to overcome these constraints and shortcomings. We summarize the principles of EEM to uncover DOM-metal association, including why fluorescence gets quenched and some potential mechanisms that affect the accuracy of fluorescence quenching. Lastly, we review some significant and innovative research, including the application of 2D-COS in DOM-metal binding analysis, hoping to provide a fresh perspective for possible future hotspots of study. We argue the expansion of EEM applications to a broader range of areas related to natural organic matter. This extension would facilitate our exploration of the mobility and fate of metals in the environment.",
+		"container-title": "Environmental Science and Pollution Research International",
+		"DOI": "10.1007/s11356-024-32072-z",
+		"ISSN": "1614-7499",
+		"issue": "10",
+		"journalAbbreviation": "Environ Sci Pollut Res Int",
+		"language": "eng",
+		"note": "PMID: 38289550",
+		"page": "14388-14405",
+		"source": "PubMed",
+		"title": "Deciphering DOM-metal binding using EEM-PARAFAC: Mechanisms, challenges, and perspectives",
+		"title-short": "Deciphering DOM-metal binding using EEM-PARAFAC",
+		"volume": "31",
+		"author": [
+			{
+				"family": "Li",
+				"given": "Weijun"
+			},
+			{
+				"family": "Lu",
+				"given": "Lei"
+			},
+			{
+				"family": "Du",
+				"given": "Huihui"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2024",
+					2
+				]
+			]
+		}
+	},
+	{
+		"id": "zotero-2766",
+		"type": "webpage",
+		"title": "Deciphering DOM-metal binding using EEM-PARAFAC: Mechanisms, challenges, and perspectives | Environmental Science and Pollution Research",
+		"URL": "https://link.springer.com/article/10.1007/s11356-024-32072-z",
+		"accessed": {
+			"date-parts": [
+				[
+					"2024",
+					11,
+					1
+				]
+			]
+		}
+	},
+	{
+		"id": "lofgren2019",
+		"type": "article-journal",
+		"abstract": "Abstract\n            Ribosomal DNA (rDNA) copy number variation (CNV) has major physiological implications for all organisms, but how it varies for fungi, an ecologically ubiquitous and important group of microorganisms, has yet to be systemically investigated. Here, we examine rDNA CNV using an in silico read depth approach for 91 fungal taxa with sequenced genomes and assess copy number conservation across phylogenetic scales and ecological lifestyles. rDNA copy number varied considerably across fungi, ranging from an estimated 14 to 1,442 copies (mean = 113, median = 82), and copy number similarity was inversely correlated with phylogenetic distance. No correlations were found between rDNA CNV and fungal trophic mode, ecological guild or genome size. Taken together, these results show that like other microorganisms, fungi exhibit substantial variation in rDNA copy number, which is linked to their phylogeny in a scale‐dependent manner.",
+		"container-title": "Molecular Ecology",
+		"DOI": "10.1111/mec.14995",
+		"ISSN": "0962-1083, 1365-294X",
+		"issue": "4",
+		"journalAbbreviation": "Molecular Ecology",
+		"language": "en",
+		"page": "721-730",
+		"source": "DOI.org (Crossref)",
+		"title": "Genome‐based estimates of fungal rDNA copy number variation across phylogenetic scales and ecological lifestyles",
+		"URL": "https://onlinelibrary.wiley.com/doi/10.1111/mec.14995",
+		"volume": "28",
+		"author": [
+			{
+				"family": "Lofgren",
+				"given": "Lotus A."
+			},
+			{
+				"family": "Uehling",
+				"given": "Jessie K."
+			},
+			{
+				"family": "Branco",
+				"given": "Sara"
+			},
+			{
+				"family": "Bruns",
+				"given": "Thomas D."
+			},
+			{
+				"family": "Martin",
+				"given": "Francis"
+			},
+			{
+				"family": "Kennedy",
+				"given": "Peter G."
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2024",
+					11,
+					8
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2019",
+					2
 				]
 			]
 		}
